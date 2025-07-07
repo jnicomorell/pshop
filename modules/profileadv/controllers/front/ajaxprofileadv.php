@@ -34,7 +34,7 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
 
     public function postProcess()
     {
-        $this->translationList = require_once('./modules/profileadv/translations/translations.php');
+        $this->translationList = require_once(_PS_MODULE_DIR_.'profileadv/translations/translations.php');
 
         $action = Tools::getValue('action');
 
