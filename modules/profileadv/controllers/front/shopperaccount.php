@@ -1,5 +1,7 @@
 <?php
 
+require_once(_PS_MODULE_DIR_ . 'profileadv/controllers/front/ProfileadvFrontController.php');
+
 use PrestaShop\PrestaShop\Adapter\Tools;
 
 /**
@@ -19,26 +21,18 @@ use PrestaShop\PrestaShop\Adapter\Tools;
  * for all its modules is valid only once for a single shop.
  */
 
-class ProfileadvshopperaccountModuleFrontController extends ModuleFrontController
+class ProfileadvshopperaccountModuleFrontController extends ProfileadvFrontController
 {
 
     public function init()
     {
-
+        $this->addCustomInputFileAssets = true;
+        $this->addProfileadvJs = true;
         parent::init();
     }
 
     public function setMedia()
     {
-
-        $module_name = "profileadv";
-
-        //$this->context->controller->addJs(__PS_BASE_URI__ . 'modules/' . $module_name . '/views/js/jquery.form.js');
-
-        $this->context->controller->addCSS(__PS_BASE_URI__ . 'modules/' . $module_name . '/views/css/custom-input-file.css');
-        $this->context->controller->addJs(__PS_BASE_URI__ . 'modules/' . $module_name . '/views/js/custom-input-file.js');
-        $this->context->controller->addJS(__PS_BASE_URI__ . 'modules/' . $module_name . '/views/js/profileadv-custom.js');
-
         parent::setMedia();
     }
 

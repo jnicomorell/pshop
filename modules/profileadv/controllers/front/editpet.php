@@ -1,5 +1,7 @@
 <?php
 
+require_once(_PS_MODULE_DIR_ . 'profileadv/controllers/front/ProfileadvFrontController.php');
+
 use PrestaShop\PrestaShop\Adapter\Tools;
 
 /**
@@ -18,7 +20,7 @@ use PrestaShop\PrestaShop\Adapter\Tools;
  * Don't use this module on several shops. The license provided by PrestaShop Addons
  * for all its modules is valid only once for a single shop.
  */
-class ProfileadvEditpetModuleFrontController extends ModuleFrontController
+class ProfileadvEditpetModuleFrontController extends ProfileadvFrontController
 {
     public $auth = true;
     public $guestAllowed = false;
@@ -31,8 +33,10 @@ class ProfileadvEditpetModuleFrontController extends ModuleFrontController
     public function init()
     {
         $this->petToUpdate = pSQL(isset($_GET['pet'])) ? pSQL($_GET['pet']) : false;
-
-        $this->translationList = require_once('./modules/profileadv/translations/translations.php');
+        $this->addCustomInputFileAssets = true;
+        $this->addProfileadvCustomCss = true;
+        $this->addProfileadvJs = true;
+        $this->loadTranslations();
         parent::init();
     }
 
@@ -161,29 +165,4 @@ class ProfileadvEditpetModuleFrontController extends ModuleFrontController
         }
     }
 
-    public function setMedia()
-    {
-
-        $module_name = "profileadv";
-
-        //$this->context->controller->addJs(__PS_BASE_URI__ . 'modules/' . $module_name . '/views/js/jquery.form.js');
-
-        $this->context->controller->addCSS(__PS_BASE_URI__ . 'modules/' . $module_name . '/views/css/custom-input-file.css');
-        $this->context->controller->addCSS(__PS_BASE_URI__ . 'modules/' . $module_name . '/views/css/profileadv-custom.css');
-        $this->context->controller->addJs(__PS_BASE_URI__ . 'modules/' . $module_name . '/views/js/custom-input-file.js');
-        $this->context->controller->addJS(__PS_BASE_URI__ . 'modules/' . $module_name . '/views/js/profileadv-custom.js');
-
-        parent::setMedia();
-    }
-
-    private function calculateAgeInMonths(string $birth)
-    {
-        $birth = new DateTime(date('Y/m/d', strtotime($birth)));
-        $now =  new DateTime(date('Y/m/d', time()));
-
-        //Calculate age in months
-        $age = date_diff($now, $birth);
-        $age = ($age->y * 12) + $age->m;
-        return $age;
-    }
 }

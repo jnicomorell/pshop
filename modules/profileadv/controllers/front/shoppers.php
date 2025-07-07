@@ -1,4 +1,5 @@
 <?php
+require_once(_PS_MODULE_DIR_ . 'profileadv/controllers/front/ProfileadvFrontController.php');
 /**
  * 2011 - 2019 StorePrestaModules SPM LLC.
  *
@@ -16,7 +17,7 @@
  * for all its modules is valid only once for a single shop.
  */
 
-class ProfileadvshoppersModuleFrontController extends ModuleFrontController
+class ProfileadvshoppersModuleFrontController extends ProfileadvFrontController
 {
 	
 	public function init()
@@ -25,10 +26,6 @@ class ProfileadvshoppersModuleFrontController extends ModuleFrontController
 		parent::init();
 	}
 	
-	public function setMedia()
-	{
-		parent::setMedia();
-    }
 
 	
 	/**
