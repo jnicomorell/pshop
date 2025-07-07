@@ -1,0 +1,57 @@
+<?php
+
+$errors = $data['errors'];
+// error handler
+if(count($errors)>0) {
+    $_html .= '<div class="bootstrap">
+                                <div class="alert alert-danger">
+                                    <button data-dismiss="alert" class="close" type="button">×</button>'.count($errors).'&nbsp;'.$this->_data_translate_custom['_displayForm16_errors'].'<br>
+                                    <ol>';
+    foreach ($errors as $error_text) {
+        $_html .= '<li>'.$error_text.'</li>';
+
+    }
+    $_html .= '</ol>
+			                	</div>
+	                            </div>';
+
+}
+// error handler
+
+
+//include_once(_PS_MODULE_DIR_.$this->name.'/views/templates/hooks/promo.phtml');
+
+$_html .= '<div class="row">
+    	<div class="col-lg-12">
+    	<div class="row">';
+
+$_html .= '<div class="col-lg-12 col-md-3">
+
+						<div class="list-group">';
+$_html .= '<ul class="nav nav-pills" id="navtabs16">
+
+							    <li class="active"><a href="#welcome" data-toggle="tab" class="list-group-item"><i class="fa fa-home fa-lg"></i>&nbsp;'.$this->_data_translate_custom['_displayForm16_welcome'].'</a></li>
+							    <li><a href="#modulesettings" data-toggle="tab" class="list-group-item"><i class="fa fa-cogs fa-lg"></i>&nbsp;'.$this->_data_translate_custom['_displayForm16_main_set'].'</a></li>
+							    <li><a href="#info" data-toggle="tab" class="list-group-item"><i class="fa fa-question-circle fa-lg"></i>&nbsp;'.$this->_data_translate_custom['_displayForm16_help_doc'].'</a></li>
+							    <li><a href="http://addons.prestashop.com/en/2_community-developer?contributor=790166" target="_blank"  class="list-group-item"><img src="../modules/'.$this->name.'/views/img/spm-logo.png"  />&nbsp;&nbsp;'.$this->_data_translate_custom['_displayForm16_other_spm_mod'].'</a></li>
+
+
+							</ul>';
+$_html .= '</div>
+    				</div>';
+
+
+$_html .= '<div class="tab-content col-lg-12 col-md-9">';
+$_html .= '<div class="tab-pane active" id="welcome">'.$this->_welcome().'</div>';
+$_html .= '<div class="tab-pane" id="modulesettings">'.$this->_modulesettings16().'</div>';
+$_html .= '<div class="tab-pane" id="info">'.$this->_help_documentation().'</div>';
+$_html .= '</div>';
+
+
+
+$_html .= '</div></div></div>';
+
+
+echo $_html;
+
+?>

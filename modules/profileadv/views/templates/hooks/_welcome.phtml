@@ -1,0 +1,22 @@
+<?php
+
+$_html  = '';
+$_html .= '<div class="panel">
+            <div class="panel-heading"><i class="fa fa-home fa-lg"></i>&nbsp;'.$this->_data_translate_custom['_welcome_wel'].'</div>';
+$_html .=  '<p class="alert alert-info">'.$this->_data_translate_custom['_welcome_thank_for_purch'].'</p>';
+
+$_html .= '<br/><p class="alert alert-info"><b>Version</b> : '.$this->version.'</p>';
+
+
+$_html .= '<br/><p class="alert alert-info">';
+$_html .= $this->_data_translate_custom['_welcome_to_conf'].'&nbsp;<b><a style="text-decoration:underline" id="tab-menu-6" onclick="tabs_custom(6)" href="javascript:void(0)">'.$this->_data_translate_custom['_welcome_help_doc'].'</a></b>';
+$_html .= '</p>';
+
+
+
+$_html .= '</div>';
+
+echo $_html;
+
+
+?>

@@ -1,0 +1,85 @@
+<?php
+
+$name_module = "blockarticlesplus";
+$name_file = "Installation_Guid.pdf";
+$id_product_promo = 0;
+$developer_url = "http://addons.prestashop.com/en/2_community-developer?contributor=790166";
+
+$promo_id_1 = "4514"; // Product Questions
+$promo_title_1 = "Product Questions";
+$promo_alias_img_1 = "prodquestions";
+
+$promo_id_2 = "3748"; // Blog PRO
+$promo_title_2 = "Blog PRO";
+$promo_alias_img_2 = "blockblog";
+
+$promo_id_3 = "4409"; // Product reviews + Google Snippets, Breadcrumb, Rich Pin
+$promo_title_3 = "Product reviews + Google Snippets, Breadcrumb, Rich Pin";
+$promo_alias_img_3 = "reviewsnippets";
+
+
+$_html .= '<style type="text/css">
+
+table.promo-file-spm{width:100%}
+table.promo-file-spm td.item1{width:8%;}
+table.promo-file-spm td{text-align: center;padding: 5px 8px}
+table.promo-file-spm td .img-module-smp{width:40px}
+table.promo-file-spm td.find-module-spm{color: #daa520;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: right;}
+table.promo-file-spm td .fa-star{color:#fbbb22}
+table.promo-file-spm td .fa-question-circle, table.promo-file-spm td .fa-wrench{color:grey}
+table.promo-file-spm td .title-module-spm{color:#777;font-size: 12px;}
+</style>';
+
+$_html .= '<table class="panel promo-file-spm">
+    <tbody><tr>
+        <td class="item1">
+            <a href="../modules/'.$name_module.'/'.$name_file.'" target="_blank">
+                <i class="fa fa-question-circle fa-3x"></i>
+                <br/><span class="title-module-spm">Documentation</span>
+            </a>
+        </td>
+        <td class="item1">
+            <a href="https://addons.prestashop.com/en/write-to-developper?id_product='.$id_product_promo.'" target="_blank">
+                <i class="fa fa-wrench fa-3x"></i>
+                <br/><span class="title-module-spm">Contact Support</span>
+            </a>
+        </td>
+        <td class="item1">
+            <a href="https://addons.prestashop.com/en/customer-support.php" target="_blank">
+                <i class="fa fa-cloud-upload fa-3x"></i>
+                <br/><span class="title-module-spm">Module Updates</span>
+            </a>
+        </td>
+        <td class="item1">
+            <a href="http://addons.prestashop.com/en/ratings.php" target="_blank">
+                <i class="fa fa-star fa-3x"></i>
+                <br/><span class="title-module-spm">Rate Module</span>
+            </a>
+        </td>
+        <td class="find-module-spm">See also other SPM<br/> Prestashop Modules:</td>
+        <td>
+            <a href="http://addons.prestashop.com/product.php?id_product='.$promo_id_1.'" target="_blank">
+                <img src="../modules/'.$name_module.'/views/img/promo/'.$promo_alias_img_1.'.jpg" class="img-module-smp"/><br/><span class="title-module-spm">'.$promo_title_1.'</span>
+            </a>
+        </td>
+        <td>
+            <a href="http://addons.prestashop.com/product.php?id_product='.$promo_id_2.'" target="_blank">
+                <img src="../modules/'.$name_module.'/views/img/promo/'.$promo_alias_img_2.'.jpg" class="img-module-smp"/><br/><span class="title-module-spm">'.$promo_title_2.'</span>
+            </a>
+        </td>
+        <td>
+            <a href="http://addons.prestashop.com/product.php?id_product='.$promo_id_3.'" target="_blank">
+                <img src="../modules/'.$name_module.'/views/img/promo/'.$promo_alias_img_3.'.jpg" class="img-module-smp"/><br/><span class="title-module-spm">'.$promo_title_3.'</span>
+            </a>
+        </td>
+
+        <td>
+            <a href="'.$developer_url.'" target="_blank" style="font-size: 14px;color:#777;">
+                <img src="../modules/'.$name_module.'/views/img/promo/logo.png"  class="img-module-smp"/><br/>All SPM Modules
+            </a>
+        </td>
+    </tr>
+</tbody></table>';
