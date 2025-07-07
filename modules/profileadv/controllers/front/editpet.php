@@ -1,6 +1,7 @@
 <?php
 
 require_once(_PS_MODULE_DIR_ . 'profileadv/controllers/front/ProfileadvFrontController.php');
+include_once(_PS_MODULE_DIR_ . 'profileadv/classes/AgeCalculator.php');
 
 use PrestaShop\PrestaShop\Adapter\Tools;
 
@@ -82,7 +83,7 @@ class ProfileadvEditpetModuleFrontController extends ProfileadvFrontController
             "name" => $getPetData['name'],
             "genre" => (int)$getPetData['genre'],
             "birth" => $getPetData['birth'],
-            "age" => $this->calculateAgeinMonths($getPetData['birth']),
+            "age" => AgeCalculator::calculateAgeInMonths($getPetData['birth'], true),
             "breed" => (int) $getPetData['breed'],
             "esterilized" => (int)$getPetData['esterilized'],
             "weight" => (float)$getPetData['weight'],

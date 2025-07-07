@@ -20,14 +20,6 @@ class ProfileadvFrontController extends ModuleFrontController
         }
     }
 
-    protected function calculateAgeInMonths(string $birth)
-    {
-        $birth = new DateTime(date('Y/m/d', strtotime($birth)));
-        $now = new DateTime(date('Y/m/d', time()));
-        $age = date_diff($now, $birth);
-        return ($age->y * 12) + $age->m;
-    }
-
     protected function findTranslatedDataByParameters($type, int $value)
     {
         $cookie = Context::getContext()->cookie;

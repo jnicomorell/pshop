@@ -17,6 +17,8 @@
  * for all its modules is valid only once for a single shop.
  */
 
+include_once(_PS_MODULE_DIR_ . 'profileadv/classes/AgeCalculator.php');
+
 class petList extends Module
 {
     const DEFAULT_DOG_IMG = '527785806447bde994fa8.jpg';
@@ -71,8 +73,8 @@ class petList extends Module
             $pets[$i]['amount'] = $_item_customer['amount'];
             $pets[$i]['text'] = html_entity_decode($_item_customer['comment']);
             $pets[$i]['active'] = $_item_customer['active'];
-            $pets[$i]['ageyears'] = $this->calculateAgeInYears($pets[$i]['birth']);
-            $pets[$i]['agemonths'] = $this->calculateAgeInMonths($pets[$i]['birth']);
+            $pets[$i]['ageyears'] = AgeCalculator::calculateAgeInYears($pets[$i]['birth']);
+            $pets[$i]['agemonths'] = AgeCalculator::calculateAgeInMonths($pets[$i]['birth']);
             $pets[$i]['edit_url'] = $this->context->link->getAdminLink('Adminprofileadv', false) . '?token=' . Tools::getAdminToken('Adminprofileadv' . intval(Tab::getIdFromClassName('Adminprofileadv')) . intval($this->context->cookie->id_employee)) . '&reference=' . $_item_customer['reference'];
             $i++;
         }
@@ -109,19 +111,4 @@ class petList extends Module
         }
     }
 
-    private function calculateAgeInYears($date)
-    {
-        $date = new DateTime($date);
-        $now = new DateTime();
-        $interval = $now->diff($date);
-        return $interval->y;
-    }
-
-    private function calculateAgeInMonths($date)
-    {
-        $date = new DateTime($date);
-        $now = new DateTime();
-        $interval = $now->diff($date);
-        return $interval->m;
-    }
 }

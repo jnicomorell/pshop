@@ -1,4 +1,5 @@
 <?php
+require_once _PS_MODULE_DIR_ . 'profileadv/classes/AgeCalculator.php';
 
 class calculateAmount
 {
@@ -62,8 +63,8 @@ class calculateAmount
 
     public function calculateDailyEatAmount(array $data): array
     {
-        $data['age_years'] = $this->calculateAgeInYears($data['pet-birth']);
-        $data['age_months'] = $this->calculateAgeInMonths($data['pet-birth']);
+        $data['age_years'] = AgeCalculator::calculateAgeInYears($data['pet-birth']);
+        $data['age_months'] = AgeCalculator::calculateAgeInMonths($data['pet-birth'], true);
         $data = $this->getDailyRate($data);
 
         $data['pet-amount'] = ($data['dailyrate'] * $data['pet-desired-weight']) * 1000;
@@ -189,27 +190,6 @@ class calculateAmount
         return (ceil($number * $increments) / $increments);
     }
 
-    private function calculateAgeInYears(string $birth)
-    {
-        $birth = new DateTime(date('Y/m/d', strtotime($birth)));
-        $now =  new DateTime(date('Y/m/d', time()));
-
-        //Calculate age in years
-        $age = date_diff($now, $birth);
-        $age = $age->y;
-        return $age;
-    }
-
-    private function calculateAgeInMonths(string $birth)
-    {
-        $birth = new DateTime(date('Y/m/d', strtotime($birth)));
-        $now =  new DateTime(date('Y/m/d', time()));
-
-        //Calculate age in months
-        $age = date_diff($now, $birth);
-        $age = ($age->y * 12) + $age->m;
-        return $age;
-    }
 }
 
 $pet = new calculateAmount();

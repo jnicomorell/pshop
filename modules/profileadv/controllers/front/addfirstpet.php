@@ -2,6 +2,7 @@
 require_once(_PS_MODULE_DIR_ . 'profileadv/controllers/front/ajaxprofileadv.php');
 require_once(_PS_MODULE_DIR_ . 'profileadv/controllers/front/ProfileadvFrontController.php');
 include_once(_PS_MODULE_DIR_ . 'profileadv/classes/profileadvanced.class.php');
+include_once(_PS_MODULE_DIR_ . 'profileadv/classes/AgeCalculator.php');
 include_once(_PS_MODULE_DIR_ . 'profileadv/profileadv.php');
 
 use PrestaShop\PrestaShop\Adapter\Tools;
@@ -69,7 +70,7 @@ class ProfileadvAddFirstpetModuleFrontController extends ProfileadvFrontControll
                 "name" => $getPetData['name'],
                 "genre" => $getPetData['genre'],
                 "birth" => $getPetData['birth'],
-                "age" => $this->calculateAgeinMonths($getPetData['birth']),
+                "age" => AgeCalculator::calculateAgeInMonths($getPetData['birth'], true),
                 "breed" => $getPetData['breed'],
                 "esterilized" => $getPetData['esterilized'],
                 "weight" => $getPetData['weight'],
