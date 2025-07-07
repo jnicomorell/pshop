@@ -67,6 +67,13 @@ class ProfileadvFrontController extends ModuleFrontController
         ]);
     }
 
+    protected function assignBrowserDetection()
+    {
+        $isChrome = (bool) (preg_match('/chrome/i', $_SERVER['HTTP_USER_AGENT']) ||
+            preg_match('/Firefox\/10\.0\.1/i', $_SERVER['HTTP_USER_AGENT']));
+        $this->context->smarty->assign('profileadvis_chrome', (int) $isChrome);
+    }
+
     public function setMedia()
     {
         $module_name = 'profileadv';
