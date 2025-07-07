@@ -19,18 +19,17 @@
 
 class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontController
 {
-
     private $translationList;
     private $newPetData = [];
 
-    const DEFAULT_RECOMMENDED_PRODUCT_DOG_250 = 3886;
-    const DEFAULT_RECOMMENDED_PRODUCT_DOG_500 = 3901;
-    const DEFAULT_RECOMMENDED_PRODUCT_DOG_1000 = 3936;
-    const DEFAULT_RECOMMENDED_BARF_PRODUCT_DOG_250 = 3899;
-    const DEFAULT_RECOMMENDED_BARF_PRODUCT_DOG_500 = 3924;
-    const DEFAULT_RECOMMENDED_BARF_PRODUCT_DOG_1000 = 3949;
-    const DEFAULT_RECOMMENDED_PRODUCT_CAT = 129;
-    const DEFAULT_RECOMMENDED_BARF_PRODUCT_CAT = 130;
+    public const DEFAULT_RECOMMENDED_PRODUCT_DOG_250 = 3886;
+    public const DEFAULT_RECOMMENDED_PRODUCT_DOG_500 = 3901;
+    public const DEFAULT_RECOMMENDED_PRODUCT_DOG_1000 = 3936;
+    public const DEFAULT_RECOMMENDED_BARF_PRODUCT_DOG_250 = 3899;
+    public const DEFAULT_RECOMMENDED_BARF_PRODUCT_DOG_500 = 3924;
+    public const DEFAULT_RECOMMENDED_BARF_PRODUCT_DOG_1000 = 3949;
+    public const DEFAULT_RECOMMENDED_PRODUCT_CAT = 129;
+    public const DEFAULT_RECOMMENDED_BARF_PRODUCT_CAT = 130;
 
     public function postProcess()
     {
@@ -52,8 +51,9 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
 
         $token = Tools::getValue('token');
         $token_orig = $obj_profileadv->getokencron();
-        if ($token_orig != $token)
+        if ($token_orig != $token) {
             die('Invalid token.');
+        }
 
         ob_start();
         $status = 'success';
@@ -153,7 +153,7 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
             $this->newPetData['is_guest'] = true;
         }
 
-        //Calculate daily amount 
+        //Calculate daily amount
         if ($this->newPetData['pet-amount-blocked'] === 0) {
             include_once(_PS_MODULE_DIR_ . $name_module . "/calculateamount.php");
             $calculator = new calculateAmount();
@@ -216,11 +216,11 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
                             '{pet-validator-url}' => 'https://guauandcat.com/validate-pet-profile?reference=' . $this->newPetData['pet-reference'] . '&token=' . $obj->getValidationTokenFromReference($this->newPetData['pet-reference']) . ''
                         ),
                         $email_customer, // receiver email address
-                        NULL, //receiver name
+                        null, //receiver name
                         'hola@guauandcat.com', //from email address
-                        NULL,  //from name
-                        NULL,
-                        NULL,
+                        null,  //from name
+                        null,
+                        null,
                         $this->module->getLocalPath() . 'mails/' // 11th parameter is template path
                     );
                 }
@@ -255,11 +255,11 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
                     '{message}' => 'El cliente <strong>#' . $custom->id . ' - ' . $custom->firstname . ' ' . $custom->lastname . ' (' . $custom->email . ')</strong> necesita ayuda con su mascota <strong>' . $pet_name . '</strong> sobre la porción diaria de comida ya que es un caso especial, el motivo es: "' . $reason . '"'
                 ),
                 'hola@guauandcat.com', // receiver email address
-                NULL, //receiver name
+                null, //receiver name
                 'info@guauandcat.com', //from email address
-                NULL,  //from name
-                NULL,
-                NULL,
+                null,  //from name
+                null,
+                null,
                 $this->module->getLocalPath() . 'mails/' // 11th parameter is template path
             );
         }

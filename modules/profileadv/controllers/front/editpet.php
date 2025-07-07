@@ -53,8 +53,9 @@ class ProfileadvEditpetModuleFrontController extends ProfileadvFrontController
 
         $cookie = Context::getContext()->cookie;
         $is_logged = isset($cookie->id_customer) ? $cookie->id_customer : 0;
-        if (!$is_logged)
+        if (!$is_logged) {
             Tools::redirect('authentication.php');
+        }
 
         include_once(_PS_MODULE_DIR_ . $name_module . '/classes/profileadvanced.class.php');
         $obj = new profileAdvanced();

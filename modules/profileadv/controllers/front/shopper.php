@@ -1,4 +1,5 @@
 <?php
+
 require_once(_PS_MODULE_DIR_ . 'profileadv/controllers/front/ProfileadvFrontController.php');
 /**
  * 2011 - 2019 StorePrestaModules SPM LLC.
@@ -19,21 +20,20 @@ require_once(_PS_MODULE_DIR_ . 'profileadv/controllers/front/ProfileadvFrontCont
 
 class ProfileadvshopperModuleFrontController extends ProfileadvFrontController
 {
-	
-	public function init()
-	{
+    public function init()
+    {
 
-		parent::init();
-	}
-	
+        parent::init();
+    }
 
-	
-	/**
-	 * @see FrontController::initContent()
-	 */
-	public function initContent()
-	{
-		parent::initContent();
+
+
+    /**
+     * @see FrontController::initContent()
+     */
+    public function initContent()
+    {
+        parent::initContent();
 
 
         $name_module = 'profileadv';
@@ -50,16 +50,18 @@ class ProfileadvshopperModuleFrontController extends ProfileadvFrontController
         $data_urls = $obj->getSEOURLs();
         $shoppers_url = $data_urls['shoppers_url'];
 
-        if(!$shopper_id)
+        if (!$shopper_id) {
             Tools::redirect($shoppers_url);
+        }
 
         $info = $obj->getShopperInfo(array('shopper_id' => $shopper_id));
 
 
-        if(sizeof($info['customer'])==0)
+        if (sizeof($info['customer']) == 0) {
             Tools::redirect($shoppers_url);
+        }
 
-        $this->context->smarty->assign($name_module.'is16' , 1);
+        $this->context->smarty->assign($name_module.'is16', 1);
 
         $this->context->smarty->assign(array(
             $name_module.'customer' => $info['customer']
@@ -75,12 +77,13 @@ class ProfileadvshopperModuleFrontController extends ProfileadvFrontController
         $obj_profileadv->setSEOUrls();
 
         $custom_ssl_var = 0;
-        if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' || (bool)Configuration::get('PS_SSL_ENABLED'))
+        if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' || (bool)Configuration::get('PS_SSL_ENABLED')) {
             $custom_ssl_var = 1;
-        $this->context->smarty->assign($name_module.'is_ssl' , $custom_ssl_var);
+        }
+        $this->context->smarty->assign($name_module.'is_ssl', $custom_ssl_var);
 
 
-        if(version_compare(_PS_VERSION_, '1.7', '>')) {
+        if (version_compare(_PS_VERSION_, '1.7', '>')) {
             $this->context->smarty->tpl_vars['page']->value['meta']['title'] = $title;
             $this->context->smarty->tpl_vars['page']->value['meta']['description'] = $title;
             $this->context->smarty->tpl_vars['page']->value['meta']['keywords'] = $title;
@@ -88,14 +91,14 @@ class ProfileadvshopperModuleFrontController extends ProfileadvFrontController
 
 
 
-        $this->context->smarty->assign('meta_title' , $title);
-        $this->context->smarty->assign('meta_description' , $title);
-        $this->context->smarty->assign('meta_keywords' , $title);
+        $this->context->smarty->assign('meta_title', $title);
+        $this->context->smarty->assign('meta_description', $title);
+        $this->context->smarty->assign('meta_keywords', $title);
 
 
-        if(version_compare(_PS_VERSION_, '1.7', '>')) {
+        if (version_compare(_PS_VERSION_, '1.7', '>')) {
             $this->setTemplate('module:' . $name_module . '/views/templates/front/shopper17.tpl');
-        }else {
+        } else {
             $this->setTemplate('shopper.tpl');
         }
 

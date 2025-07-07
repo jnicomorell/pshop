@@ -1,4 +1,5 @@
 <?php
+
 require_once(_PS_MODULE_DIR_ . 'profileadv/controllers/front/ProfileadvFrontController.php');
 /**
  * 2011 - 2019 StorePrestaModules SPM LLC.
@@ -19,21 +20,20 @@ require_once(_PS_MODULE_DIR_ . 'profileadv/controllers/front/ProfileadvFrontCont
 
 class ProfileadvshoppersModuleFrontController extends ProfileadvFrontController
 {
-	
-	public function init()
-	{
+    public function init()
+    {
 
-		parent::init();
-	}
-	
+        parent::init();
+    }
 
-	
-	/**
-	 * @see FrontController::initContent()
-	 */
-	public function initContent()
-	{
-		parent::initContent();
+
+
+    /**
+     * @see FrontController::initContent()
+     */
+    public function initContent()
+    {
+        parent::initContent();
 
 
         $name_module = 'profileadv';
@@ -46,20 +46,20 @@ class ProfileadvshoppersModuleFrontController extends ProfileadvFrontController
         $obj_profileadv->setSEOUrls();
 
 
-        if(version_compare(_PS_VERSION_, '1.7', '>')) {
+        if (version_compare(_PS_VERSION_, '1.7', '>')) {
             $this->context->smarty->tpl_vars['page']->value['meta']['title'] = $_data_translate['meta_title_shoppers'];
             $this->context->smarty->tpl_vars['page']->value['meta']['description'] = $_data_translate['meta_description_shoppers'];
             $this->context->smarty->tpl_vars['page']->value['meta']['keywords'] = $_data_translate['meta_keywords_shoppers'];
         }
 
 
-        $this->context->smarty->assign('meta_title' , $_data_translate['meta_title_shoppers']);
-        $this->context->smarty->assign('meta_description' , $_data_translate['meta_description_shoppers']);
-        $this->context->smarty->assign('meta_keywords' , $_data_translate['meta_keywords_shoppers']);
+        $this->context->smarty->assign('meta_title', $_data_translate['meta_title_shoppers']);
+        $this->context->smarty->assign('meta_description', $_data_translate['meta_description_shoppers']);
+        $this->context->smarty->assign('meta_keywords', $_data_translate['meta_keywords_shoppers']);
 
 
 
-        $this->context->smarty->assign($name_module.'is16' , 1);
+        $this->context->smarty->assign($name_module.'is16', 1);
 
         include_once(_PS_MODULE_DIR_.$name_module.'/classes/profileadvanced.class.php');
         $obj = new profileAdvanced();
@@ -74,9 +74,9 @@ class ProfileadvshoppersModuleFrontController extends ProfileadvFrontController
         ));
 
 
-        if(version_compare(_PS_VERSION_, '1.7', '>')) {
+        if (version_compare(_PS_VERSION_, '1.7', '>')) {
             $this->setTemplate('module:' . $name_module . '/views/templates/front/shoppers17.tpl');
-        }else {
+        } else {
             $this->setTemplate('shoppers.tpl');
         }
 
