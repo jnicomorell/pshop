@@ -57,7 +57,7 @@ class ProfileadvValidatePetProfileModuleFrontController extends ModuleFrontContr
             if (!$this->getIdCustomerFromPets()) {
                 //If is a guest, pet profile will not be validated until has been registered as customer
                 $this->is_guest = true;
-            } else if ($this->profile->customerIdExists($this->getIdCustomerFromPets())) {
+            } elseif ($this->profile->customerIdExists($this->getIdCustomerFromPets())) {
                 $this->customer = $this->getIdCustomerFromPets();
                 $this->validated = $this->validatePetProfile();
             }
@@ -97,7 +97,8 @@ class ProfileadvValidatePetProfileModuleFrontController extends ModuleFrontContr
         return $this->profile->getPetDataFromReference($this->pet_reference);
     }
 
-    public function validatePetProfileAfterResgistration(int $id_customer){
+    public function validatePetProfileAfterResgistration(int $id_customer)
+    {
         return $this->profile->getListPetDataFromCustomerEmailOnMessage($id_customer);
     }
 }

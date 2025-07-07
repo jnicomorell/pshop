@@ -23,7 +23,6 @@ use PrestaShop\PrestaShop\Adapter\Tools;
 
 class ProfileadvshopperaccountModuleFrontController extends ProfileadvFrontController
 {
-
     public function init()
     {
         $this->addCustomInputFileAssets = true;
@@ -46,8 +45,9 @@ class ProfileadvshopperaccountModuleFrontController extends ProfileadvFrontContr
 
         $cookie = Context::getContext()->cookie;
         $is_logged = isset($cookie->id_customer) ? $cookie->id_customer : 0;
-        if (!$is_logged)
+        if (!$is_logged) {
             Tools::redirect('authentication.php');
+        }
 
 
         $name_module = 'profileadv';
@@ -68,8 +68,9 @@ class ProfileadvshopperaccountModuleFrontController extends ProfileadvFrontContr
         //$pet_reference = Tools::getValue('pet');
         $pet_reference = pSQL($_REQUEST['pet']);
 
-        if (!$pet_reference)
-            Tools::redirect('index.php?controller=my-account'); //Redirect to my account
+        if (!$pet_reference) {
+            Tools::redirect('index.php?controller=my-account');
+        } //Redirect to my account
 
         $info_customer = $obj->getCustomerInfo($pet_reference);
         $avatar_thumb = $info_customer['avatar_thumb'];

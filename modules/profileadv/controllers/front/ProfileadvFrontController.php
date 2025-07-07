@@ -1,4 +1,5 @@
 <?php
+
 class ProfileadvFrontController extends ModuleFrontController
 {
     /** @var array */
