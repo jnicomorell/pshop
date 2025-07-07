@@ -153,14 +153,7 @@ class ProfileadvAddFirstpetModuleFrontController extends ProfileadvFrontControll
 
             $data_urls = $obj->getSEOURLs();
             $my_account = $data_urls['pet_list'];
-
-            $is_chrome = 1;
-
-            if (
-                preg_match("/chrome/i", $_SERVER['HTTP_USER_AGENT']) ||
-                preg_match("/Firefox\/10\.0\.1/i", $_SERVER['HTTP_USER_AGENT'])
-            )
-                $is_chrome = 1;
+            $this->assignBrowserDetection();
 
 
             $this->context->smarty->assign($name_module . 'is16', 1);
@@ -177,7 +170,6 @@ class ProfileadvAddFirstpetModuleFrontController extends ProfileadvFrontControll
             $this->context->smarty->assign('meta_keywords', $_data_translate['meta_keywords_myaccount']);
 
             $this->context->smarty->assign(array(
-                $name_module . 'is_chrome' => $is_chrome,
                 $name_module . 'my_account' => $my_account
             ));
         }

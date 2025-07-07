@@ -75,14 +75,8 @@ class ProfileadvshopperaccountModuleFrontController extends ProfileadvFrontContr
         $avatar_thumb = $info_customer['avatar_thumb'];
         $exist_avatar = $info_customer['exist_avatar'];
         $is_show = $info_customer['is_show'];
-        $is_chrome = 1;
         $pet_data = $info_customer['pet_data'];
-
-        if (
-            preg_match("/chrome/i", $_SERVER['HTTP_USER_AGENT']) ||
-            preg_match("/Firefox\/10\.0\.1/i", $_SERVER['HTTP_USER_AGENT'])
-        )
-            $is_chrome = 1;
+        $this->assignBrowserDetection();
 
 
         $this->context->smarty->assign($name_module . 'is16', 1);
@@ -104,7 +98,6 @@ class ProfileadvshopperaccountModuleFrontController extends ProfileadvFrontContr
             $name_module . 'avatar_thumb' => $avatar_thumb,
             $name_module . 'exist_avatar' => $exist_avatar,
             $name_module . 'is_show' => $is_show,
-            $name_module . 'is_chrome' => $is_chrome,
             $name_module . 'my_account' => $my_account,
             $name_module . 'is_demo' => $obj_profileadv->is_demo,
             //$name_module . 'status_error' => Tools::getValue('error'),
