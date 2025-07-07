@@ -1,5 +1,6 @@
 <?php
 require_once(_PS_MODULE_DIR_ . 'profileadv/controllers/front/ajaxprofileadv.php');
+require_once(_PS_MODULE_DIR_ . 'profileadv/controllers/front/ProfileadvFrontController.php');
 include_once(_PS_MODULE_DIR_ . 'profileadv/classes/profileadvanced.class.php');
 include_once(_PS_MODULE_DIR_ . 'profileadv/profileadv.php');
 
@@ -21,7 +22,7 @@ use PrestaShop\PrestaShop\Adapter\Tools;
  * Don't use this module on several shops. The license provided by PrestaShop Addons
  * for all its modules is valid only once for a single shop.
  */
-class ProfileadvAddFirstpetModuleFrontController extends ModuleFrontController
+class ProfileadvAddFirstpetModuleFrontController extends ProfileadvFrontController
 {
     public $auth = false;
     public $guestAllowed = true;
@@ -34,8 +35,9 @@ class ProfileadvAddFirstpetModuleFrontController extends ModuleFrontController
     public function init()
     {
         $this->showdata = pSQL(isset($_GET['showdata'])) ? pSQL($_GET['showdata']) : false;
-
-        $this->translationList = require_once('./modules/profileadv/translations/translations.php');
+        $this->addCustomInputFileAssets = true;
+        $this->addProfileadvJs = true;
+        $this->loadTranslations();
         parent::init();
     }
 
@@ -206,43 +208,4 @@ class ProfileadvAddFirstpetModuleFrontController extends ModuleFrontController
         }
     }
 
-    public function setMedia()
-    {
-
-        $module_name = "profileadv";
-
-        //$this->context->controller->addJs(__PS_BASE_URI__ . 'modules/' . $module_name . '/views/js/jquery.form.js');
-
-        $this->context->controller->addCSS(__PS_BASE_URI__ . 'modules/' . $module_name . '/views/css/custom-input-file.css');
-        $this->context->controller->addJs(__PS_BASE_URI__ . 'modules/' . $module_name . '/views/js/custom-input-file.js');
-        $this->context->controller->addJS(__PS_BASE_URI__ . 'modules/' . $module_name . '/views/js/profileadv-custom.js');
-
-        parent::setMedia();
-    }
-
-    private function calculateAgeInMonths(string $birth)
-    {
-        $birth = new DateTime(date('Y/m/d', strtotime($birth)));
-        $now =  new DateTime(date('Y/m/d', time()));
-
-        //Calculate age in months
-        $age = date_diff($now, $birth);
-        $age = ($age->y * 12) + $age->m;
-        return $age;
-    }
-
-    private function findTranslatedDataByParameters($type, int $value)
-    {
-        $cookie = Context::getContext()->cookie;
-        $iso_code =  isset($cookie->id_lang) ? Language::getIsoById((int)$cookie->id_lang) : 'es';
-
-        switch ($type) {
-            case 'dog':
-                return $this->translationList['breed']['dog'][$iso_code][$value];
-            case 'cat':
-                return $this->translationList['breed']['cat'][$iso_code][$value];
-            default:
-                return $this->translationList[$type][$iso_code][$value];
-        }
-    }
 }
