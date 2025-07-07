@@ -139,31 +139,10 @@ class ProfileadvAddFirstpetModuleFrontController extends ProfileadvFrontControll
             $this->context->smarty->assign($name_module . 'product_list', $product_list);
         } else {
 
-            $iso_code =  isset($cookie->id_lang) ? Language::getIsoById((int)$cookie->id_lang) : 'es';
-
-            $dogBreedList = $this->translationList['breed']['dog'][$iso_code];
-            $catBreedList = $this->translationList['breed']['cat'][$iso_code];
-            $genreList = $this->translationList['genre'][$iso_code];
-            $typeList = $this->translationList['type'][$iso_code];
-            $esterilizedList = $this->translationList['esterilized'][$iso_code];
-            $activityList = $this->translationList['activity'][$iso_code];
-            $physicalConditionList = $this->translationList['physical-condition'][$iso_code];
-            $feedingList = $this->translationList['feeding'][$iso_code];
-            $pathologiesList = $this->translationList['pathologies'][$iso_code];
-            $allergiesList = $this->translationList['allergies'][$iso_code];
             $currentDate = date('Y-m-d');
             $maxOldDate = date("Y-m-d", strtotime("-25 year"));
 
-            $this->context->smarty->assign($name_module . 'dogbreedlist', $dogBreedList);
-            $this->context->smarty->assign($name_module . 'catbreedlist', $catBreedList);
-            $this->context->smarty->assign($name_module . 'typelist', $typeList);
-            $this->context->smarty->assign($name_module . 'genrelist', $genreList);
-            $this->context->smarty->assign($name_module . 'esterilizedlist', $esterilizedList);
-            $this->context->smarty->assign($name_module . 'activitylist', $activityList);
-            $this->context->smarty->assign($name_module . 'physicalconditionlist', $physicalConditionList);
-            $this->context->smarty->assign($name_module . 'feedinglist', $feedingList);
-            $this->context->smarty->assign($name_module . 'pathologieslist', $pathologiesList);
-            $this->context->smarty->assign($name_module . 'allergieslist', $allergiesList);
+            $this->assignTranslations($this->translationList, $name_module);
             $this->context->smarty->assign($name_module . 'currentdate', $currentDate);
             $this->context->smarty->assign($name_module . 'maxolddate', $maxOldDate);
 
