@@ -42,6 +42,31 @@ class ProfileadvFrontController extends ModuleFrontController
         }
     }
 
+    /**
+     * Assign translation lists to Smarty.
+     *
+     * @param array  $translations
+     * @param string $moduleName
+     */
+    protected function assignTranslations(array $translations, string $moduleName)
+    {
+        $cookie = Context::getContext()->cookie;
+        $iso_code = isset($cookie->id_lang) ? Language::getIsoById((int) $cookie->id_lang) : 'es';
+
+        $this->context->smarty->assign([
+            $moduleName . 'dogbreedlist'          => $translations['breed']['dog'][$iso_code],
+            $moduleName . 'catbreedlist'          => $translations['breed']['cat'][$iso_code],
+            $moduleName . 'typelist'              => $translations['type'][$iso_code],
+            $moduleName . 'genrelist'             => $translations['genre'][$iso_code],
+            $moduleName . 'esterilizedlist'       => $translations['esterilized'][$iso_code],
+            $moduleName . 'activitylist'          => $translations['activity'][$iso_code],
+            $moduleName . 'physicalconditionlist' => $translations['physical-condition'][$iso_code],
+            $moduleName . 'feedinglist'           => $translations['feeding'][$iso_code],
+            $moduleName . 'pathologieslist'       => $translations['pathologies'][$iso_code],
+            $moduleName . 'allergieslist'         => $translations['allergies'][$iso_code],
+        ]);
+    }
+
     public function setMedia()
     {
         $module_name = 'profileadv';
