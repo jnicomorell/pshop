@@ -177,7 +177,7 @@ class ProfileadvAddFirstpetModuleFrontController extends ProfileadvFrontControll
         }
 
         if (version_compare(_PS_VERSION_, '1.7', '>')) {
-            $this->setTemplate('module:' . $name_module . '/views/templates/front/addfirstpet.tpl');
+            $this->setTemplate('module:' . $name_module . '/views/templates/front/addpet.tpl');
         }
     }
 
