@@ -19,7 +19,7 @@
 
 {extends file='page.tpl'}
 {block name="page_content"}
-    {if $logged}
+    {if isset($logged) && $logged}
         <a href="/calculadora">{l s='My Pets' mod='profileadv'}</a>
         <span class="navigation-pipe"> ></span>
     {/if}
