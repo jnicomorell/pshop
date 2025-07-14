@@ -68,7 +68,7 @@ class AdminProfileAdvListController extends ModuleAdminController
             }
         } else {
             for ($i = 0; $i < count($pets); $i++) {
-                $pets[$i]['pet_href'] = $this->context->link->getModuleLink('profileadv', 'addfirstpet', array('reference' => $pets[$i]['reference'], 'showdata' => 1));
+                $pets[$i]['pet_href'] = $this->context->link->getModuleLink('profileadv', 'addpet', array('reference' => $pets[$i]['reference'], 'showdata' => 1));
             }
             $showPetsWCustomer = true;
         }
