@@ -115,7 +115,7 @@
                                     {/if}
                                 </td>
                                 <td style="text-align: center;">
-                                    <p>{$item['message']}</p>
+                                    <p>{$item['message']|default:''}</p>
                                 </td>
                             </tr>
                         {/foreach}
@@ -175,28 +175,28 @@
                                     style="text-align: center; color: {if $item['amount'] > 0}#53d572{else}red{/if};">
                                     {$item['amount']}</td>
                                 <td style="text-align: center;">
-                                    <p>{$item['message']}</p>
+                                    <p>{$item['message']|default:''}</p>
                                 </td>
                                 <td style="text-align: center;">
-                                    <p>{$item['date_add']|date_format:'%d-%m-%y %H:%M:%S'}</p>
+                                    <p>{$item['date_add']|default:''|date_format:'%d-%m-%y %H:%M:%S'}</p>
                                 </td>
                                 <td style="text-align: center;">
                                     <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                                         <button type="button" class="btn btn-secondary"
                                             onclick="updateSendedEmail('{$item['reference']}',1)"
-                                            {if $item['sended_email'] >= 1}disabled{/if}>1</button>
+                                            {if $item['sended_email']|default:0 >= 1}disabled{/if}>1</button>
                                         <button type="button" class="btn btn-secondary"
                                             onclick="updateSendedEmail('{$item['reference']}',2)"
-                                            {if $item['sended_email'] >= 2}disabled{/if}>2</button>
+                                            {if $item['sended_email']|default:0 >= 2}disabled{/if}>2</button>
                                         <button type="button" class="btn btn-secondary"
                                             onclick="updateSendedEmail('{$item['reference']}',3)"
-                                            {if $item['sended_email'] >= 3}disabled{/if}>3</button>
+                                            {if $item['sended_email']|default:0 >= 3}disabled{/if}>3</button>
                                         <button type="button" class="btn btn-secondary"
                                             onclick="updateSendedEmail('{$item['reference']}',4)"
-                                            {if $item['sended_email'] >= 4}disabled{/if}>4</button>
+                                            {if $item['sended_email']|default:0 >= 4}disabled{/if}>4</button>
                                         <button type="button" class="btn btn-secondary"
                                             onclick="updateSendedEmail('{$item['reference']}',5)"
-                                            {if $item['sended_email'] >= 5}disabled{/if}>5</button>
+                                            {if $item['sended_email']|default:0 >= 5}disabled{/if}>5</button>
                                         <div class="btn-group" role="group">
                                             <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle"
                                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
