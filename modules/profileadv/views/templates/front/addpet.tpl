@@ -19,9 +19,15 @@
 
 {extends file='page.tpl'}
 {block name="page_content"}
-    <a href="/calculadora">{l s='My Pets' mod='profileadv'}</a>
-    <span class="navigation-pipe"> >
-    </span>{if isset($smarty.get.showdata) && $smarty.get.showdata == 1}{$profileadvnewpetdata.name}{else}{l s='Add new pet' mod='profileadv'}{/if}
+    {if $logged}
+        <a href="/calculadora">{l s='My Pets' mod='profileadv'}</a>
+        <span class="navigation-pipe"> ></span>
+    {/if}
+    {if isset($smarty.get.showdata) && $smarty.get.showdata == 1}
+        {$profileadvnewpetdata.name}
+    {else}
+        {l s='Add new pet' mod='profileadv'}
+    {/if}
 
     {if isset($smarty.get.showdata) && $smarty.get.showdata  == 1}
 
