@@ -156,8 +156,7 @@ class AddPetController extends ProfileadvFrontController
         ));
 
         if (version_compare(_PS_VERSION_, '1.7', '>')) {
-            $template = $is_logged ? 'addpet.tpl' : 'addfirstpet.tpl';
-            $this->setTemplate('module:' . $name_module . '/views/templates/front/' . $template);
+            $this->setTemplate('module:' . $name_module . '/views/templates/front/addpet.tpl');
         }
     }
 }
