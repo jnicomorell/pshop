@@ -1,7 +1,7 @@
 <?php
 require_once _PS_MODULE_DIR_.'profileadv/controllers/front/addpet.php';
 
-class ProfileadvAddFirstpetModuleFrontController extends AddPetController
+class ProfileadvAddFirstpetModuleFrontController extends ProfileadvAddpetModuleFrontController
 {
     public function init()
     {

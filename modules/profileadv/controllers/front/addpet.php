@@ -5,9 +5,8 @@ include_once(_PS_MODULE_DIR_ . 'profileadv/classes/profileadvanced.class.php');
 include_once(_PS_MODULE_DIR_ . 'profileadv/classes/AgeCalculator.php');
 include_once(_PS_MODULE_DIR_ . 'profileadv/profileadv.php');
 
-use PrestaShop\PrestaShop\Adapter\Tools;
 
-class AddPetController extends ProfileadvFrontController
+class ProfileadvAddpetModuleFrontController extends ProfileadvFrontController
 {
     public $ssl = true;
     public $auth;
