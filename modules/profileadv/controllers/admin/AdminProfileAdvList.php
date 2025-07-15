@@ -31,7 +31,9 @@ class AdminProfileAdvListController extends ModuleAdminController
 
     public function initContent()
     {
-        $this->translationList = require_once(_PS_MODULE_DIR_ . '/profileadv/translations/translations.php');
+        require_once _PS_MODULE_DIR_ . 'profileadv/classes/TranslationManager.php';
+        $iso = $this->context->language ? $this->context->language->iso_code : 'es';
+        $this->translationList = ProfileadvTranslationManager::getDataTranslations($iso);
 
         parent::initContent();
     }

@@ -17,21 +17,21 @@ class ProfileadvFrontController extends ModuleFrontController
     protected function loadTranslations()
     {
         if (empty($this->translationList)) {
-            $this->translationList = require_once(_PS_MODULE_DIR_ . 'profileadv/translations/translations.php');
+            require_once _PS_MODULE_DIR_ . 'profileadv/classes/TranslationManager.php';
+            $iso = $this->context->language ? $this->context->language->iso_code : 'es';
+            $this->translationList = ProfileadvTranslationManager::getDataTranslations($iso);
         }
     }
 
     protected function findTranslatedDataByParameters($type, int $value)
     {
-        $cookie = Context::getContext()->cookie;
-        $iso_code = isset($cookie->id_lang) ? Language::getIsoById((int) $cookie->id_lang) : 'es';
         switch ($type) {
             case 'dog':
-                return $this->translationList['breed']['dog'][$iso_code][$value];
+                return $this->translationList['breed']['dog'][$value] ?? '';
             case 'cat':
-                return $this->translationList['breed']['cat'][$iso_code][$value];
+                return $this->translationList['breed']['cat'][$value] ?? '';
             default:
-                return $this->translationList[$type][$iso_code][$value];
+                return $this->translationList[$type][$value] ?? '';
         }
     }
 
@@ -43,20 +43,17 @@ class ProfileadvFrontController extends ModuleFrontController
      */
     protected function assignTranslations(array $translations, string $moduleName)
     {
-        $cookie = Context::getContext()->cookie;
-        $iso_code = isset($cookie->id_lang) ? Language::getIsoById((int) $cookie->id_lang) : 'es';
-
         $this->context->smarty->assign([
-            $moduleName . 'dogbreedlist'          => $translations['breed']['dog'][$iso_code],
-            $moduleName . 'catbreedlist'          => $translations['breed']['cat'][$iso_code],
-            $moduleName . 'typelist'              => $translations['type'][$iso_code],
-            $moduleName . 'genrelist'             => $translations['genre'][$iso_code],
-            $moduleName . 'esterilizedlist'       => $translations['esterilized'][$iso_code],
-            $moduleName . 'activitylist'          => $translations['activity'][$iso_code],
-            $moduleName . 'physicalconditionlist' => $translations['physical-condition'][$iso_code],
-            $moduleName . 'feedinglist'           => $translations['feeding'][$iso_code],
-            $moduleName . 'pathologieslist'       => $translations['pathologies'][$iso_code],
-            $moduleName . 'allergieslist'         => $translations['allergies'][$iso_code],
+            $moduleName . 'dogbreedlist'          => $translations['breed']['dog'],
+            $moduleName . 'catbreedlist'          => $translations['breed']['cat'],
+            $moduleName . 'typelist'              => $translations['type'],
+            $moduleName . 'genrelist'             => $translations['genre'],
+            $moduleName . 'esterilizedlist'       => $translations['esterilized'],
+            $moduleName . 'activitylist'          => $translations['activity'],
+            $moduleName . 'physicalconditionlist' => $translations['physical-condition'],
+            $moduleName . 'feedinglist'           => $translations['feeding'],
+            $moduleName . 'pathologieslist'       => $translations['pathologies'],
+            $moduleName . 'allergieslist'         => $translations['allergies'],
         ]);
     }
 

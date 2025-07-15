@@ -33,7 +33,9 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
 
     public function postProcess()
     {
-        $this->translationList = require_once(_PS_MODULE_DIR_.'profileadv/translations/translations.php');
+        require_once _PS_MODULE_DIR_.'profileadv/classes/TranslationManager.php';
+        $iso = $this->context->language ? $this->context->language->iso_code : 'es';
+        $this->translationList = ProfileadvTranslationManager::getDataTranslations($iso);
 
         $action = Tools::getValue('action');
 
@@ -317,14 +319,12 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
 
     private function validateFormData(): bool
     {
-        $iso_code =  isset($cookie->id_lang) ? Language::getIsoById((int)$cookie->id_lang) : 'es';
-
         foreach ($this->newPetData as $key => $value) {
 
             if ($key === 'pet-type' || $key === 'pet-genre' || $key === 'pet-esterilized' || $key === 'pet-activity' || $key === 'pet-feeding') {
                 $key = str_replace('-', '', strrchr($key, '-'));
 
-                if (!array_key_exists($value, $this->translationList[$key][$iso_code])) {
+                if (!array_key_exists($value, $this->translationList[$key])) {
                     return false;
                 }
             }
@@ -348,14 +348,14 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
                     return false;
                 }
 
-                if (!array_key_exists($value, $this->translationList['breed'][$type][$iso_code])) {
+                if (!array_key_exists($value, $this->translationList['breed'][$type])) {
                     return false;
                 }
             }
             if ($key === 'pet-pathology') {
                 if (count($this->newPetData[$key]) > 0) {
                     foreach ($this->newPetData[$key] as $k => $val) {
-                        if (!array_key_exists($val, $this->translationList['pathologies'][$iso_code])) {
+                        if (!array_key_exists($val, $this->translationList['pathologies'])) {
                             return false;
                         }
                     }
@@ -364,7 +364,7 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
             if ($key === 'pet-allergies') {
                 if (count($this->newPetData[$key]) > 0) {
                     foreach ($this->newPetData[$key] as $k => $val) {
-                        if (!array_key_exists($val, $this->translationList['allergies'][$iso_code])) {
+                        if (!array_key_exists($val, $this->translationList['allergies'])) {
                             return false;
                         }
                     }

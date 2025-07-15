@@ -14,7 +14,9 @@ class calculateAmount
             include(dirname(__FILE__) . '/../../config/config.inc.php');
         }
 
-        $this->translationList = require(_PS_MODULE_DIR_ . 'profileadv/translations/translations.php');
+        require_once _PS_MODULE_DIR_ . 'profileadv/classes/TranslationManager.php';
+        $iso = Context::getContext()->language ? Context::getContext()->language->iso_code : 'es';
+        $this->translationList = ProfileadvTranslationManager::getDataTranslations($iso);
         $this->petId = isset($_GET['pet']) ? $_GET['pet'] : false;
         $this->source = $source;
     }
