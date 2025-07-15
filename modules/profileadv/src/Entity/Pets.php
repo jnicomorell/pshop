@@ -29,6 +29,15 @@ class Pets extends ObjectModel
     public $active;
 
     public $translations;
+    private $iso_code;
+
+    public function __construct($id = null, $id_lang = null, $id_shop = null)
+    {
+        parent::__construct($id, $id_lang, $id_shop);
+        $this->iso_code = Context::getContext()->language ? Context::getContext()->language->iso_code : 'es';
+        require_once _PS_MODULE_DIR_ . 'profileadv/classes/TranslationManager.php';
+        $this->translations = ProfileadvTranslationManager::getDataTranslations($this->iso_code);
+    }
 
     /**
      * @see ObjectModel::$definition
@@ -139,9 +148,7 @@ class Pets extends ObjectModel
     public function getWsPetType(): string
     {
 
-        $this->translations = require _PS_MODULE_DIR_ . 'profileadv/translations/translations.php';
-
-        return  $this->translations['type']['es'][strval($this->type)];
+        return $this->translations['type'][strval($this->type)] ?? '';
     }
 
 
@@ -158,12 +165,12 @@ class Pets extends ObjectModel
     {
         (int) $this->esterilized === 0 ? $this->esterilized = 2 : $this->esterilized;
 
-        return  $this->translations['esterilized']['es'][strval($this->esterilized)];
+        return $this->translations['esterilized'][strval($this->esterilized)] ?? '';
     }
 
     public function getWsPetGenre(): string
     {
-        return  $this->translations['genre']['es'][strval($this->genre)];
+        return $this->translations['genre'][strval($this->genre)] ?? '';
     }
 
     /**
@@ -174,13 +181,13 @@ class Pets extends ObjectModel
 
         (int) $this->type === 2 ? $type = "cat" : $type = "dog";
 
-        return  $this->translations['breed'][$type]['es'][strval($this->breed)];
+        return $this->translations['breed'][$type][strval($this->breed)] ?? '';
     }
 
 
     public function getWsPetFeeding(): string
     {
-        return  $this->translations['feeding']['es'][strval($this->feeding)];
+        return $this->translations['feeding'][strval($this->feeding)] ?? '';
     }
 
     /**
@@ -188,12 +195,12 @@ class Pets extends ObjectModel
      */
     public function getWsPetActivity(): string
     {
-        return  $this->translations['activity']['es'][strval($this->activity)];
+        return $this->translations['activity'][strval($this->activity)] ?? '';
     }
 
     public function getWsPetPhysicalCondition(): string
     {
-        return  $this->translations['physical-condition']['es'][strval($this->physical_condition)];
+        return $this->translations['physical-condition'][strval($this->physical_condition)] ?? '';
     }
 
     public function getWsPetPathology(): string
@@ -202,7 +209,7 @@ class Pets extends ObjectModel
         $this->pathology = json_decode($this->pathology);
 
         foreach ($this->pathology as $value) {
-            $pathologies[] = $this->translations['pathologies']['es'][strval($value)];
+            $pathologies[] = $this->translations['pathologies'][strval($value)] ?? '';
         }
 
         $pathologies = implode('|', $pathologies);
@@ -216,7 +223,7 @@ class Pets extends ObjectModel
         $this->allergies = json_decode($this->allergies);
 
         foreach ($this->allergies as $value) {
-            $allergies[] = $this->translations['allergies']['es'][strval($value)];
+            $allergies[] = $this->translations['allergies'][strval($value)] ?? '';
         }
 
         $allergies = implode('|', $allergies);

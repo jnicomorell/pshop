@@ -31,7 +31,9 @@ class AdminProfileAdvAddController extends ModuleAdminController
 
     public function initContent()
     {
-        $this->translationList = require_once(_PS_MODULE_DIR_ . '/profileadv/translations/translations.php');
+        require_once _PS_MODULE_DIR_ . 'profileadv/classes/TranslationManager.php';
+        $iso = $this->context->language ? $this->context->language->iso_code : 'es';
+        $this->translationList = ProfileadvTranslationManager::getDataTranslations($iso);
 
         parent::initContent();
     }
@@ -43,18 +45,16 @@ class AdminProfileAdvAddController extends ModuleAdminController
 
         $cookie = $this->context->cookie;
 
-        $iso_code =  isset($cookie->id_lang) ? Language::getIsoById((int)$cookie->id_lang) : 'es';
-
-        $dogBreedList = $this->translationList['breed']['dog'][$iso_code];
-        $catBreedList = $this->translationList['breed']['cat'][$iso_code];
-        $genreList = $this->translationList['genre'][$iso_code];
-        $typeList = $this->translationList['type'][$iso_code];
-        $esterilizedList = $this->translationList['esterilized'][$iso_code];
-        $activityList = $this->translationList['activity'][$iso_code];
-        $physicalConditionList = $this->translationList['physical-condition'][$iso_code];
-        $feedingList = $this->translationList['feeding'][$iso_code];
-        $pathologiesList = $this->translationList['pathologies'][$iso_code];
-        $allergiesList = $this->translationList['allergies'][$iso_code];
+        $dogBreedList = $this->translationList['breed']['dog'];
+        $catBreedList = $this->translationList['breed']['cat'];
+        $genreList = $this->translationList['genre'];
+        $typeList = $this->translationList['type'];
+        $esterilizedList = $this->translationList['esterilized'];
+        $activityList = $this->translationList['activity'];
+        $physicalConditionList = $this->translationList['physical-condition'];
+        $feedingList = $this->translationList['feeding'];
+        $pathologiesList = $this->translationList['pathologies'];
+        $allergiesList = $this->translationList['allergies'];
         $currentDate = date('Y-m-d');
         $maxOldDate = date("Y-m-d", strtotime("-25 year"));
 
