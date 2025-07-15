@@ -390,7 +390,7 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
 
         switch ((int)$data['type']) {
             case 1:
-                switch ($data['desired_weight']) {
+                switch (true) {
                     case ($data['desired_weight'] < 5):
                         $size = 1;
                         break;
@@ -406,10 +406,16 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
                     case ($data['desired_weight'] > 50):
                         $size = 5;
                         break;
+                    default:
+                        $size = 1;
+                        break;
                 }
                 break;
             case 2:
                 $size = 1; //Cats by default
+                break;
+            default:
+                $size = 1;
                 break;
         }
 
