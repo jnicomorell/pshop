@@ -846,13 +846,45 @@
                                 </div>
                             </div>
                             <div class="navigation-buttons">
-                                <button type="button" class="btn previous"
-                                    data-step='6'>{l s='Previous' mod='profileadv'}</button>
-                                <button type="submit" class="btn btn-submit" id="submit-button"
-                                    onClick="submitClicked()">{l s='Finalizar' mod='profileadv'}
-                                </button>
+                                <button type="button" class="btn previous" data-step='6'>{l s='Previous' mod='profileadv'}</button>
+                                {if $logged}
+                                    <button type="submit" class="btn btn-submit" id="submit-button" onClick="submitClicked()">{l s='Finalizar' mod='profileadv'}</button>
+                                {else}
+                                    <button type="button" class="btn next" data-step='8'>{l s='Next' mod='profileadv'}</button>
+                                {/if}
                             </div>
                         </section>
+
+                        {if !$logged}
+                        <!-- Email step for guests -->
+                        <section data-step='8' class="data-step" style="display: none;">
+                            <div class="profileadv-add-header">
+                                <h1>
+                                    {l s='¡El menú ideal de tu peludo' mod='profileadv'}
+                                    <span class="pet-name-span"></span>
+                                    {l s='ya está casi listo!' mod='profileadv'}
+                                </h1>
+                                <p>{l s='En el siguiente paso verás el menú, la ración y el precio ideal para tu peque. Te enviaremos por correo un informe más completo con todos los detalles sobre su alimentación.' mod='profileadv'}</p>
+                                <p>
+                                    {l s='El correo electrónico del humano de ' mod='profileadv'}<span class="pet-name-span"></span>{l s=' es...' mod='profileadv'}
+                                </p>
+                            </div>
+                            <div class="text-center" style="padding: 0% 20%;">
+                                <input type="email" class="form-control" id="inputEmail" name="customer-email" />
+                                <p class="mt-2">
+                                    {l s='Al seguir, aceptarás los ' mod='profileadv'}
+                                    <a href="/terminos">{l s=' términos ' mod='profileadv'}</a>
+                                    {l s='y' mod='profileadv'}
+                                    <a href="/condiciones">{l s=' condiciones ' mod='profileadv'}</a>
+                                    {l s='para recibir los mejores consejos sobre la alimentación de tu peque.' mod='profileadv'}
+                                </p>
+                            </div>
+                            <div class="navigation-buttons">
+                                <button type="button" class="btn previous" data-step='7'>{l s='Previous' mod='profileadv'}</button>
+                                <button type="submit" class="btn btn-submit" id="submit-button" onClick="submitClicked()">{l s='Finalizar' mod='profileadv'}</button>
+                            </div>
+                        </section>
+                        {/if}
                     </form>
                 </div>
             </div>
