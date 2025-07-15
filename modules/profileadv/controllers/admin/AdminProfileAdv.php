@@ -74,8 +74,9 @@ class AdminprofileadvController extends ModuleAdminController
         $maxOldDate = date("Y-m-d", strtotime("-25 year"));
 
         $customer = new Customer((int) $this->customer);
-        $address = $pet->getLastCustomerIdAddress($customer->id);
-        $address = new Address((int) $address[0]['id_address']);
+        $addressData = $pet->getLastCustomerIdAddress($customer->id);
+        $addressId = (!empty($addressData) && isset($addressData[0]['id_address'])) ? (int) $addressData[0]['id_address'] : 0;
+        $address = new Address($addressId);
 
         $customerData = array(
             "id" => Validate::isLoadedObject($customer) ? $customer->id : 1,
