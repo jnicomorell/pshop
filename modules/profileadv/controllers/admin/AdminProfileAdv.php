@@ -56,9 +56,33 @@ class AdminprofileadvController extends ModuleAdminController
         $pet = new profileAdvanced();
         $pet_data = $pet->getPetDataFromReference($this->pet_reference, (int) $this->customer);
 
-        /**Convert to array */
-        $pet_data['pathology'] = isset($pet_data['pathology']) ? json_decode($pet_data['pathology']) : array();
-        $pet_data['allergies'] = isset($pet_data['allergies']) ? json_decode($pet_data['allergies']) : array();
+        if (!$pet_data) {
+            $pet_data = [
+                'name' => '',
+                'avatar_thumb' => '',
+                'amount' => 0,
+                'is_amount_blocked' => 0,
+                'birth' => '',
+                'type' => 1,
+                'genre' => 1,
+                'desired_weight' => 0,
+                'weight' => 0,
+                'esterilized' => 0,
+                'breed' => 0,
+                'activity' => 0,
+                'feeding' => 0,
+                'pathology' => [],
+                'allergies' => [],
+                'message' => '',
+                'reference' => '',
+                'active' => 0,
+                'is_validated' => 0
+            ];
+        } else {
+            /**Convert to array */
+            $pet_data['pathology'] = isset($pet_data['pathology']) ? json_decode($pet_data['pathology']) : array();
+            $pet_data['allergies'] = isset($pet_data['allergies']) ? json_decode($pet_data['allergies']) : array();
+        }
 
         $dogBreedList = $this->translationList['breed']['dog'];
         $catBreedList = $this->translationList['breed']['cat'];
