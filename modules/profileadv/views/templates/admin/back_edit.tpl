@@ -1,7 +1,7 @@
 <div class="admin-edit-pet">
   <div class="card" style="background: #FFF;">
     <div class="card-header">
-      <h2>{l s="Editar los datos de " mod='profileadv'} <strong>{$pet_data['name']}</strong></h2>
+      <h2>{l s="Editar los datos de " mod='profileadv'} <strong>{$pet_data.name|default:''}</strong></h2>
     </div>
     <div class="card-body clearfix">
       {if count($pet_data['allergies']) > 0}
@@ -29,7 +29,7 @@
                   <dd style="text-align: center;">
                     <p><img class="img-fluid pet-img"
                         style="max-width: 600px; max-height: 300px; object-fit: cover; border-radius: 10%;"
-                        src="/img/pets/{$pet_data['avatar_thumb']|escape:'htmlall':'UTF-8'}" alt="{$pet_data['name']}">
+                        src="/img/pets/{$pet_data['avatar_thumb']|escape:'htmlall':'UTF-8'}" alt="{$pet_data.name|default:''}">
                     </p>
                   </dd>
                 </dl>
@@ -59,7 +59,7 @@
               <div class="form-check">
                 <div class="form-group col-md-4">
                   <label for="pet-name">{l s='Pet name' mod='profileadv'}</label>
-                  <input type="text" class="form-control" id="pet-name" name="pet-name" value="{$pet_data['name']}"
+                  <input type="text" class="form-control" id="pet-name" name="pet-name" value="{$pet_data.name|default:''}"
                     required>
                 </div>
               </div>
@@ -114,7 +114,7 @@
 
                     <label for="inputWeight">{l s='Weight' mod='profileadv'}</label>
                     <a type="button" data-toggle="tooltip" data-placement="top" style="color: #FFF;"
-                      title="El peso de {$pet_data['name']} es un ' {$desired_weight_percentage}% ' {if $desired_weight_percentage > 10}SUPERIOR{else if $desired_weight_percentage < -10}INFERIOR{/if} respecto al peso ideal de la mascota">
+                        title="El peso de {$pet_data.name|default:''} es un ' {$desired_weight_percentage}% ' {if $desired_weight_percentage > 10}SUPERIOR{else if $desired_weight_percentage < -10}INFERIOR{/if} respecto al peso ideal de la mascota">
                       ({$desired_weight_percentage}% -
                       {if $desired_weight_percentage > 10}SUPERIOR
                       {else if $desired_weight_percentage < -10}INFERIOR
