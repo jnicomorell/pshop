@@ -12,6 +12,21 @@ class ProfileadvAddpetModuleFrontController extends ProfileadvFrontController
     public $auth;
     public $guestAllowed;
 
+    /**
+     * Force guest access regardless the login state. Used when the controller
+     * should be available even for not logged in users.
+     *
+     * @var bool
+     */
+    protected $forceGuest = false;
+
+    /**
+     * Redirect logged in users when $forceGuest is enabled.
+     *
+     * @var bool
+     */
+    protected $redirectLogged = false;
+
     private $showdata;
 
     public $translationList;
@@ -19,8 +34,14 @@ class ProfileadvAddpetModuleFrontController extends ProfileadvFrontController
     public function init()
     {
         $isLogged = Context::getContext()->customer->isLogged();
-        $this->auth = $isLogged;
-        $this->guestAllowed = !$isLogged;
+
+        if ($this->forceGuest) {
+            $this->auth = false;
+            $this->guestAllowed = true;
+        } else {
+            $this->auth = $isLogged;
+            $this->guestAllowed = !$isLogged;
+        }
 
         $this->showdata = Tools::getValue('showdata');
         $this->addCustomInputFileAssets = true;
@@ -89,6 +110,10 @@ class ProfileadvAddpetModuleFrontController extends ProfileadvFrontController
     public function initContent()
     {
         parent::initContent();
+
+        if ($this->redirectLogged && Context::getContext()->customer->isLogged()) {
+            Tools::redirect($this->context->link->getModuleLink('profileadv', 'addpet'));
+        }
 
         $name_module = 'profileadv';
         $is_logged = (int)$this->context->customer->id;
