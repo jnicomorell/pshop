@@ -847,7 +847,7 @@
                             </div>
                             <div class="navigation-buttons">
                                 <button type="button" class="btn previous" data-step='6'>{l s='Previous' mod='profileadv'}</button>
-                                {if $logged}
+                                {if isset($logged) && $logged}
                                     <button type="submit" class="btn btn-submit" id="submit-button" onClick="submitClicked()">{l s='Finalizar' mod='profileadv'}</button>
                                 {else}
                                     <button type="button" class="btn next" data-step='8'>{l s='Next' mod='profileadv'}</button>
@@ -855,7 +855,7 @@
                             </div>
                         </section>
 
-                        {if !$logged}
+                        {if !isset($logged) || !$logged}
                         <!-- Email step for guests -->
                         <section data-step='8' class="data-step" style="display: none;">
                             <div class="profileadv-add-header">
