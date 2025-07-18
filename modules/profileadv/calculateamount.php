@@ -1,5 +1,5 @@
 <?php
-require_once _PS_MODULE_DIR_ . 'profileadv/classes/AgeCalculator.php';
+require_once _PS_MODULE_DIR_ . 'profileadv/controllers/AgeCalculator.php';
 
 class calculateAmount
 {

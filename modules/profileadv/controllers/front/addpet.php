@@ -2,7 +2,7 @@
 require_once(_PS_MODULE_DIR_ . 'profileadv/controllers/front/ajaxprofileadv.php');
 require_once(_PS_MODULE_DIR_ . 'profileadv/controllers/front/ProfileadvFrontController.php');
 include_once(_PS_MODULE_DIR_ . 'profileadv/classes/profileadvanced.class.php');
-include_once(_PS_MODULE_DIR_ . 'profileadv/classes/AgeCalculator.php');
+include_once(_PS_MODULE_DIR_ . 'profileadv/controllers/AgeCalculator.php');
 include_once(_PS_MODULE_DIR_ . 'profileadv/profileadv.php');
 
 
