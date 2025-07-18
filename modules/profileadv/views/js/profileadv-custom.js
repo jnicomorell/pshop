@@ -331,7 +331,7 @@ $(document).ready(function () {
 	});
 
 	//Autoadd recommended product to cart
-	if ($('#module-profileadv-addfirstpet #add-to-cart-or-refresh').length > 0) {
+	if ($('#module-profileadv-addpet #add-to-cart-or-refresh').length > 0) {
 		$(function () {
 			$('#add-to-cart-or-refresh button').trigger("click");
 		})

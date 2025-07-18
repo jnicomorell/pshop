@@ -196,36 +196,9 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
                 }
 
                 $recommended_product = $this->getRecommendedProduct($this->newPetData);
-
                 //Send email to customer
-                if ((int)$this->newPetData['pet-amount'] > 0) {
-                    Mail::Send(
-                        (int)(Configuration::get('PS_LANG_DEFAULT')), // defaut language id
-                        $this->newPetData['is_guest'] ? 'pet_info_validator' : 'pet_info', // email template file to be use
-                        $this->newPetData['is_guest'] ? 'Valida los datos de tu mascota' : 'Aquí tienes los datos de tu mascota', // email subject
-                        array(
-                            '{pet-name}' => $this->newPetData['pet-name'],
-                            '{pet-reference}' => $this->newPetData['pet-reference'],
-                            '{pet-amount}' => $this->newPetData['pet-amount'],
-                            '{pet-amount-month}' => ($this->newPetData['pet-amount'] / 1000) * 30,
-                            '{pet-recommended-product-name}' => $recommended_product['name'],
-                            '{pet-recommended-product-url}' => $recommended_product['link'],
-                            '{pet-amount-cost-daily}' => number_format((($recommended_product['daily_price']  * $this->newPetData['pet-amount'])), 2, ",", ","),
-                            //'{pet-amount-cost-daily}' => number_format((($this->newPetData['pet-amount'] / 1000) * 30) * ($recommended_product['price'] / 30), 2, ",", ","),
-                            '{pet-amount-cost-monthly}' => number_format((($recommended_product['monthly_price'] * $this->newPetData['pet-amount'])), 2, ",", ","),
-                            //'{pet-amount-cost-monthly}' => number_format((($this->newPetData['pet-amount'] / 1000) * 30) * $recommended_product['price']/1000, 2, ",", ","),
-                            '{pet-isguest}' => $this->newPetData['is_guest'],
-                            '{pet-validator-url}' => 'https://guauandcat.com/validate-pet-profile?reference=' . $this->newPetData['pet-reference'] . '&token=' . $obj->getValidationTokenFromReference($this->newPetData['pet-reference']) . ''
-                        ),
-                        $email_customer, // receiver email address
-                        null, //receiver name
-                        'hola@guauandcat.com', //from email address
-                        null,  //from name
-                        null,
-                        null,
-                        $this->module->getLocalPath() . 'mails/' // 11th parameter is template path
-                    );
-                }
+                $this->sendCustomerEmail($obj, $email_customer, $recommended_product);
+
                 break;
         }
 
@@ -248,22 +221,7 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
 
             $pet_name = $this->newPetData['pet-name'];
 
-            Mail::Send(
-                (int)(Configuration::get('PS_LANG_DEFAULT')), // defaut language id
-                'pet_contact', // email template file to be use
-                ' Nueva mascota', // email subject
-                array(
-                    '{email}' => Configuration::get('PS_SHOP_EMAIL'), // sender email address
-                    '{message}' => 'El cliente <strong>#' . $custom->id . ' - ' . $custom->firstname . ' ' . $custom->lastname . ' (' . $custom->email . ')</strong> necesita ayuda con su mascota <strong>' . $pet_name . '</strong> sobre la porción diaria de comida ya que es un caso especial, el motivo es: "' . $reason . '"'
-                ),
-                'hola@guauandcat.com', // receiver email address
-                null, //receiver name
-                'info@guauandcat.com', //from email address
-                null,  //from name
-                null,
-                null,
-                $this->module->getLocalPath() . 'mails/' // 11th parameter is template path
-            );
+                $this->sendAdminEmail($custom, $pet_name, $reason);
         }
 
         $response = new stdClass();
@@ -384,7 +342,54 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
         $obj = new profileAdvanced();
         return $obj->isAmountBlockedByPetReferenceAndCustomer($pet_reference, $customer);
     }
+    private function sendCustomerEmail($obj, $email, array $recommended_product)
+    {
+        if ((int)$this->newPetData["pet-amount"] > 0) {
+            Mail::Send(
+                (int)Configuration::get("PS_LANG_DEFAULT"),
+                $this->newPetData["is_guest"] ? "pet_info_validator" : "pet_info",
+                $this->newPetData["is_guest"] ? "Valida los datos de tu mascota" : "Aquí tienes los datos de tu mascota",
+                array(
+                    '{pet-name}' => $this->newPetData['pet-name'],
+                    '{pet-reference}' => $this->newPetData['pet-reference'],
+                    '{pet-amount}' => $this->newPetData['pet-amount'],
+                    '{pet-amount-month}' => ($this->newPetData['pet-amount'] / 1000) * 30,
+                    '{pet-recommended-product-name}' => $recommended_product['name'],
+                    '{pet-recommended-product-url}' => $recommended_product['link'],
+                    '{pet-amount-cost-daily}' => number_format((($recommended_product['daily_price']  * $this->newPetData['pet-amount'])), 2, ",", ","),
+                    '{pet-amount-cost-monthly}' => number_format((($recommended_product['monthly_price'] * $this->newPetData['pet-amount'])), 2, ",", ","),
+                    '{pet-isguest}' => $this->newPetData['is_guest'],
+                    '{pet-validator-url}' => 'https://guauandcat.com/validate-pet-profile?reference=' . $this->newPetData['pet-reference'] . '&token=' . $obj->getValidationTokenFromReference($this->newPetData['pet-reference'])
+                ),
+                $email,
+                null,
+                'hola@guauandcat.com',
+                null,
+                null,
+                null,
+                $this->module->getLocalPath() . 'mails/'
+            );
+        }
+    }
 
+    private function sendAdminEmail(Customer $customer, string $petName, string $reason)
+    {
+        Mail::Send(
+            (int)Configuration::get('PS_LANG_DEFAULT'),
+            'pet_contact',
+            ' Nueva mascota',
+            array(
+                '{email}' => Configuration::get('PS_SHOP_EMAIL'),
+                '{message}' => 'El cliente <strong>#' . $customer->id . ' - ' . $customer->firstname . ' ' . $customer->lastname . ' (' . $customer->email . ')</strong> necesita ayuda con su mascota <strong>' . $petName . '</strong> sobre la porción diaria de comida ya que es un caso especial, el motivo es: "' . $reason . '"'
+            ),
+            'hola@guauandcat.com',
+            null,
+            'info@guauandcat.com',
+            null,
+            null,
+            $this->module->getLocalPath() . 'mails/'
+        );
+    }
     public function getRecommendedProduct(array $data)
     {
 

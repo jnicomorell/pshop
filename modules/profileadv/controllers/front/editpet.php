@@ -1,7 +1,7 @@
 <?php
 
 require_once(_PS_MODULE_DIR_ . 'profileadv/controllers/front/ProfileadvFrontController.php');
-include_once(_PS_MODULE_DIR_ . 'profileadv/classes/AgeCalculator.php');
+include_once(_PS_MODULE_DIR_ . 'profileadv/controllers/AgeCalculator.php');
 
 use PrestaShop\PrestaShop\Adapter\Tools;
 

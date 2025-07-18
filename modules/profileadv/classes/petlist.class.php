@@ -17,7 +17,7 @@
  * for all its modules is valid only once for a single shop.
  */
 
-include_once(_PS_MODULE_DIR_ . 'profileadv/classes/AgeCalculator.php');
+include_once(_PS_MODULE_DIR_ . 'profileadv/controllers/AgeCalculator.php');
 
 class petList extends Module
 {
