@@ -426,7 +426,9 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
 
 
         //Recommended product
-        if ((int)$data['feeding'] === 3 && (int) $data['type'] === 1) { //Recommend barf for dogs
+        if (isset($data['recommended_menu'])) {
+            $product = new Product((int)$data['recommended_menu'], true, (int)Context::getContext()->language->id);
+        } elseif ((int)$data['feeding'] === 3 && (int) $data['type'] === 1) { //Recommend barf for dogs
             switch ($size) {
                 case 1:
                 case 2:
