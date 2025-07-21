@@ -392,7 +392,855 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
     }
     public function getRecommendedProduct(array $data)
     {
+/*
+Mida petita (menús 5kg - 200gr)
+CACHORROS:
 
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cuinat perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come Guau&Cat cocinado → Menú cachorro cuinat perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come BARF → Menú inicio crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come Guau&Cat crudo → Menú cachorro crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come Guau&Cat cocinado → Menú cachorro cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come BARF → Menú inicio crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come Guau&Cat crudo → Menú cachorro crudo perro pequeño (5kg - 200gr)
+
+
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cocinado perro pequeño (5kg - 200gr) 
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come Guau&Cat cuinat → Menú cachorros cocinado perro pequeño (5kg - 200gr) 
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come BARF → Menú Inicio crudo perro pequeño (5kg - 200gr) 
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come Guau&Cat Crudo → Menú cachorro crudo perro pequeño (5kg - 200gr) 
+
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come Guau&Cat → Menú perros cachorro perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come BARF → Menú Inici crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come Guau&Cat Crudo → Menú cachorro crudo perro pequeño (5kg - 200gr)
+
+
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro pequeño (5kg - 200gr)
+
+
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come BARF → Alergia Pollo → Menú Allergy crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro pequeño (5kg - 200gr)
+
+
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come BARF → Alergia Pollo → Menú Allergy crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro pequeño (5kg - 200gr)
+
+
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro pequeño (5kg - 200gr)
+
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pescado → Menú Inicio cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come Guau&Cat cocinado → Alergia Pescado → Menú Completo sin pescado cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come BARF → Alergia Pescado → Menú Inicio crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come Guau&Cat crudo → Alergia Pescado → Menú Completo sin pescado (variado) crudo perro pequeño (5kg - 200gr)
+
+
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) →  Alergia Pescado → Menú Inicio cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come Guau&Cat Cocinado →  Alergia Pescado → Menú Completo sin pescado cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come BARF →  Alergia Pescado → Menú Inicio crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come Guau&Cat crudo →  Alergia Pescado → Menú Completo sin pescado (variado) crudo perro pequeño (5kg - 200gr)
+
+
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) →  Alergia Pescado → Menú Inicio Cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come Guau&Cat cocinado →  Alergia Pescado → Menú Completo sin pescado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come BARF →  Alergia Pescado → Menú Inicio Crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come Guau&Cat crudo →  Alergia Pescado → Menú Completo sin pescado (menú variado) crudo perro pequeño (5kg - 200gr)
+
+
+Perro → Petit (menys de 10kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) →  Alergia Pescado → Menú Inicio Cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 10kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come Guau&Cat Cocinado →  Alergia Pescado → Menú Completo sin pescado cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 10kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come BARF →  Alergia Pescado → Menú Inicio Crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 10kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come Guau&Cat crudo →  Alergia Pescado → Menú Completo sin pescado (Menú Variado) Crudo perro pequeño (5kg - 200gr)
+
+
+
+ADULT:
+
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any) → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cuinat perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any) → No esterilizado → Come Guau&Cat cocinado → Menú completo cuinat perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → No esterilizado → Come BARF → Menú inicio crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any) → No esterilizado → Come Guau&Cat crudo → Menú variado crudo perro pequeño (5kg - 200gr)
+
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any) → No esterilizado  → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any) → No esterilizado → Peludo de trabajo → Come Guau&Cat cocinado → Menú Energy cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any) → No esterilizado → Peludo de trabajo → Come BARF → Menú inicio crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any) → No esterilizado → Peludo de trabajo → Come Guau&Cat crudo → Menú Energy crudo perro pequeño (5kg - 200gr)
+
+
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cocinado perro pequeño (5kg - 200gr) 
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come Guau&Cat cuinat → Menú Energy cocinado perro pequeño (5kg - 200gr) 
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come BARF → Menú Inicio crudo perro pequeño (5kg - 200gr) 
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come Guau&Cat Crudo → Menú Energy crudo perro pequeño (5kg - 200gr) 
+
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → esterilizado → Come Guau&Cat → Menú perros esterilizado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → esterilizado → Come BARF → Menú Inici crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any) → esterilizado → Come Guau&Cat Crudo → Menú perros esterilizados crudo perro pequeño (5kg - 200gr)
+
+
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any) → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any) → No esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any) → No esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any) → No esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro pequeño (5kg - 200gr)
+
+
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any) → No esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any) → No esterilizado → Peludo de trabajo → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any) → No esterilizado → Peludo de trabajo → Come BARF → Alergia Pollo → Menú Allergy crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any) → No esterilizado → Peludo de trabajo → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro pequeño (5kg - 200gr)
+
+
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come BARF → Alergia Pollo → Menú Allergy crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro pequeño (5kg - 200gr)
+
+
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro pequeño (5kg - 200gr)
+
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any) → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pescado → Menú Inicio cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any) → No esterilizado → Come Guau&Cat cocinado → Alergia Pescado → Menú Completo sin pescado cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any) → No esterilizado → Come BARF → Alergia Pescado → Menú Inicio crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any) → No esterilizado → Come Guau&Cat crudo → Alergia Pescado → Menú Completo sin pescado (variado) crudo perro pequeño (5kg - 200gr)
+
+
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any) → No esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) →  Alergia Pescado → Menú Inicio cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any) → No esterilizado → Peludo de trabajo → Come Guau&Cat Cocinado →  Alergia Pescado → Menú Completo sin pescado cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any) → No esterilizado → Peludo de trabajo → Come BARF →  Alergia Pescado → Menú Inicio crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any) → No esterilizado → Peludo de trabajo → Come Guau&Cat crudo →  Alergia Pescado → Menú Completo sin pescado (variado) crudo perro pequeño (5kg - 200gr)
+
+
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) →  Alergia Pescado → Menú Inicio Cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any) → esterilizado → Peludo de trabajo → Come Guau&Cat cocinado →  Alergia Pescado → Menú Completo sin pescado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come BARF →  Alergia Pescado → Menú Inicio Crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come Guau&Cat crudo →  Alergia Pescado → Menú Completo sin pescado (menú variado) crudo perro pequeño (5kg - 200gr)
+
+
+
+Perro → Petit (menys de 10kg) →  Adult (Més d’ 1 any) → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) →  Alergia Pescado → Menú Inicio Cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 10kg) →  Adult (Més d’ 1 any) → esterilizado → Come Guau&Cat Cocinado →  Alergia Pescado → Menú Completo sin pescado cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 10kg) →  Adult (Més d’ 1 any) → esterilizado → Come BARF →  Alergia Pescado → Menú Inicio Crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 10kg) → Adult (Més d’ 1 any)  → esterilizado → Come Guau&Cat crudo →  Alergia Pescado → Menú Completo sin pescado (Menú Variado) Crudo perro pequeño (5kg - 200gr)
+
+
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any) → Tiene Sobrepeso → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cuinat perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any) → Tiene Sobrepeso → No esterilizado →Come Guau&Cat cocinado → Menú Obesidad cuinat perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  →Tiene Sobrepeso → No esterilizado → Come BARF → Menú inicio crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat crudo → Menú Obesidad crudo perro pequeño (5kg - 200gr)
+
+
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → esterilizado → Come Guau&Cat → Menú Obesidad cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → esterilizado → Come BARF → Menú Inici crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any) → Tiene Sobrepeso → esterilizado → Come Guau&Cat Crudo → Menú Obesidad crudo perro pequeño (5kg - 200gr)
+
+
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → No esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro pequeño (5kg - 200gr)
+
+
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro pequeño (5kg - 200gr)
+
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pescado → Menú Inicio cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat cocinado → Alergia Pescado → Menú Obesidad cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → No esterilizado → Come BARF → Alergia Pescado → Menú Inicio crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat crudo → Alergia Pescado → Menú Obesidad crudo perro pequeño (5kg - 200gr)
+
+
+Perro → Petit (menys de 10kg) → Adult (Més d’ 1 any) →  Tiene Sobrepeso → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) →  Alergia Pescado → Menú Inicio Cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 10kg) → Adult (Més d’ 1 any) →  Tiene Sobrepeso → esterilizado → Come Guau&Cat Cocinado →  Alergia Pescado → Menú Obesidad cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 10kg) → Adult (Més d’ 1 any) →  Tiene Sobrepeso → esterilizado → Come BARF →  Alergia Pescado → Menú Inicio Crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 10kg) → Adult (Més d’ 1 any) →  Tiene Sobrepeso → esterilizado → Come Guau&Cat crudo →  Alergia Pescado → Menú Obesidad Crudo perro pequeño (5kg - 200gr)
+
+SÉNIOR:
+
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys) → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cuinat perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys) → No esterilizado → Come Guau&Cat cocinado → Menú sénior cuinat perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → No esterilizado → Come BARF → Menú inicio crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → No esterilizado → Come Guau&Cat crudo → Menú sénior crudo perro pequeño (5kg - 200gr)
+
+
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → esterilizado → Come Guau&Cat → Menú Senior perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → esterilizado → Come BARF → Menú Inici crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys) → esterilizado → Come Guau&Cat Crudo → Menú senior crudo perro pequeño (5kg - 200gr)
+
+
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys) → No esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → No esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → No esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro pequeño (5kg - 200gr)
+
+
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro pequeño (5kg - 200gr)
+
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → No esterilizado →Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pescado → Menú Inicio cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → No esterilizado → Come Guau&Cat cocinado → Alergia Pescado → Menú Completo sin pescado cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → No esterilizado → Come BARF → Alergia Pescado → Menú Inicio crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → No esterilizado → Come Guau&Cat crudo → Alergia Pescado → Menú senior crudo perro pequeño (5kg - 200gr)
+
+Perro → Petit (menys de 10kg) →  Sénior (Més de 9 anys) → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) →  Alergia Pescado → Menú Inicio Cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 10kg) →  Sénior (Més de 9 anys) → esterilizado → Come Guau&Cat Cocinado →  Alergia Pescado → Menú Completo sin pescado cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 10kg) →  Sénior (Més de 9 anys) → esterilizado → Come BARF →  Alergia Pescado → Menú Inicio Crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 10kg) → Sénior (Més de 9 anys)  → esterilizado → Come Guau&Cat crudo →  Alergia Pescado → Menú Senior Crudo perro pequeño (5kg - 200gr)
+
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys) → Tiene Sobrepeso → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cuinat perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys) → Tiene Sobrepeso → No esterilizado →Come Guau&Cat cocinado → Menú Obesidad cuinat perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come BARF → Menú inicio crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat crudo → Menú Obesidad crudo perro pequeño (5kg - 200gr)
+
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → esterilizado → Come Guau&Cat → Menú Obesidad cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → esterilizado → Come BARF → Menú Inici crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys) → Tiene Sobrepeso → esterilizado → Come Guau&Cat Crudo → Menú Obesidad crudo perro pequeño (5kg - 200gr)
+
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro pequeño (5kg - 200gr)
+
+
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro pequeño (5kg - 200gr)
+
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pescado → Menú Inicio cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat cocinado → Alergia Pescado → Menú Obesidad cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come BARF → Alergia Pescado → Menú Inicio crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 5kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat crudo → Alergia Pescado → Menú Obesidad crudo perro pequeño (5kg - 200gr)
+
+
+Perro → Petit (menys de 10kg) → Sénior (Més de 9 anys) →  Tiene Sobrepeso → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) →  Alergia Pescado → Menú Inicio Cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 10kg) → Sénior (Més de 9 anys) →  Tiene Sobrepeso → esterilizado → Come Guau&Cat Cocinado →  Alergia Pescado → Menú Obesidad cocinado perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 10kg) → Sénior (Més de 9 anys) →  Tiene Sobrepeso → esterilizado → Come BARF →  Alergia Pescado → Menú Inicio Crudo perro pequeño (5kg - 200gr)
+Perro → Petit (menys de 10kg) → Sénior (Més de 9 anys) →  Tiene Sobrepeso → esterilizado → Come Guau&Cat crudo →  Alergia Pescado → Menú Obesidad Crudo perro pequeño (5kg - 200gr)
+
+Mida mitjana (menús 10kg - 500gr)
+
+CACHORROS:
+
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cuinat perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come Guau&Cat cocinado → Menú cachorro cuinat perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come BARF → Menú inicio crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come Guau&Cat crudo → Menú cachorro crudo perro mediano (500gr)
+
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come Guau&Cat cocinado → Menú cachorro cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come BARF → Menú inicio crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come Guau&Cat crudo → Menú cachorro crudo perro mediano (500gr)
+
+
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cocinado perro mediano (500gr) 
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come Guau&Cat cuinat → Menú cachorros cocinado perro mediano (500gr) 
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come BARF → Menú Inicio crudo perro mediano (500gr) 
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come Guau&Cat Crudo → Menú cachorro crudo perro mediano (500gr) 
+
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come Guau&Cat → Menú perros cachorro perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come BARF → Menú Inici crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come Guau&Cat Crudo → Menú cachorro crudo perro mediano (500gr)
+
+
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro pequeño (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro mediano (500gr)
+
+
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come BARF → Alergia Pollo → Menú Allergy crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro mediano (500gr)
+
+
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro pequeño (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come BARF → Alergia Pollo → Menú Allergy crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro mediano (500gr)
+
+
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro mediano (500gr)
+
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pescado → Menú Inicio cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come Guau&Cat cocinado → Alergia Pescado → Menú Completo sin pescado cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come BARF → Alergia Pescado → Menú Inicio crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come Guau&Cat crudo → Alergia Pescado → Menú Completo sin pescado (variado) crudo perro mediano (500gr)
+
+
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) →  Alergia Pescado → Menú Inicio cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come Guau&Cat Cocinado →  Alergia Pescado → Menú Completo sin pescado cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come BARF →  Alergia Pescado → Menú Inicio crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) →No esterilizado → Peludo de trabajo → Come Guau&Cat crudo →  Alergia Pescado → Menú Completo sin pescado (variado) crudo perro mediano (500gr)
+
+
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) →  Alergia Pescado → Menú Inicio Cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come Guau&Cat cocinado →  Alergia Pescado → Menú Completo sin pescado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come BARF →  Alergia Pescado → Menú Inicio Crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come Guau&Cat crudo →  Alergia Pescado → Menú Completo sin pescado (menú variado) crudo perro mediano (500gr)
+
+
+
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) →  Alergia Pescado → Menú Inicio Cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come Guau&Cat Cocinado →  Alergia Pescado → Menú Completo sin pescado cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come BARF →  Alergia Pescado → Menú Inicio Crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come Guau&Cat crudo →  Alergia Pescado → Menú Completo sin pescado (Menú Variado) Crudo perro mediano (500gr)
+
+
+
+ADULT:
+
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any) → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cuinat perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any) → No esterilizado → Come Guau&Cat cocinado → Menú completo cuinat perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Come BARF → Menú inicio crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Come Guau&Cat crudo → Menú variado crudo perro mediano (500gr)
+
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Peludo de trabajo → Come Guau&Cat cocinado → Menú Energy cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any) → No esterilizado → Peludo de trabajo → Come BARF → Menú inicio crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any) → No esterilizado → Peludo de trabajo → Come Guau&Cat crudo → Menú Energy crudo perro mediano (500gr)
+
+
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’1 any)  → esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cocinado perro mediano (500gr) 
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come Guau&Cat cuinat → Menú Energy cocinado perro mediano (500gr) 
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come BARF → Menú Inicio crudo perro mediano (500gr) 
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come Guau&Cat Crudo → Menú Energy crudo perro mediano (500gr) 
+
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → esterilizado → Come Guau&Cat → Menú perros esterilizado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → esterilizado → Come BARF → Menú Inici crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any) → esterilizado → Come Guau&Cat Crudo → Menú perros esterilizados crudo perro mediano (500gr)
+
+
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro mediano (500gr)
+
+
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any) → No esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Peludo de trabajo → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Peludo de trabajo → Come BARF → Alergia Pollo → Menú Allergy crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Peludo de trabajo → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro mediano (500gr)
+
+
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come BARF → Alergia Pollo → Menú Allergy crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro mediano (500gr)
+
+
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro mediano (500gr)
+
+
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pescado → Menú Inicio cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Come Guau&Cat cocinado → Alergia Pescado → Menú Completo sin pescado cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Come BARF → Alergia Pescado → Menú Inicio crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Come Guau&Cat crudo → Alergia Pescado → Menú Completo sin pescado (variado) crudo perro mediano (500gr)
+
+
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → Peludo de trabajo → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) →  Alergia Pescado → Menú Inicio cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → Peludo de trabajo → No esterilizado → Come Guau&Cat Cocinado →  Alergia Pescado → Menú Completo sin pescado cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → Peludo de trabajo → No esterilizado → Come BARF →  Alergia Pescado → Menú Inicio crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any) ) → Peludo de trabajo → No esterilizado → Come Guau&Cat crudo →  Alergia Pescado → Menú Energy crudo perro mediano (500gr)
+
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) →  Alergia Pescado → Menú Inicio Cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any) → esterilizado → Peludo de trabajo → Come Guau&Cat cocinado →  Alergia Pescado → Menú Completo sin pescado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come BARF →  Alergia Pescado → Menú Inicio Crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come Guau&Cat crudo →  Alergia Pescado → Menú Energy crudo perro mediano (500gr)
+
+Perro → Mitjà (gos 5 - 25kg) →  Adult (Més d’ 1 any) → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) →  Alergia Pescado → Menú Inicio Cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) →  Adult (Més d’ 1 any) → esterilizado → Come Guau&Cat Cocinado →  Alergia Pescado → Menú Completo sin pescado cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) →  Adult (Més d’ 1 any) → esterilizado → Come BARF →  Alergia Pescado → Menú Inicio Crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → esterilizado → Come Guau&Cat crudo →  Alergia Pescado → Menú Esterilizado Crudo perro mediano (500gr)
+
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any) → Tiene Sobrepeso → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cuinat perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any) → Tiene Sobrepeso → No esterilizado → Come Guau&Cat cocinado → Menú Obesidad cuinat perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  →Tiene Sobrepeso → No esterilizado → Come BARF → Menú inicio crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat crudo → Menú Obesidad crudo perro mediano (500gr)
+
+
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso →  esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → esterilizado → Come Guau&Cat → Menú Obesidad perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → esterilizado → Come BARF → Menú Inici crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any) → Tiene Sobrepeso → esterilizado → Come Guau&Cat Crudo → Menú Obesidad crudo perro mediano (500gr)
+
+
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → No esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro mediano (500gr)
+
+
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro mediano (500gr)
+
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pescado → Menú Inicio cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat cocinado → Alergia Pescado → Menú Obesidad cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → No esterilizado → Come BARF → Alergia Pescado → Menú Inicio crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat crudo → Alergia Pescado → Menú Obesidad crudo perro mediano (500gr)
+
+
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any) →  Tiene Sobrepeso → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) →  Alergia Pescado → Menú Inicio Cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any) →  Tiene Sobrepeso → esterilizado → Come Guau&Cat Cocinado →  Alergia Pescado → Menú Obesidad cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any) →  Tiene Sobrepeso → esterilizado → Come BARF →  Alergia Pescado → Menú Inicio Crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Adult (Més d’ 1 any) →  Tiene Sobrepeso → esterilizado → Come Guau&Cat crudo →  Alergia Pescado → Menú Obesidad Crudo perro mediano (500gr)
+
+SÉNIOR:
+
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys) → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cuinat perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys) → No esterilizado → Come Guau&Cat cocinado → Menú sénior cuinat perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → No esterilizado → Come BARF → Menú inicio crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → No esterilizado → Come Guau&Cat crudo → Menú sénior crudo perro mediano (500gr)
+
+
+Perro → Mitjà (gos 5 - 25kg)  → Sénior (Més de 9 anys)  → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys) → esterilizado → Come Guau&Cat → Menú Senior cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg)  → Sénior (Més de 9 anys)  → esterilizado → Come BARF → Menú Inici crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg)  → Sénior (Més de 9 anys) → esterilizado → Come Guau&Cat Crudo → Menú senior crudo perro mediano (500gr)
+
+
+Perro →  Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro mediano (500gr)
+Perro →  Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → No esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro mediano (500gr)
+Perro →  Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → No esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro mediano (500gr)
+Perro →  Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → No esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro mediano (500gr)
+
+
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro mediano (500gr)
+
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pescado → Menú Inicio cocinado perro mediano (500gr)
+Perro →Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → No esterilizado → Come Guau&Cat cocinado → Alergia Pescado → Menú Completo sin pescado cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → No esterilizado → Come BARF → Alergia Pescado → Menú Inicio crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → No esterilizado → Come Guau&Cat crudo → Alergia Pescado → Menú senior crudo perro mediano (500gr)
+
+
+Perro → Mitjà (gos 5 - 25kg) →  Sénior (Més de 9 anys) → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) →  Alergia Pescado → Menú Inicio Cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) →  Sénior (Més de 9 anys) → esterilizado → Come Guau&Cat Cocinado →  Alergia Pescado → Menú Completo sin pescado cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) →  Sénior (Més de 9 anys) → esterilizado → Come BARF →  Alergia Pescado → Menú Inicio Crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → esterilizado → Come Guau&Cat crudo →  Alergia Pescado → Menú Senior Crudo perro mediano (500gr)
+
+
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys) → Tiene Sobrepeso → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cuinat perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys) → Tiene Sobrepeso → No esterilizado → Come Guau&Cat cocinado → Menú Obesidad cuinat perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come BARF → Menú inicio crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat crudo → Menú Obesidad crudo perro mediano (500gr)
+
+
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → esterilizado → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg)  → Sénior (Més de 9 anys)  → Tiene Sobrepeso → esterilizado → No esterilizado → Come Guau&Cat → Menú Obesidad cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → esterilizado → No esterilizado → Come BARF → Menú Inici crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys) → Tiene Sobrepeso → esterilizado → No esterilizado → Come Guau&Cat Crudo → Menú Obesidad crudo perro mediano (500gr)
+
+
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro pequeño (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro mediano (500gr)
+
+
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro mediano (500gr)
+
+Perro →  Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pescado → Menú Inicio cocinado perro mediano (500gr)
+Perro →  Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat cocinado → Alergia Pescado → Menú Obesidad cocinado perro mediano (500gr)
+Perro →  Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come BARF → Alergia Pescado → Menú Inicio crudo perro mediano (500gr)
+Perro →  Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat crudo → Alergia Pescado → Menú Obesidad crudo perro mediano (500gr)
+
+
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys) →  Tiene Sobrepeso → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) →  Alergia Pescado → Menú Inicio Cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys) →  Tiene Sobrepeso → esterilizado → Come Guau&Cat Cocinado →  Alergia Pescado → Menú Obesidad cocinado perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys) →  Tiene Sobrepeso → esterilizado → Come BARF →  Alergia Pescado → Menú Inicio Crudo perro mediano (500gr)
+Perro → Mitjà (gos 5 - 25kg) → Sénior (Més de 9 anys) →  Tiene Sobrepeso → esterilizado → Come Guau&Cat crudo →  Alergia Pescado → Menú Obesidad Crudo perro mediano (500gr)
+
+Mida gran i gegant (menús 15kg - 1kg)
+
+CACHORROS:
+
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cuinat perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come Guau&Cat cocinado → Menú cachorro cuinat perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come BARF → Menú inicio crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come Guau&Cat crudo → Menú cachorro crudo perro grande (1kg)
+
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come Guau&Cat cocinado → Menú cachorro cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come BARF → Menú inicio crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come Guau&Cat crudo → Menú cachorro crudo perro grande (1kg)
+
+
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cocinado perro grande (1kg) 
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come Guau&Cat cuinat → Menú cachorros cocinado perro grande (1kg) 
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come BARF → Menú Inicio crudo perro grande (1kg) 
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come Guau&Cat Crudo → Menú cachorro crudo perro grande (1kg) 
+
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come Guau&Cat → Menú perros cachorro cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come BARF → Menú Inici crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come Guau&Cat Crudo → Menú cachorro crudo perro grande (1kg)
+
+
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro grande (1kg)
+
+
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come BARF → Alergia Pollo → Menú Allergy crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro grande (1kg)
+
+
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come BARF → Alergia Pollo → Menú Allergy crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro grande (1kg)
+
+
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro grande (1kg)
+
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pescado → Menú Inicio cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come Guau&Cat cocinado → Alergia Pescado → Menú Completo sin pescado cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come BARF → Alergia Pescado → Menú Inicio crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Come Guau&Cat crudo → Alergia Pescado → Menú Completo sin pescado (variado) crudo perro grande (1kg)
+
+
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) →  Alergia Pescado → Menú Inicio cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come Guau&Cat Cocinado → Alergia Pescado → Menú Completo sin pescado cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come BARF →  Alergia Pescado → Menú Inicio crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → No esterilizado → Peludo de trabajo → Come Guau&Cat crudo →  Alergia Pescado → Menú Cachorro crudo perro grande (1kg)
+
+
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) →  Alergia Pescado → Menú Inicio Cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come Guau&Cat cocinado →  Alergia Pescado → Menú Completo sin pescado perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come BARF →  Alergia Pescado → Menú Inicio Crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Peludo de trabajo → Come Guau&Cat crudo →  Alergia Pescado → Menú Cachorro crudo perro grande (1kg)
+
+
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) →  Alergia Pescado → Menú Inicio Cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come Guau&Cat Cocinado →  Alergia Pescado → Menú Completo sin pescado cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come BARF →  Alergia Pescado → Menú Inicio Crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Cachorro (de 3 mesos a 1 any) → esterilizado → Come Guau&Cat crudo →  Alergia Pescado → Menú Completo sin pescado (Menú Variado) Crudo perro grande (1kg)
+
+ADULT:
+
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any) → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cuinat perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any) → No esterilizado → Come Guau&Cat cocinado → Menú completo cuinat perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Come BARF → Menú inicio crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Come Guau&Cat crudo → Menú variado crudo perro grande (1kg)
+
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Peludo de trabajo → Come Guau&Cat cocinado → Menú Energy cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any) → No esterilizado → Peludo de trabajo → Come BARF → Menú inicio crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any) → No esterilizado → Peludo de trabajo → Come Guau&Cat crudo → Menú Energy crudo perro grande (1kg)
+
+
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cocinado perro grande (1kg) 
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come Guau&Cat cuinat → Menú Energy cocinado perro grande (1kg) 
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come BARF → Menú Inicio crudo perro grande (1kg) 
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come Guau&Cat Crudo → Menú Energy crudo perro grande (1kg) 
+
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → esterilizado → Come Guau&Cat → Menú perros esterilizado cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → esterilizado → Come BARF → Menú Inici crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any) → esterilizado → Come Guau&Cat Crudo → Menú perros esterilizados crudo perro grande (1kg)
+
+
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro grande (1kg)
+
+
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any) → No esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Peludo de trabajo → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Peludo de trabajo → Come BARF → Alergia Pollo → Menú Allergy crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Peludo de trabajo → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro grande (1kg)
+
+
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come BARF → Alergia Pollo → Menú Allergy crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro grande (1kg)
+
+
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro grande (1kg)
+
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pescado → Menú Inicio cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Come Guau&Cat cocinado → Alergia Pescado → Menú Completo sin pescado cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Come BARF → Alergia Pescado → Menú Inicio crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Come Guau&Cat crudo → Alergia Pescado → Menú Completo sin pescado (variado) crudo perro grande (1kg)
+
+
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) →  Alergia Pescado → Menú Inicio cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Peludo de trabajo → Come Guau&Cat Cocinado →  Alergia Pescado → Menú Completo sin pescado cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → No esterilizado → Peludo de trabajo → Come BARF →  Alergia Pescado → Menú Inicio crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any) → No esterilizado → Peludo de trabajo → Come Guau&Cat crudo →  Alergia Pescado → Menú Energy (variado) crudo perro grande (1kg)
+
+
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come pienso / cocinada / deshidratada / húmeda (latas) →  Alergia Pescado → Menú Inicio Cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any) → esterilizado → Peludo de trabajo → Come Guau&Cat cocinado →  Alergia Pescado → Menú Completo sin pescado perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come BARF →  Alergia Pescado → Menú Inicio Crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → esterilizado → Peludo de trabajo → Come Guau&Cat crudo →  Alergia Pescado → Menú Completo Energy crudo perro grande (1kg)
+
+
+
+Perro → Gran (> 25kg) →  Adult (Més d’ 1 any) → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) →  Alergia Pescado → Menú Inicio Cocinado perro grande (1kg)
+Perro → Gran (> 25kg) →  Adult (Més d’ 1 any) → esterilizado → Come Guau&Cat Cocinado →  Alergia Pescado → Menú Completo sin pescado cocinado perro grande (1kg)
+Perro → Gran (> 25kg) →  Adult (Més d’ 1 any) → esterilizado → Come BARF →  Alergia Pescado → Menú Inicio Crudo perro grande (1kg)
+Perro → Gran (> 25kg)  → Adult (Més d’ 1 any)  → esterilizado → Come Guau&Cat crudo →  Alergia Pescado → Menú Completo sin pescado (Menú Variado) Crudo perro grande (1kg)
+
+
+Perro → Gran (> 25kg)  → Adult (Més d’ 1 any) → Tiene Sobrepeso → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cuinat perro grande (1kg)
+Perro → Gran (> 25kg)  → Adult (Més d’ 1 any) → Tiene Sobrepeso → No esterilizado → Come Guau&Cat cocinado → Menú Obesidad cuinat perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  →Tiene Sobrepeso → No esterilizado → Come BARF → Menú inicio crudo perro grande (1kg)
+Perro → Gran (> 25kg)  → Adult (Més d’ 1 any)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat crudo → Menú Obesidad crudo perro grande (1kg)
+
+
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → esterilizado → Come Guau&Cat → Menú Obesidad cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → esterilizado → Come BARF → Menú Inici crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any) → Tiene Sobrepeso → esterilizado → Come Guau&Cat Crudo → Menú Obesidad crudo perro grande (1kg)
+
+
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → No esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro grande (1kg)
+
+
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro grande (1kg)
+
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pescado → Menú Inicio cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat cocinado → Alergia Pescado → Menú Obesidad cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → No esterilizado → Come BARF → Alergia Pescado → Menú Inicio crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat crudo → Alergia Pescado → Menú Obesidad crudo perro grande (1kg)
+
+
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any) →  Tiene Sobrepeso → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) →  Alergia Pescado → Menú Inicio Cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any) →  Tiene Sobrepeso → esterilizado → Come Guau&Cat Cocinado →  Alergia Pescado → Menú Obesidad cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any) →  Tiene Sobrepeso → esterilizado → Come BARF →  Alergia Pescado → Menú Inicio Crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Adult (Més d’ 1 any) →  Tiene Sobrepeso → esterilizado → Come Guau&Cat crudo →  Alergia Pescado → Menú Obesidad Crudo perro grande (1kg)
+
+SÉNIOR:
+
+Perro → Gran (> 25kg) → Sénior (Més de 9 anys) → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cuinat perro grande (1kg)
+Perro → Gran (> 25kg) → Sénior (Més de 9 anys) → No esterilizado → Come Guau&Cat cocinado → Menú sénior cuinat perro grande (1kg)
+Perro → Gran (> 25kg) → Sénior (Més de 9 anys)  → No esterilizado → Come BARF → Menú inicio crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Sénior (Més de 9 anys)  → No esterilizado → Come Guau&Cat crudo → Menú sénior crudo perro grande (1kg)
+
+
+Perro → Gran (> 25kg)  → Sénior (Més de 9 anys)  → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cocinado perro grande (1kg)
+Perro → Gran (> 25kg)  → Sénior (Més de 9 anys)  → esterilizado → Come Guau&Cat → Menú Senior perro grande (1kg)
+Perro → Gran (> 25kg)  → Sénior (Més de 9 anys)  → esterilizado → Come BARF → Menú Inici crudo perro grande (1kg)
+Perro → Gran (> 25kg)  → Sénior (Més de 9 anys) → esterilizado → Come Guau&Cat Crudo → Menú senior crudo perro grande (1kg)
+
+
+Perro →  Gran (> 25kg) → Sénior (Més de 9 anys)  → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro grande (1kg)
+Perro →  Gran (> 25kg)  → Sénior (Més de 9 anys)  → No esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro grande (1kg)
+Perro →  Gran (> 25kg)  → Sénior (Més de 9 anys)  → No esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro grande (1kg)
+Perro →  Gran (> 25kg)  → Sénior (Més de 9 anys)  → No esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro grande (1kg)
+
+
+Perro → Gran (> 25kg)  → Sénior (Més de 9 anys)  → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro grande (1kg)
+Perro →Gran (> 25kg)  → Sénior (Més de 9 anys)  → esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy perro grande (1kg)
+Perro → Gran (> 25kg)  → Sénior (Més de 9 anys)  → esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro grande (1kg)
+Perro → Gran (> 25kg)  → Sénior (Més de 9 anys)  → esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro grande (1kg)
+
+Perro → Gran (> 25kg) → Sénior (Més de 9 anys)  → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pescado → Menú Inicio cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Sénior (Més de 9 anys)  → No esterilizado → Come Guau&Cat cocinado → Alergia Pescado → Menú Completo sin pescado cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Sénior (Més de 9 anys)  → No esterilizado → Come BARF → Alergia Pescado → Menú Inicio crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Sénior (Més de 9 anys)  → No esterilizado → Come Guau&Cat crudo → Alergia Pescado → Menú senior crudo perro grande (1kg)
+
+
+Perro → Gran (> 25kg) →  Sénior (Més de 9 anys) → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) →  Alergia Pescado → Menú Inicio Cocinado perro grande (1kg)
+Perro → Gran (> 25kg) →  Sénior (Més de 9 anys) → esterilizado → Come Guau&Cat Cocinado →  Alergia Pescado → Menú Completo sin pescado cocinado perro grande (1kg)
+Perro → Gran (> 25kg) →  Sénior (Més de 9 anys) → esterilizado → Come BARF →  Alergia Pescado → Menú Inicio Crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Sénior (Més de 9 anys)  → esterilizado → Come Guau&Cat crudo →  Alergia Pescado → Menú Senior Crudo perro grande (1kg)
+
+
+Perro → Gran (> 25kg) → Sénior (Més de 9 anys) → Tiene Sobrepeso → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cuinat perro grande (1kg)
+Perro → Gran (> 25kg) → Sénior (Més de 9 anys) → Tiene Sobrepeso → No esterilizado → Come Guau&Cat cocinado → Menú Obesidad cuinat perro grande (1kg)
+Perro → Gran (> 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come BARF → Menú inicio crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat crudo → Menú Obesidad crudo perro grande (1kg)
+
+
+Perro → Gran (> 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Menú Inici cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → esterilizado → Come Guau&Cat → Menú Obesidad perro grande (1kg)
+Perro → Gran (> 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → esterilizado → Come BARF → Menú Inici crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Sénior (Més de 9 anys) → Tiene Sobrepeso → esterilizado → Come Guau&Cat Crudo → Menú Obesidad crudo perro grande (1kg)
+
+
+Perro → Gran (> 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro grande (1kg)
+
+
+Perro → Gran (> 25kg)  → Sénior (Més de 9 anys)  → Tiene Sobrepeso → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pollo → Menú Allergy cocinado perro grande (1kg)
+Perro → Gran (> 25kg)  → Sénior (Més de 9 anys)  → Tiene Sobrepeso → esterilizado → Come Guau&Cat cocinado → Alergia Pollo → Menú Allergy cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → esterilizado → Come BARF → Alergia Pollo → Menú Allergy crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → esterilizado → Come Guau&Cat crudo → Alergia Pollo → Menú Allergy crudo perro grande (1kg)
+
+Perro →  Gran (> 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) → Alergia Pescado → Menú Inicio cocinado perro grande (1kg)
+Perro →  Gran (> 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat cocinado → Alergia Pescado → Menú Obesidad cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come BARF → Alergia Pescado → Menú Inicio crudo perro grande (1kg)
+Perro →  Gran (> 25kg) → Sénior (Més de 9 anys)  → Tiene Sobrepeso → No esterilizado → Come Guau&Cat crudo → Alergia Pescado → Menú Obesidad crudo perro grande (1kg)
+
+
+Perro → Gran (> 25kg) → Sénior (Més de 9 anys) →  Tiene Sobrepeso → esterilizado → Come pienso / cocinada / deshidratada / húmeda (latas) →  Alergia Pescado → Menú Inicio Cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Sénior (Més de 9 anys) →  Tiene Sobrepeso → esterilizado → Come Guau&Cat Cocinado →  Alergia Pescado → Menú Obesidad cocinado perro grande (1kg)
+Perro → Gran (> 25kg) → Sénior (Més de 9 anys) →  Tiene Sobrepeso → esterilizado → Come BARF →  Alergia Pescado → Menú Inicio Crudo perro grande (1kg)
+Perro → Gran (> 25kg) → Sénior (Més de 9 anys) →  Tiene Sobrepeso → esterilizado → Come Guau&Cat crudo →  Alergia Pescado → Menú Obesidad Crudo perro grande (1kg)
+
+
+Este es el array de ejemplo que se recibe en $data
+Array
+(
+    [reference] => 28c8c8b4b694c981a1adf2c701e010bc
+    [img] => 1142081429687ebf17465f0.jpg
+    [type] => Perro
+    [name] => Toribio
+    [genre] => Macho
+    [birth] => 2021-01-21
+    [age] => 54
+    [breed] => Mezcla Mini (<5KG)
+    [esterilized] => Sí
+    [weight] => 15
+    [feeding] => Cocinado
+    [activity] => Baja. Menos de 1 hora al día
+    [physical_condition] => Normal
+    [pathology] => Array
+        (
+            [0] => Obesidad
+        )
+
+    [allergies] => Array
+        (
+            [0] => Pollo
+        )
+
+    [comment] => 
+    [amount] => 300
+    [amount_blocked] => 0
+    [id_customer] => 64778
+    [customer_email] => nicolas.jnm@gmail.com
+    [is_new] => 1
+)
+
+Estas son los posibles valores que se envían
+    'genre' => array(
+        'es' => array(
+            '1' => 'Macho',
+            '2' => 'Hembra'
+        )
+    ),
+    'physical-condition' => array(
+        'es' => array(
+            '1' => 'Delgado',
+            '2' => 'Normal',
+            '3' => 'Gordito'
+        )
+    ),
+    'activity' => array(
+        'es' => array(
+            '1' => 'Muy alta. Más de 4h al día',
+            '2' => 'Alta. Entre 2 y 4 horas al día',
+            '3' => 'Media. Entre 1 y 2 horas al día',
+            '4' => 'Baja. Menos de 1 hora al día'
+        )
+    ),
+    'feeding' => array(
+        'es' => array(
+            '1' => 'Pienso',
+            '2' => 'Humedo (latas)',
+            '3' => 'Barf',
+            '4' => 'Cocinado',
+            '5' => 'Deshidratado',
+            '6' => 'Lactancia',
+        )
+    ),
+    'type' => array(
+        'es' => array(
+            '1' => 'Perro',
+            '2' => 'Gato',
+        )
+    ),
+    'esterilized' => array(
+        'es' => array(
+            '1' => 'Sí',
+            '2' => 'No',
+        )
+    ),
+    'pathologies' => array(
+        'es' => array(
+            '1' => 'Nada',
+            '2' => 'Obesidad',
+            '3' => 'Enfermedades renales',
+            '4' => 'Alteraciones pancreáticas',
+            '5' => 'Enfermedades hepáticas',
+            '6' => 'Problemas articulares',
+            '7' => 'Problemas gastrointestinales',
+            '8' => 'Alergias cutáneas',
+            '9' => 'Intolerancias alimentarias'
+        )
+    ),
+    'allergies' => array(
+        'es' => array(
+            '1' => 'Nada',
+            '2' => 'Pollo',
+            '3' => 'Pavo',
+            '4' => 'Ternera',
+            '5' => 'Cerdo',
+            '6' => 'Cordero',
+            '7' => 'Conejo',
+            '8' => 'Pescado azul'
+        )
+    ),
+ */
         switch ((int)$data['type']) {
             case 1:
                 switch (true) {
