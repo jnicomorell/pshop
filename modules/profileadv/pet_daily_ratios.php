@@ -1,10 +1,5 @@
 <?php
 
-/**
- * List of ratios clasified for type, age, size, activity and physical condition
- * type -> age -> size -> activity -> physical_condition
- */
-
 return array(
     'type' => array(
         1 => array(
@@ -15,195 +10,411 @@ return array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.080,
-                                        2 => 0.080,
-                                        3 => 0.080
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.080,
-                                        2 => 0.080,
-                                        3 => 0.080
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.080,
-                                        2 => 0.080,
-                                        3 => 0.080
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.080,
-                                        2 => 0.080,
-                                        3 => 0.080
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         2 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         3 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         4 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         5 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         6 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.080,
-                                        2 => 0.080,
-                                        3 => 0.080
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.080,
-                                        2 => 0.080,
-                                        3 => 0.080
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.080,
-                                        2 => 0.080,
-                                        3 => 0.080
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.080,
-                                        2 => 0.080,
-                                        3 => 0.080
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
-                    )
+                    ),
                 ),
                 4 => array(
                     'size' => array(
@@ -211,195 +422,411 @@ return array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.080,
-                                        2 => 0.080,
-                                        3 => 0.080
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.080,
-                                        2 => 0.080,
-                                        3 => 0.080
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.080,
-                                        2 => 0.080,
-                                        3 => 0.080
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.080,
-                                        2 => 0.080,
-                                        3 => 0.080
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         2 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         3 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         4 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         5 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         6 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.080,
-                                        2 => 0.080,
-                                        3 => 0.080
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.080,
-                                        2 => 0.080,
-                                        3 => 0.080
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.080,
-                                        2 => 0.080,
-                                        3 => 0.080
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.080,
-                                        2 => 0.080,
-                                        3 => 0.080
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
-                    )
+                    ),
                 ),
                 5 => array(
                     'size' => array(
@@ -407,195 +834,411 @@ return array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.070,
-                                        2 => 0.070,
-                                        3 => 0.070
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.070,
-                                        2 => 0.070,
-                                        3 => 0.070
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.070,
-                                        2 => 0.070,
-                                        3 => 0.070
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.070,
-                                        2 => 0.070,
-                                        3 => 0.070
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         2 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         3 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         4 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         5 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         6 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.070,
-                                        2 => 0.070,
-                                        3 => 0.070
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.070,
-                                        2 => 0.070,
-                                        3 => 0.070
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.070,
-                                        2 => 0.070,
-                                        3 => 0.070
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.070,
-                                        2 => 0.070,
-                                        3 => 0.070
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
-                    )
+                    ),
                 ),
                 6 => array(
                     'size' => array(
@@ -603,195 +1246,411 @@ return array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.070,
-                                        2 => 0.070,
-                                        3 => 0.070
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.070,
-                                        2 => 0.070,
-                                        3 => 0.070
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.070,
-                                        2 => 0.070,
-                                        3 => 0.070
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.070,
-                                        2 => 0.070,
-                                        3 => 0.070
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         2 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         3 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         4 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         5 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         6 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.070,
-                                        2 => 0.070,
-                                        3 => 0.070
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.070,
-                                        2 => 0.070,
-                                        3 => 0.070
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.070,
-                                        2 => 0.070,
-                                        3 => 0.070
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.070,
-                                        2 => 0.070,
-                                        3 => 0.070
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.07,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
-                    )
+                    ),
                 ),
                 7 => array(
                     'size' => array(
@@ -799,195 +1658,411 @@ return array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         2 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         3 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         4 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         5 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         6 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
-                    )
+                    ),
                 ),
                 8 => array(
                     'size' => array(
@@ -995,195 +2070,411 @@ return array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         2 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         3 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         4 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         5 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         6 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
-                    )
+                    ),
                 ),
                 9 => array(
                     'size' => array(
@@ -1191,195 +2482,411 @@ return array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         2 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         3 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         4 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         5 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.020,
-                                        2 => 0.020,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.020,
-                                        2 => 0.020,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.020,
-                                        2 => 0.020,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.020,
-                                        2 => 0.020,
-                                        3 => 0.020
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         6 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
-                    )
+                    ),
                 ),
                 10 => array(
                     'size' => array(
@@ -1387,195 +2894,411 @@ return array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         2 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         3 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         4 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         5 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.020,
-                                        2 => 0.020,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.020,
-                                        2 => 0.020,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.020,
-                                        2 => 0.020,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.020,
-                                        2 => 0.020,
-                                        3 => 0.020
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         6 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
-                    )
+                    ),
                 ),
                 11 => array(
                     'size' => array(
@@ -1583,195 +3306,411 @@ return array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         2 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         3 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         4 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         5 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.020,
-                                        2 => 0.020,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.020,
-                                        2 => 0.020,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.020,
-                                        2 => 0.020,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.020,
-                                        2 => 0.020,
-                                        3 => 0.020
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         6 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
-                    )
+                    ),
                 ),
                 12 => array(
                     'size' => array(
@@ -1779,195 +3718,411 @@ return array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.040,
-                                        2 => 0.040,
-                                        3 => 0.040
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         2 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         3 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         4 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.030,
-                                        3 => 0.030
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         5 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.020,
-                                        2 => 0.020,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.020,
-                                        2 => 0.020,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.020,
-                                        2 => 0.020,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.020,
-                                        2 => 0.020,
-                                        3 => 0.020
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         6 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.050,
-                                        2 => 0.050,
-                                        3 => 0.050
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
-                    )
+                    ),
                 ),
                 13 => array(
                     'size' => array(
@@ -1975,195 +4130,411 @@ return array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.050,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.048,
-                                        2 => 0.040,
-                                        3 => 0.032
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.048,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.032,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.048,
-                                        2 => 0.040,
-                                        3 => 0.032
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.048,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.032,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.036,
-                                        2 => 0.030,
-                                        3 => 0.024
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.036,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.024,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         2 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.042,
-                                        2 => 0.035,
-                                        3 => 0.028
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.042,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.035,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.028,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.025,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.025,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.025,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.025,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.024,
-                                        2 => 0.020,
-                                        3 => 0.016
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.024,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.016,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         3 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.042,
-                                        2 => 0.035,
-                                        3 => 0.028
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.042,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.035,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.028,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.025,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.025,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.025,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.025,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.024,
-                                        2 => 0.020,
-                                        3 => 0.016
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.024,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.016,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         4 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.042,
-                                        2 => 0.035,
-                                        3 => 0.028
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.042,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.035,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.028,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.025,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.025,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.025,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.025,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.024,
-                                        2 => 0.020,
-                                        3 => 0.016
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.024,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.016,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         5 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.042,
-                                        2 => 0.035,
-                                        3 => 0.028
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.042,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.035,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.028,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.025,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.025,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.025,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.025,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.024,
-                                        2 => 0.020,
-                                        3 => 0.016
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.024,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.016,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         6 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.066,
-                                        2 => 0.055,
-                                        3 => 0.044
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.066,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.055,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.044,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.050,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.050,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.048,
-                                        2 => 0.040,
-                                        3 => 0.032
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.048,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.032,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
-                    )
+                    ),
                 ),
                 14 => array(
                     'size' => array(
@@ -2171,197 +4542,413 @@ return array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.048,
-                                        2 => 0.040,
-                                        3 => 0.032
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.048,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.032,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.048,
-                                        2 => 0.040,
-                                        3 => 0.032
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.048,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.032,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.048,
-                                        2 => 0.040,
-                                        3 => 0.032
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.048,
+                                            'menu' => ProfileadvMenuConstants::MENU_SENIOR_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_SENIOR_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.032,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.048,
-                                        2 => 0.040,
-                                        3 => 0.032
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.048,
+                                            'menu' => ProfileadvMenuConstants::MENU_SENIOR_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_SENIOR_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.032,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         2 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.025,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.025,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.025,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.025,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.025,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_SENIOR_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.025,
+                                            'menu' => ProfileadvMenuConstants::MENU_SENIOR_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.025,
-                                        3 => 0.020
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_SENIOR_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.025,
+                                            'menu' => ProfileadvMenuConstants::MENU_SENIOR_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         3 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.025,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.025,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.025,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.025,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.025,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_SENIOR_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.025,
+                                            'menu' => ProfileadvMenuConstants::MENU_SENIOR_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.025,
-                                        3 => 0.020
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_SENIOR_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.025,
+                                            'menu' => ProfileadvMenuConstants::MENU_SENIOR_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         4 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.025,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.025,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.025,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.025,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.025,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_SENIOR_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.025,
+                                            'menu' => ProfileadvMenuConstants::MENU_SENIOR_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.025,
-                                        3 => 0.020
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_SENIOR_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.025,
+                                            'menu' => ProfileadvMenuConstants::MENU_SENIOR_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         5 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.025,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.025,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.025,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.025,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.025,
-                                        3 => 0.020
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_SENIOR_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.025,
+                                            'menu' => ProfileadvMenuConstants::MENU_SENIOR_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.030,
-                                        2 => 0.025,
-                                        3 => 0.020
-                                    )
-                                )
-                            )
+                                        1 => array(
+                                            'ratio' => 0.03,
+                                            'menu' => ProfileadvMenuConstants::MENU_SENIOR_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.025,
+                                            'menu' => ProfileadvMenuConstants::MENU_SENIOR_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.02,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
                         ),
                         6 => array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.050,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.050,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.050,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_SENIOR_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_SENIOR_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.050,
-                                        3 => 0.040
-                                    )
-                                )
-                            )
-                        )
-                    )
-                )
-            )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_SENIOR_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_SENIOR_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
+                                ),
+                            ),
+                        ),
+                    ),
+                ),
+            ),
         ),
         2 => array(
             'age' => array(
@@ -2371,35 +4958,71 @@ return array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.080,
-                                        2 => 0.080,
-                                        3 => 0.080
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.080,
-                                        2 => 0.080,
-                                        3 => 0.080
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.080,
-                                        2 => 0.080,
-                                        3 => 0.080
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.080,
-                                        2 => 0.080,
-                                        3 => 0.080
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
-                            )
-                        )
-                    )
+                            ),
+                        ),
+                    ),
                 ),
                 4 => array(
                     'size' => array(
@@ -2407,35 +5030,71 @@ return array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.080,
-                                        2 => 0.080,
-                                        3 => 0.080
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.080,
-                                        2 => 0.080,
-                                        3 => 0.080
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.080,
-                                        2 => 0.080,
-                                        3 => 0.080
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.080,
-                                        2 => 0.080,
-                                        3 => 0.080
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_CACHORRO_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.08,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
-                            )
-                        )
-                    )
+                            ),
+                        ),
+                    ),
                 ),
                 5 => array(
                     'size' => array(
@@ -2443,35 +5102,71 @@ return array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
-                            )
-                        )
-                    )
+                            ),
+                        ),
+                    ),
                 ),
                 6 => array(
                     'size' => array(
@@ -2479,35 +5174,71 @@ return array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.060,
-                                        3 => 0.060
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
-                            )
-                        )
-                    )
+                            ),
+                        ),
+                    ),
                 ),
                 7 => array(
                     'size' => array(
@@ -2515,37 +5246,73 @@ return array(
                             'activity' => array(
                                 1 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.050,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 2 => array(
                                     'physical_condition' => array(
-                                        1 => 0.060,
-                                        2 => 0.050,
-                                        3 => 0.040
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.06,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.05,
+                                            'menu' => ProfileadvMenuConstants::MENU_ENERGY_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 3 => array(
                                     'physical_condition' => array(
-                                        1 => 0.048,
-                                        2 => 0.040,
-                                        3 => 0.032
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.048,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.032,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
                                 4 => array(
                                     'physical_condition' => array(
-                                        1 => 0.048,
-                                        2 => 0.040,
-                                        3 => 0.032
-                                    )
+                                        1 => array(
+                                            'ratio' => 0.048,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        2 => array(
+                                            'ratio' => 0.04,
+                                            'menu' => ProfileadvMenuConstants::MENU_INICI_COCINADO,
+                                        ),
+                                        3 => array(
+                                            'ratio' => 0.032,
+                                            'menu' => ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO,
+                                        ),
+                                    ),
                                 ),
-                            )
-                        )
-                    )
+                            ),
+                        ),
+                    ),
                 ),
-            )
-        )
-    )
+            ),
+        ),
+    ),
 );
