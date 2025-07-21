@@ -20,11 +20,11 @@ The available physical conditions are:
 2. Normal
 3. Gordito
 
-Daily ratio entries now also include a `menu` key with the name of the
-recommended menu for the selected condition.
+Daily ratio entries now also include a `menu` key with the product ID of the
+recommended menu for the selected condition. These IDs are defined as constants
+in the `ProfileadvMenuConstants` class.
 
-The list of possible menu values comes from the `ProfileadvMenuConstants` class
-and currently includes:
+The list of available menu constants is:
 
 ```
 MENU_INICI_COCINADO
