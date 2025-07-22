@@ -239,9 +239,7 @@ class CrmAccountValidationCron
                 break;
         }
 
-        if (isset($data['recommended_menu'])) {
-            $recommended = (int)$data['recommended_menu'];
-        } elseif ((int)$data['feeding'] === 3 && (int) $data['type'] === 1) { //Recommend barf for dogs
+        if ((int)$data['feeding'] === 3 && (int) $data['type'] === 1) { //Recommend barf for dogs
             switch ($size) {
                 case 1:
                 case 2:
