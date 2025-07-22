@@ -1,5 +1,5 @@
 <?php
-require_once _PS_MODULE_DIR_ . 'profileadv/controllers/AgeCalculator.php';
+require_once _PS_MODULE_DIR_ . 'profileadv/classes/AgeCalculator.php';
 
 class calculateAmount
 {
@@ -179,11 +179,8 @@ class calculateAmount
             $data['reason'] = 1;
         } else {
 
-            require_once _PS_MODULE_DIR_.'profileadv/classes/MenuConstants.php';
             $daily_ratios = require(_PS_MODULE_DIR_ . $name_module . '/pet_daily_ratios.php');
-            $conditionData = $daily_ratios['type'][$type]['age'][$age]['size'][$size]['activity'][$activity]['physical_condition'][$physical_condition];
-            $data['dailyrate'] = (float) $conditionData['ratio'];
-            $data['recommended_menu'] = $conditionData['menu'];
+            $data['dailyrate'] = (float) $daily_ratios['type'][$type]['age'][$age]['size'][$size]['activity'][$activity]['physical_condition'][$physical_condition];
         }
 
         return $data;

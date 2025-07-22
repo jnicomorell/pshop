@@ -77,8 +77,14 @@ class profileadv extends Module
         }
 
         ## prestashop 1.7 ##
-        $smarty = $this->context->smarty;
-        $smarty->assign($this->name . 'is17', version_compare(_PS_VERSION_, '1.7', '>') ? 1 : 0);
+        if (version_compare(_PS_VERSION_, '1.7', '>')) {
+            require_once(_PS_MODULE_DIR_ . $this->name . '/classes/ps17helpprofileadv.class.php');
+            $ps17help = new ps17helpprofileadv();
+            $ps17help->setMissedVariables();
+        } else {
+            $smarty = $this->context->smarty;
+            $smarty->assign($this->name . 'is17', 0);
+        }
         ## prestashop 1.7 ##
     }
 
@@ -545,6 +551,9 @@ class profileadv extends Module
 
             if (sizeof($errors) == 0) {
 
+                // clear cache
+                $this->clearSmartyCacheItems();
+                // clear cache
 
 
                 $url = $currentIndex . '&conf=6&tab=AdminModules&profileadv_settingsset=1&configure=' . $this->name . '&token=' . Tools::getAdminToken('AdminModules' . (int)(Tab::getIdFromClassName('AdminModules')) . (int)($cookie->id_employee)) . '';
@@ -634,4 +643,10 @@ class profileadv extends Module
         );
     }
 
+    public function clearSmartyCacheItems()
+    {
+        include_once(_PS_MODULE_DIR_ . $this->name . '/classes/cacheprofileadv.class.php');
+        $cache = new cacheprofileadv();
+        $cache->clearSmartyCacheModule();
+    }
 }
