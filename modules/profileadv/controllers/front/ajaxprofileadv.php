@@ -541,7 +541,1381 @@ Estas son los posibles valores que se envían
         ) {
             $recommended = ProfileadvMenuConstants::MENU_PETIT_CACHORRO5KG1A_NOESTERILIZADO_PIENSO;
             $product_recommend['price'] = 4.64;
-        } 
+        }
+
+        // Perro → Petit (<5kg) → Cachorro → No esterilizado → Guau&Cat cocinado
+        if ((int)$data['type'] === 1 && $size === 1 && $age >= 3 && $age < 12 &&
+        (int)$data['esterilized'] === 2 && (int)$data['feeding'] === 4) {
+        $recommended = ProfileadvMenuConstants::MENU_PETIT_CACHORRO5KG1A_NOESTERILIZADO_GUAUCAT_COCINADO;
+        $product = new Product((int)$recommended, true, (int)Context::getContext()->language->id);
+        $product_recommend['price'] = 4.64;
+        }
+
+        // Perro → Petit (<5kg) → Cachorro → No esterilizado → BARF
+        if ((int)$data['type'] === 1 && $size === 1 && $age >= 3 && $age < 12 &&
+        (int)$data['esterilized'] === 2 && (int)$data['feeding'] === 3) {
+        $recommended = ProfileadvMenuConstants::MENU_PETIT_CACHORRO5KG1A_NOESTERILIZADO_BAF;
+        $product = new Product((int)$recommended, true, (int)Context::getContext()->language->id);
+        $product_recommend['price'] = 4.64;
+        }
+
+        // Perro → Petit (<5kg) → Cachorro → No esterilizado → Guau&Cat crudo
+        if ((int)$data['type'] === 1 && $size === 1 && $age >= 3 && $age < 12 &&
+            (int)$data['esterilized'] === 2 && (int)$data['feeding'] === 4 && in_array('Guau&Cat crudo', $data)) {
+            $recommended = ProfileadvMenuConstants::MENU_PETIT_CACHORRO5KG1A_NOESTERILIZADO_GUAUCAT_CRUDO;
+            $product = new Product((int)$recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.64;
+            }
+
+            if ((int)$data['type'] === 1 && $size === 1 && $age >= 3 && $age < 12 &&
+            (int)$data['esterilized'] === 2 && isset($data['activity']) && (int)$data['activity'] <= 2) {
+        
+            switch ((int)$data['feeding']) {
+                case 1: case 2: case 4: case 5:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_CACHORRO5KG1A_NOESTERILIZADO_PELUDO_TRABAJO_PIENSO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_CACHORRO5KG1A_NOESTERILIZADO_PELUDO_TRABAJO_BAF;
+                    break;
+                default:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_CACHORRO5KG1A_NOESTERILIZADO_PELUDO_TRABAJO_PIENSO;
+                    break;
+            }
+        
+            $product = new Product((int)$recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.64;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 1 && $age >= 3 && $age < 12 &&
+            (int)$data['esterilized'] === 1 && isset($data['activity']) && (int)$data['activity'] <= 2) {
+
+            switch ((int)$data['feeding']) {
+                case 1: case 2: case 4: case 5:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_CACHORRO5KG1A_ESTILIZADO_PELUDO_TRABAJO_PIENSO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_CACHORRO5KG1A_ESTILIZADO_PELUDO_TRABAJO_BAF;
+                    break;
+                default:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_CACHORRO5KG1A_ESTILIZADO_PELUDO_TRABAJO_PIENSO;
+                    break;
+            }
+
+            $product = new Product((int)$recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.64;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 1 && $age >= 3 && $age < 12 &&
+            (int)$data['esterilized'] === 2 &&
+            in_array('Pollo', $data['allergies'], true)) {
+
+            switch ((int)$data['feeding']) {
+                case 1: case 2: case 4: case 5:
+                    if ((int)$data['activity'] <= 2) {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_CACHORRO5KG1A_NOESTERILIZADO_PELUDO_TRABAJO_PIENSO_ALERGIA_POLLO;
+                    } else {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_CACHORRO5KG1A_NOESTERILIZADO_PIENSO_ALERGIA_POLLO;
+                    }
+                    break;
+                case 3:
+                    if ((int)$data['activity'] <= 2) {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_CACHORRO5KG1A_NOESTERILIZADO_PELUDO_TRABAJO_BAF_ALERGIA_POLLO;
+                    } else {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_CACHORRO5KG1A_NOESTERILIZADO_BAF_ALERGIA_POLLO;
+                    }
+                    break;
+            }
+
+            $product = new Product((int)$recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.64;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 1 && $age >= 3 && $age < 12 &&
+            (int)$data['esterilized'] === 1 &&
+            in_array('Pollo', $data['allergies'], true)) {
+
+            switch ((int)$data['feeding']) {
+                case 1: case 2: case 4: case 5:
+                    if ((int)$data['activity'] <= 2) {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_CACHORRO5KG1A_ESTILIZADO_PELUDO_TRABAJO_PIENSO_ALERGIA_POLLO;
+                    } else {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_CACHORRO5KG1A_ESTILIZADO_PIENSO_ALERGIA_POLLO;
+                    }
+                    break;
+                case 3:
+                    if ((int)$data['activity'] <= 2) {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_CACHORRO5KG1A_ESTILIZADO_PELUDO_TRABAJO_BAF_ALERGIA_POLLO;
+                    } else {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_CACHORRO5KG1A_ESTILIZADO_BAF_ALERGIA_POLLO;
+                    }
+                    break;
+            }
+
+            $product = new Product((int)$recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.64;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 1 && $age >= 3 && $age < 12 &&
+            (int)$data['esterilized'] === 2 &&
+            in_array('Pescado azul', $data['allergies'], true)) {
+        
+            $recommended = ProfileadvMenuConstants::MENU_PETIT_CACHORRO5KG1A_NOESTERILIZADO_PIENSO_ALERGIA_PESCADO;
+        
+            $product = new Product((int)$recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.64;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 1 && $age >= 3 && $age < 12 &&
+            (int)$data['esterilized'] === 2 &&
+            in_array('Pescado azul', $data['allergies'], true)) {
+
+            switch ((int)$data['feeding']) {
+                case 1: case 2: case 4: case 5:
+                    if ((int)$data['activity'] <= 2) {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_CACHORRO5KG1A_NOESTERILIZADO_PELUDO_TRABAJO_PIENSO_ALERGIA_PESCADO;
+                    } else {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_CACHORRO5KG1A_NOESTERILIZADO_PIENSO_ALERGIA_PESCADO;
+                    }
+                    break;
+                case 3:
+                    if ((int)$data['activity'] <= 2) {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_CACHORRO5KG1A_NOESTERILIZADO_PELUDO_TRABAJO_BAF_ALERGIA_PESCADO;
+                    } else {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_CACHORRO5KG1A_NOESTERILIZADO_BAF_ALERGIA_PESCADO;
+                    }
+                    break;
+            }
+
+            $product = new Product((int)$recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.64;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 1 && $age >= 3 && $age < 12 &&
+            (int)$data['esterilized'] === 1 &&
+            in_array('Pescado azul', $data['allergies'], true)) {
+
+            switch ((int)$data['feeding']) {
+                case 1: case 2: case 4: case 5:
+                    if ((int)$data['activity'] <= 2) {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_CACHORRO5KG1A_ESTILIZADO_PELUDO_TRABAJO_PIENSO_ALERGIA_PESCADO;
+                    } else {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_CACHORRO10KG1A_ESTILIZADO_PIENSO_ALERGIA_PESCADO;
+                    }
+                    break;
+                case 3:
+                    if ((int)$data['activity'] <= 2) {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_CACHORRO5KG1A_ESTILIZADO_PELUDO_TRABAJO_BAF_ALERGIA_PESCADO;
+                    } else {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_CACHORRO10KG1A_ESTILIZADO_BAF_ALERGIA_PESCADO;
+                    }
+                    break;
+            }
+
+            $product = new Product((int)$recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.64;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 1 && $age >= 12 &&
+            (int)$data['esterilized'] === 2 &&
+            in_array('Pollo', $data['allergies'], true)) {
+
+            switch ((int)$data['feeding']) {
+                case 1: case 2: case 4: case 5:
+                    if ((int)$data['activity'] <= 2) {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT5KGM1A_NOESTERILIZADO_PELUDO_TRABAJO_PIENSO_ALERGIA_POLLO;
+                    } else {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT5KGM1A_NOESTERILIZADO_PIENSO_ALERGIA_POLLO;
+                    }
+                    break;
+                case 3:
+                    if ((int)$data['activity'] <= 2) {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT5KGM1A_NOESTERILIZADO_PELUDO_TRABAJO_BAF_ALERGIA_POLLO;
+                    } else {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT5KGM1A_NOESTERILIZADO_BAF_ALERGIA_POLLO;
+                    }
+                    break;
+            }
+
+            $product = new Product((int)$recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.64;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 1 && $age >= 12 &&
+            (int)$data['esterilized'] === 1 &&
+            in_array('Pollo', $data['allergies'], true)) {
+
+            switch ((int)$data['feeding']) {
+                case 1: case 2: case 4: case 5:
+                    if ((int)$data['activity'] <= 2) {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT5KGM1A_ESTILIZADO_PELUDO_TRABAJO_PIENSO_ALERGIA_POLLO;
+                    } else {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT5KGM1A_ESTILIZADO_PIENSO_ALERGIA_POLLO;
+                    }
+                    break;
+                case 3:
+                    if ((int)$data['activity'] <= 2) {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT5KGM1A_ESTILIZADO_PELUDO_TRABAJO_BAF_ALERGIA_POLLO;
+                    } else {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT5KGM1A_ESTILIZADO_BAF_ALERGIA_POLLO;
+                    }
+                    break;
+            }
+
+            $product = new Product((int)$recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.64;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 1 && $age >= 12 &&
+            (int)$data['esterilized'] === 2 &&
+            in_array('Pescado', $data['allergies'], true)) {
+
+            switch ((int)$data['feeding']) {
+                case 1: case 2: case 4: case 5:
+                    if ((int)$data['activity'] <= 2) {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT5KGM1A_NOESTERILIZADO_PELUDO_TRABAJO_PIENSO_ALERGIA_PESCADO;
+                    } else {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT5KGM1A_NOESTERILIZADO_PIENSO_ALERGIA_PESCADO;
+                    }
+                    break;
+                case 3:
+                    if ((int)$data['activity'] <= 2) {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT5KGM1A_NOESTERILIZADO_PELUDO_TRABAJO_BAF_ALERGIA_PESCADO;
+                    } else {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT5KGM1A_NOESTERILIZADO_BAF_ALERGIA_PESCADO;
+                    }
+                    break;
+            }
+
+            $product = new Product((int)$recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.64;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 1 && $age >= 12 &&
+            (int)$data['esterilized'] === 1 &&
+            in_array('Pescado', $data['allergies'], true)) {
+
+            switch ((int)$data['feeding']) {
+                case 1: case 2: case 4: case 5:
+                    if ((int)$data['activity'] <= 2) {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT5KGM1A_ESTILIZADO_PELUDO_TRABAJO_PIENSO_ALERGIA_PESCADO;
+                    } else {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT5KGM1A_ESTILIZADO_PIENSO_ALERGIA_PESCADO;
+                    }
+                    break;
+                case 3:
+                    if ((int)$data['activity'] <= 2) {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT5KGM1A_ESTILIZADO_PELUDO_TRABAJO_BAF_ALERGIA_PESCADO;
+                    } else {
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT5KGM1A_ESTILIZADO_BAF_ALERGIA_PESCADO;
+                    }
+                    break;
+            }
+
+            $product = new Product((int)$recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.64;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 1 && $age >= 12 &&
+            in_array($data['physical_condition'], ['Gordito'], true)) {
+
+            // Sin alergias específicas
+            if (empty($data['allergies'])) {
+                switch ((int)$data['feeding']) {
+                    case 1: case 2: case 4: case 5:
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT5KGM1A_NOESTERILIZADO_GUAUCAT_COCINADO_SOBREPESO;
+                        break;
+                    case 3:
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT5KGM1A_NOESTERILIZADO_BAF_SOBREPESO;
+                        break;
+                }
+            }
+
+            // Con alergia a pollo
+            if (in_array('Pollo', $data['allergies'], true)) {
+                switch ((int)$data['feeding']) {
+                    case 1: case 2: case 4: case 5:
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT5KGM1A_NOESTERILIZADO_GUAUCAT_COCINADO_ALERGIA_POLLO_SOBREPESO;
+                        break;
+                    case 3:
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT5KGM1A_NOESTERILIZADO_BAF_ALERGIA_POLLO_SOBREPESO;
+                        break;
+                }
+            }
+
+            // Con alergia a pescado
+            if (in_array('Pescado', $data['allergies'], true)) {
+                switch ((int)$data['feeding']) {
+                    case 1: case 2: case 4: case 5:
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT5KGM1A_NOESTERILIZADO_GUAUCAT_COCINADO_ALERGIA_PESCADO_SOBREPESO;
+                        break;
+                    case 3:
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT5KGM1A_NOESTERILIZADO_BAF_ALERGIA_PESCADO_SOBREPESO;
+                        break;
+                }
+            }
+
+            $product = new Product((int)$recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.64;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 1 && $age >= 12 &&
+            in_array($data['physical_condition'], ['Gordito'], true) &&
+            (int)$data['esterilized'] === 1) {
+
+            // Sin alergias específicas
+            if (empty($data['allergies'])) {
+                switch ((int)$data['feeding']) {
+                    case 1: case 2: case 4: case 5:
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT5KGM1A_ESTILIZADO_GUAUCAT_COCINADO_SOBREPESO;
+                        break;
+                    case 3:
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT5KGM1A_ESTILIZADO_BAF_SOBREPESO;
+                        break;
+                }
+            }
+
+            // Con alergia a pollo
+            if (in_array('Pollo', $data['allergies'], true)) {
+                switch ((int)$data['feeding']) {
+                    case 1: case 2: case 4: case 5:
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT5KGM1A_ESTILIZADO_GUAUCAT_COCINADO_ALERGIA_POLLO_SOBREPESO;
+                        break;
+                    case 3:
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT5KGM1A_ESTILIZADO_BAF_ALERGIA_POLLO_SOBREPESO;
+                        break;
+                }
+            }
+
+            // Con alergia a pescado
+            if (in_array('Pescado', $data['allergies'], true)) {
+                switch ((int)$data['feeding']) {
+                    case 1: case 2: case 4: case 5:
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT10KG1A_ESTILIZADO_GUAUCAT_COCINADO_ALERGIA_PESCADO_SOBREPESO;
+                        break;
+                    case 3:
+                        $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT10KG1A_ESTILIZADO_BAF_ALERGIA_PESCADO_SOBREPESO;
+                        break;
+                }
+            }
+
+            $product = new Product((int)$recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.64;
+        }
+
+        if ((int)$data['type'] === 1 && in_array($data['physical_condition'], ['Gordito'], true) &&
+            (int)$data['esterilized'] === 1 && $size === 2 && $age >= 12 &&
+            in_array('Pescado azul', $data['allergies'], true) &&
+            (int)$data['feeding'] === 3) {
+
+            $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT10KG1A_ESTILIZADO_BAF_ALERGIA_PESCADO_SOBREPESO;
+            $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.06;
+        }
+
+        if ((int)$data['type'] === 1 && in_array($data['physical_condition'], ['Gordito'], true) &&
+            (int)$data['esterilized'] === 1 && $size === 2 && $age >= 12 &&
+            in_array('Pescado azul', $data['allergies'], true) &&
+            (int)$data['feeding'] === 4) {
+
+            $recommended = ProfileadvMenuConstants::MENU_PETIT_ADULT10KG1A_ESTILIZADO_GUAUCAT_CRUDO_ALERGIA_PESCADO_SOBREPESO;
+            $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.06;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 1 && $age >= 108 &&
+            (int)$data['esterilized'] === 2 && empty($data['allergies'])) {
+
+            switch ((int)$data['feeding']) {
+                case 1: case 2: case 4: case 5:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR5KGM9A_NOESTERILIZADO_PIENSO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR5KGM9A_NOESTERILIZADO_BAF;
+                    break;
+            }
+
+            $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.06;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 1 && $age >= 108 &&
+            (int)$data['esterilized'] === 2 && (int)$data['feeding'] === 4) {
+
+            $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR5KGM9A_NOESTERILIZADO_GUAUCAT_COCINADO;
+            $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.06;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 1 && $age >= 108 &&
+            (int)$data['esterilized'] === 1) {
+
+            switch ((int)$data['feeding']) {
+                case 1: case 2: case 4: case 5:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR5KGM9A_ESTILIZADO_PIENSO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR5KGM9A_ESTILIZADO_BAF;
+                    break;
+            }
+
+            $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.06;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 1 && $age >= 108 &&
+            (int)$data['esterilized'] === 1 && (int)$data['feeding'] === 4) {
+
+            $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR5KGM9A_ESTILIZADO_GUAUCAT_CRUDO;
+            $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.06;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 1 && $age >= 108 &&
+            (int)$data['esterilized'] === 2 && in_array('Pollo', $data['allergies'], true)) {
+
+            switch ((int)$data['feeding']) {
+                case 1: case 2: case 4: case 5:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR5KGM9A_NOESTERILIZADO_GUAUCAT_COCINADO_ALERGIA_POLLO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR5KGM9A_NOESTERILIZADO_BAF_ALERGIA_POLLO;
+                    break;
+            }
+
+            $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.06;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 1 && $age >= 108 &&
+            (int)$data['esterilized'] === 2 && in_array('Pescado azul', $data['allergies'], true)) {
+
+            $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR5KGM9A_NOESTERILIZADO_GUAUCAT_COCINADO_ALERGIA_PESCADO;
+            $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.06;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 1 && $age >= 108 &&
+            (int)$data['esterilized'] === 2 && (int)$data['feeding'] === 3 &&
+            in_array('Pescado azul', $data['allergies'], true)) {
+
+            $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR5KGM9A_NOESTERILIZADO_BAF_ALERGIA_PESCADO;
+            $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.06;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 1 && $age >= 108 &&
+            (int)$data['esterilized'] === 2 && (int)$data['feeding'] === 4 &&
+            in_array('Pescado azul', $data['allergies'], true)) {
+
+            $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR5KGM9A_NOESTERILIZADO_GUAUCAT_CRUDO_ALERGIA_PESCADO;
+            $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.06;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 2 && $age >= 108 &&
+            (int)$data['esterilized'] === 1 && in_array('Pescado azul', $data['allergies'], true)) {
+
+            switch ((int)$data['feeding']) {
+                case 1: case 2: case 5:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR10KG9A_ESTILIZADO_PIENSO_ALERGIA_PESCADO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR10KG9A_ESTILIZADO_BAF_ALERGIA_PESCADO;
+                    break;
+                case 4:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR10KG9A_ESTILIZADO_GUAUCAT_CRUDO_ALERGIA_PESCADO;
+                    break;
+            }
+
+            $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.06;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 1 && $age >= 108 &&
+            in_array($data['physical_condition'], ['Gordito'], true) &&
+            (int)$data['esterilized'] === 1) {
+
+            switch ((int)$data['feeding']) {
+                case 1: case 2: case 5:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR5KGM9A_ESTILIZADO_PIENSO_SOBREPESO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR5KGM9A_ESTILIZADO_BAF_SOBREPESO;
+                    break;
+                case 4:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR5KGM9A_ESTILIZADO_GUAUCAT_CRUDO_SOBREPESO;
+                    break;
+            }
+
+            $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.06;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 1 && $age >= 108 &&
+            in_array($data['physical_condition'], ['Gordito'], true) &&
+            (int)$data['esterilized'] === 2 &&
+            in_array('Pollo', $data['allergies'], true)) {
+
+            switch ((int)$data['feeding']) {
+                case 1: case 2: case 5:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR5KGM9A_NOESTERILIZADO_PIENSO_ALERGIA_POLLO_SOBREPESO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR5KGM9A_NOESTERILIZADO_BAF_ALERGIA_POLLO_SOBREPESO;
+                    break;
+                case 4:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR5KGM9A_NOESTERILIZADO_GUAUCAT_CRUDO_ALERGIA_POLLO_SOBREPESO;
+                    break;
+            }
+
+            $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.06;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 1 && $age >= 108 &&
+            in_array($data['physical_condition'], ['Gordito'], true) &&
+            (int)$data['esterilized'] === 1 &&
+            in_array('Pollo', $data['allergies'], true)) {
+
+            switch ((int)$data['feeding']) {
+                case 2:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR5KGM9A_ESTILIZADO_GUAUCAT_COCINADO_ALERGIA_POLLO_SOBREPESO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR5KGM9A_ESTILIZADO_BAF_ALERGIA_POLLO_SOBREPESO;
+                    break;
+                case 4:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR5KGM9A_ESTILIZADO_GUAUCAT_CRUDO_ALERGIA_POLLO_SOBREPESO;
+                    break;
+            }
+
+            $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.06;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 1 && $age >= 108 &&
+            in_array($data['physical_condition'], ['Gordito'], true) &&
+            (int)$data['esterilized'] === 2 &&
+            in_array('Pescado azul', $data['allergies'], true)) {
+
+            switch ((int)$data['feeding']) {
+                case 1: case 2: case 5:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR5KGM9A_NOESTERILIZADO_PIENSO_ALERGIA_PESCADO_SOBREPESO;
+                    break;
+                case 2:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR5KGM9A_NOESTERILIZADO_GUAUCAT_COCINADO_ALERGIA_PESCADO_SOBREPESO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR5KGM9A_NOESTERILIZADO_BAF_ALERGIA_PESCADO_SOBREPESO;
+                    break;
+                case 4:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR5KGM9A_NOESTERILIZADO_GUAUCAT_CRUDO_ALERGIA_PESCADO_SOBREPESO;
+                    break;
+            }
+
+            $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.06;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 2 && $age >= 108 &&
+            in_array($data['physical_condition'], ['Gordito'], true) &&
+            (int)$data['esterilized'] === 1 &&
+            in_array('Pescado azul', $data['allergies'], true)) {
+
+            switch ((int)$data['feeding']) {
+                case 1: case 2: case 5:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR10KG9A_ESTILIZADO_PIENSO_ALERGIA_PESCADO_SOBREPESO;
+                    break;
+                case 2:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR10KG9A_ESTILIZADO_GUAUCAT_COCINADO_ALERGIA_PESCADO_SOBREPESO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR10KG9A_ESTILIZADO_BAF_ALERGIA_PESCADO_SOBREPESO;
+                    break;
+                case 4:
+                    $recommended = ProfileadvMenuConstants::MENU_PETIT_SENIOR10KG9A_ESTILIZADO_GUAUCAT_CRUDO_ALERGIA_PESCADO_SOBREPESO;
+                    break;
+            }
+
+            $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 4.06;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 3 && $age >= 3 && $age < 12 &&
+            (int)$data['esterilized'] === 2) {
+
+            switch ((int)$data['feeding']) {
+                case 1: case 2: case 5:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_CACHORRO25KG3M1A_NOESTERILIZADO_PIENSO;
+                    break;
+                case 2:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_CACHORRO25KG3M1A_NOESTERILIZADO_GUAUCAT_COCINADO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_CACHORRO25KG3M1A_NOESTERILIZADO_BAF;
+                    break;
+                case 4:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_CACHORRO25KG3M1A_NOESTERILIZADO_GUAUCAT_CRUDO;
+                    break;
+            }
+
+            $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 5.60;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 3 && $age >= 3 && $age < 12 &&
+            (int)$data['esterilized'] === 1 &&
+            isset($data['activity']) && $data['activity'] === 'trabajo') {
+
+            switch ((int)$data['feeding']) {
+                case 1: case 2: case 5:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_CACHORRO25KG3M1A_ESTILIZADO_PELUDO_TRABAJO_PIENSO;
+                    break;
+                case 2:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_CACHORRO25KG3M1A_ESTILIZADO_PELUDO_TRABAJO_GUAUCAT_COCINADO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_CACHORRO25KG3M1A_ESTILIZADO_PELUDO_TRABAJO_BAF;
+                    break;
+                case 4:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_CACHORRO25KG3M1A_ESTILIZADO_PELUDO_TRABAJO_GUAUCAT_CRUDO;
+                    break;
+            }
+
+            $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 5.60;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 3 && $age >= 3 && $age < 12 &&
+            (int)$data['esterilized'] === 1 &&
+            isset($data['activity']) && $data['activity'] === 'trabajo' &&
+            in_array('Pollo', $data['allergies'], true)) {
+
+            switch ((int)$data['feeding']) {
+                case 1: case 5:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_CACHORRO25KG3M1A_ESTILIZADO_PELUDO_TRABAJO_PIENSO_ALERGIA_POLLO;
+                    break;
+                case 2:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_CACHORRO25KG3M1A_ESTILIZADO_PELUDO_TRABAJO_GUAUCAT_COCINADO_ALERGIA_POLLO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_CACHORRO25KG3M1A_ESTILIZADO_PELUDO_TRABAJO_BAF_ALERGIA_POLLO;
+                    break;
+                case 4:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_CACHORRO25KG3M1A_ESTILIZADO_PELUDO_TRABAJO_GUAUCAT_CRUDO_ALERGIA_POLLO;
+                    break;
+            }
+
+            $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 5.60;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 3 && $age >= 3 && $age < 12 &&
+            (int)$data['esterilized'] === 1 &&
+            (!isset($data['activity']) || $data['activity'] !== 'trabajo')) {
+
+            switch ((int)$data['feeding']) {
+                case 1: case 2: case 5:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_CACHORRO25KG3M1A_ESTILIZADO_PIENSO;
+                    break;
+                case 2:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_CACHORRO25KG3M1A_ESTILIZADO_GUAUCAT_COCINADO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_CACHORRO25KG3M1A_ESTILIZADO_BAF;
+                    break;
+                case 4:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_CACHORRO25KG3M1A_ESTILIZADO_GUAUCAT_CRUDO;
+                    break;
+            }
+
+            $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 5.60;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 3 && $age >= 3 && $age < 12 &&
+            (int)$data['esterilized'] === 1 &&
+            (!isset($data['activity']) || $data['activity'] !== 'trabajo') &&
+            in_array('Pollo', $data['allergies'], true)) {
+
+            switch ((int)$data['feeding']) {
+                case 2:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_CACHORRO25KG3M1A_ESTILIZADO_GUAUCAT_COCINADO_ALERGIA_POLLO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_CACHORRO25KG3M1A_ESTILIZADO_BAF_ALERGIA_POLLO;
+                    break;
+                case 4:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_CACHORRO25KG3M1A_ESTILIZADO_GUAUCAT_CRUDO_ALERGIA_POLLO;
+                    break;
+            }
+
+            $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 5.60;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 3 && $age >= 3 && $age < 12 &&
+            (int)$data['esterilized'] === 0 &&
+            in_array('Pescado', $data['allergies'], true) &&
+            (!isset($data['activity']) || $data['activity'] !== 'trabajo')) {
+
+            switch ((int)$data['feeding']) {
+                case 1: case 2: case 5:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_CACHORRO25KG3M1A_NOESTERILIZADO_PIENSO_ALERGIA_PESCADO;
+                    break;
+                case 2:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_CACHORRO25KG3M1A_NOESTERILIZADO_GUAUCAT_COCINADO_ALERGIA_PESCADO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_CACHORRO25KG3M1A_NOESTERILIZADO_BAF_ALERGIA_PESCADO;
+                    break;
+                case 4:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_CACHORRO25KG3M1A_NOESTERILIZADO_GUAUCAT_CRUDO_ALERGIA_PESCADO;
+                    break;
+            }
+
+            $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 5.60;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 3 && $age >= 12 &&
+            (int)$data['esterilized'] === 0 &&
+            (isset($data['activity']) && $data['activity'] === 'trabajo') &&
+            empty($data['allergies'])) {
+
+            switch ((int)$data['feeding']) {
+                case 1: case 2: case 5:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_ADULT25KG1A_NOESTERILIZADO_PELUDO_TRABAJO_PIENSO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_ADULT25KG1A_NOESTERILIZADO_PELUDO_TRABAJO_BAF;
+                    break;
+                case 4:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_ADULT25KG1A_NOESTERILIZADO_PELUDO_TRABAJO_GUAUCAT_CRUDO;
+                    break;
+                case 2: // Guau&Cat cocinado
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_ADULT25KG1A_NOESTERILIZADO_PELUDO_TRABAJO_GUAUCAT_COCINADO;
+                    break;
+            }
+
+            $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 5.60;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 3 && $age >= 12 &&
+            (int)$data['esterilized'] === 1 &&
+            (isset($data['activity']) && $data['activity'] === 'trabajo') &&
+            empty($data['allergies'])) {
+
+            switch ((int)$data['feeding']) {
+                case 1: case 2: case 5:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_ADULT25KG1A_ESTILIZADO_PELUDO_TRABAJO_PIENSO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_ADULT25KG1A_ESTILIZADO_PELUDO_TRABAJO_BAF;
+                    break;
+                case 4:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_ADULT25KG1A_ESTILIZADO_PELUDO_TRABAJO_GUAUCAT_CRUDO;
+                    break;
+                case 2: // Guau&Cat cocinado
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_ADULT25KG1A_ESTILIZADO_PELUDO_TRABAJO_GUAUCAT_COCINADO;
+                    break;
+            }
+
+            $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 5.60;
+        }
+
+        if ((int)$data['type'] === 1 && $size === 3 && $age >= 12 &&
+            (int)$data['esterilized'] === 0 &&
+            in_array('pescado', $data['allergies'])) {
+
+            $isWorking = (isset($data['activity']) && $data['activity'] === 'trabajo');
+
+            switch ((int)$data['feeding']) {
+                case 1: case 5:
+                    $recommended = $isWorking
+                        ? ProfileadvMenuConstants::MENU_MITJA_ADULT25KG1A_NOESTERILIZADO_PELUDO_TRABAJO_PIENSO_ALERGIA_PESCADO
+                        : ProfileadvMenuConstants::MENU_MITJA_ADULT25KG1A_NOESTERILIZADO_PIENSO_ALERGIA_PESCADO;
+                    break;
+                case 2:
+                    $recommended = $isWorking
+                        ? ProfileadvMenuConstants::MENU_MITJA_ADULT25KG1A_NOESTERILIZADO_PELUDO_TRABAJO_GUAUCAT_COCINADO_ALERGIA_PESCADO
+                        : ProfileadvMenuConstants::MENU_MITJA_ADULT25KG1A_NOESTERILIZADO_GUAUCAT_COCINADO_ALERGIA_PESCADO;
+                    break;
+                case 3:
+                    $recommended = $isWorking
+                        ? ProfileadvMenuConstants::MENU_MITJA_ADULT25KG1A_NOESTERILIZADO_PELUDO_TRABAJO_BAF_ALERGIA_PESCADO
+                        : ProfileadvMenuConstants::MENU_MITJA_ADULT25KG1A_NOESTERILIZADO_BAF_ALERGIA_PESCADO;
+                    break;
+                case 4:
+                    $recommended = $isWorking
+                        ? ProfileadvMenuConstants::MENU_MITJA_ADULT25KG1A_NOESTERILIZADO_PELUDO_TRABAJO_GUAUCAT_CRUDO_ALERGIA_PESCADO
+                        : ProfileadvMenuConstants::MENU_MITJA_ADULT25KG1A_NOESTERILIZADO_GUAUCAT_CRUDO_ALERGIA_PESCADO;
+                    break;
+            }
+
+            $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 5.60;
+        }
+
+        // Mitjà sénior (>9 anys), no esterilitzat
+        if ((int)$data['type'] === 1 && $size === 3 && $age >= 9 * 12 &&
+        (int)$data['esterilized'] === 0) {
+
+            $hasPolloAllergy   = in_array('pollo', $data['allergies']);
+            $hasPescadoAllergy = in_array('pescado', $data['allergies']);
+
+            switch ((int)$data['feeding']) {
+                case 1: case 5: // pienso o deshidratado
+                    if ($hasPolloAllergy) {
+                        $recommended = ProfileadvMenuConstants::MENU_MITJA_SENIOR25KG9A_NOESTERILIZADO_PIENSO_ALERGIA_POLLO;
+                    } elseif ($hasPescadoAllergy) {
+                        $recommended = ProfileadvMenuConstants::MENU_MITJA_SENIOR25KG9A_NOESTERILIZADO_PIENSO_ALERGIA_PESCADO;
+                    } else {
+                        $recommended = ProfileadvMenuConstants::MENU_MITJA_SENIOR25KG9A_NOESTERILIZADO_PIENSO;
+                    }
+                    break;
+                case 2: // Guau&Cat cocinado
+                    if ($hasPolloAllergy) {
+                        $recommended = ProfileadvMenuConstants::MENU_MITJA_SENIOR25KG9A_NOESTERILIZADO_GUAUCAT_COCINADO_ALERGIA_POLLO;
+                    } elseif ($hasPescadoAllergy) {
+                        $recommended = ProfileadvMenuConstants::MENU_MITJA_SENIOR25KG9A_NOESTERILIZADO_GUAUCAT_COCINADO_ALERGIA_PESCADO;
+                    } else {
+                        $recommended = ProfileadvMenuConstants::MENU_MITJA_SENIOR25KG9A_NOESTERILIZADO_GUAUCAT_COCINADO;
+                    }
+                    break;
+                case 3: // BARF
+                    if ($hasPolloAllergy) {
+                        $recommended = ProfileadvMenuConstants::MENU_MITJA_SENIOR25KG9A_NOESTERILIZADO_BAF_ALERGIA_POLLO;
+                    } elseif ($hasPescadoAllergy) {
+                        $recommended = ProfileadvMenuConstants::MENU_MITJA_SENIOR25KG9A_NOESTERILIZADO_BAF_ALERGIA_PESCADO;
+                    } else {
+                        $recommended = ProfileadvMenuConstants::MENU_MITJA_SENIOR25KG9A_NOESTERILIZADO_BAF;
+                    }
+                    break;
+                case 4: // Guau&Cat crudo
+                    if ($hasPolloAllergy) {
+                        $recommended = ProfileadvMenuConstants::MENU_MITJA_SENIOR25KG9A_NOESTERILIZADO_GUAUCAT_CRUDO_ALERGIA_POLLO;
+                    } elseif ($hasPescadoAllergy) {
+                        $recommended = ProfileadvMenuConstants::MENU_MITJA_SENIOR25KG9A_NOESTERILIZADO_GUAUCAT_CRUDO_ALERGIA_PESCADO;
+                    } else {
+                        $recommended = ProfileadvMenuConstants::MENU_MITJA_SENIOR25KG9A_NOESTERILIZADO_GUAUCAT_CRUDO;
+                    }
+                    break;
+                default:
+                    $recommended = ProfileadvMenuConstants::MENU_MITJA_SENIOR25KG9A_NOESTERILIZADO_PIENSO;
+            }
+
+            $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 5.80; // ajustar según política de precios
+            }
+
+            // Mitjà sénior (>9 anys), sobrepeso
+            if ((int)$data['type'] === 1 && $size === 3 && $age >= 9 * 12 &&
+            $data['overweight'] && (int)$data['esterilized'] === $esterFlag) {
+
+            switch ((int)$data['feeding']) {
+                case 2: // Guau&Cat cocinado
+                    $recommended = $esterFlag
+                        ? ProfileadvMenuConstants::MENU_MITJA_SENIOR25KG9A_ESTILIZADO_GUAUCAT_COCINADO_SOBREPESO
+                        : ProfileadvMenuConstants::MENU_MITJA_SENIOR25KG9A_NOESTERILIZADO_GUAUCAT_COCINADO_SOBREPESO;
+                    break;
+                case 3: // BARF
+                    $recommended = $esterFlag
+                        ? ProfileadvMenuConstants::MENU_MITJA_SENIOR25KG9A_ESTILIZADO_BAF_SOBREPESO
+                        : ProfileadvMenuConstants::MENU_MITJA_SENIOR25KG9A_NOESTERILIZADO_BAF_SOBREPESO;
+                    break;
+                case 4: // Guau&Cat crudo
+                    $recommended = $esterFlag
+                        ? ProfileadvMenuConstants::MENU_MITJA_SENIOR25KG9A_ESTILIZADO_GUAUCAT_CRUDO_SOBREPESO
+                        : ProfileadvMenuConstants::MENU_MITJA_SENIOR25KG9A_NOESTERILIZADO_GUAUCAT_CRUDO_SOBREPESO;
+                    break;
+                default:
+                    // En caso de pienso/deshidratado o no contemplado
+                    $recommended = $esterFlag
+                        ? ProfileadvMenuConstants::MENU_MITJA_SENIOR25KG9A_ESTILIZADO_PIENSO_SOBREPESO
+                        : ProfileadvMenuConstants::MENU_MITJA_SENIOR25KG9A_NOESTERILIZADO_PIENSO_SOBREPESO;
+            }
+
+            $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 6.20; // ajuste orientativo
+        }
+
+        // Gran tamaño, cachorro (3m-1a), alergias
+        if ((int)$data['type'] === 1 && $size === 4 && $age >= 3 && $age <= 12 &&
+        ($data['allergy_pollo'] || $data['allergy_pescado'])) {
+
+            if ($data['allergy_pollo']) {
+                if ((int)$data['work'] === 1) {
+                    switch ((int)$data['feeding']) {
+                        case 2: // Guau&Cat cocinado
+                            $recommended = $esterFlag
+                                ? ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_ESTILIZADO_PELUDO_TRABAJO_GUAUCAT_COCINADO_ALERGIA_POLLO
+                                : ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_NOESTERILIZADO_PELUDO_TRABAJO_GUAUCAT_COCINADO_ALERGIA_POLLO;
+                            break;
+                        case 3: // BARF
+                            $recommended = $esterFlag
+                                ? ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_ESTILIZADO_PELUDO_TRABAJO_BAF_ALERGIA_POLLO
+                                : ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_NOESTERILIZADO_PELUDO_TRABAJO_BAF_ALERGIA_POLLO;
+                            break;
+                        case 4: // Guau&Cat crudo
+                            $recommended = $esterFlag
+                                ? ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_ESTILIZADO_PELUDO_TRABAJO_GUAUCAT_CRUDO_ALERGIA_POLLO
+                                : ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_NOESTERILIZADO_PELUDO_TRABAJO_GUAUCAT_CRUDO_ALERGIA_POLLO;
+                            break;
+                        default:
+                            $recommended = $esterFlag
+                                ? ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_ESTILIZADO_PELUDO_TRABAJO_PIENSO_ALERGIA_POLLO
+                                : ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_NOESTERILIZADO_PELUDO_TRABAJO_PIENSO_ALERGIA_POLLO;
+                    }
+                } else {
+                    switch ((int)$data['feeding']) {
+                        case 2:
+                            $recommended = $esterFlag
+                                ? ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_ESTILIZADO_GUAUCAT_COCINADO_ALERGIA_POLLO
+                                : ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_NOESTERILIZADO_GUAUCAT_COCINADO_ALERGIA_POLLO;
+                            break;
+                        case 3:
+                            $recommended = $esterFlag
+                                ? ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_ESTILIZADO_BAF_ALERGIA_POLLO
+                                : ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_NOESTERILIZADO_BAF_ALERGIA_POLLO;
+                            break;
+                        case 4:
+                            $recommended = $esterFlag
+                                ? ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_ESTILIZADO_GUAUCAT_CRUDO_ALERGIA_POLLO
+                                : ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_NOESTERILIZADO_GUAUCAT_CRUDO_ALERGIA_POLLO;
+                            break;
+                        default:
+                            $recommended = $esterFlag
+                                ? ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_ESTILIZADO_PIENSO_ALERGIA_POLLO
+                                : ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_NOESTERILIZADO_PIENSO_ALERGIA_POLLO;
+                    }
+                }
+            } elseif ($data['allergy_pescado']) {
+                if ((int)$data['work'] === 1) {
+                    switch ((int)$data['feeding']) {
+                        case 2:
+                            $recommended = $esterFlag
+                                ? ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_ESTILIZADO_PELUDO_TRABAJO_GUAUCAT_COCINADO_ALERGIA_PESCADO
+                                : ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_NOESTERILIZADO_PELUDO_TRABAJO_GUAUCAT_COCINADO_ALERGIA_PESCADO;
+                            break;
+                        case 3:
+                            $recommended = $esterFlag
+                                ? ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_ESTILIZADO_PELUDO_TRABAJO_BAF_ALERGIA_PESCADO
+                                : ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_NOESTERILIZADO_PELUDO_TRABAJO_BAF_ALERGIA_PESCADO;
+                            break;
+                        case 4:
+                            $recommended = $esterFlag
+                                ? ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_ESTILIZADO_PELUDO_TRABAJO_GUAUCAT_CRUDO_ALERGIA_PESCADO
+                                : ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_NOESTERILIZADO_PELUDO_TRABAJO_GUAUCAT_CRUDO_ALERGIA_PESCADO;
+                            break;
+                        default:
+                            $recommended = $esterFlag
+                                ? ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_ESTILIZADO_PELUDO_TRABAJO_PIENSO_ALERGIA_PESCADO
+                                : ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_NOESTERILIZADO_PELUDO_TRABAJO_PIENSO_ALERGIA_PESCADO;
+                    }
+                } else {
+                    switch ((int)$data['feeding']) {
+                        case 2:
+                            $recommended = $esterFlag
+                                ? ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_ESTILIZADO_GUAUCAT_COCINADO_ALERGIA_PESCADO
+                                : ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_NOESTERILIZADO_GUAUCAT_COCINADO_ALERGIA_PESCADO;
+                            break;
+                        case 3:
+                            $recommended = $esterFlag
+                                ? ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_ESTILIZADO_BAF_ALERGIA_PESCADO
+                                : ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_NOESTERILIZADO_BAF_ALERGIA_PESCADO;
+                            break;
+                        case 4:
+                            $recommended = $esterFlag
+                                ? ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_ESTILIZADO_GUAUCAT_CRUDO_ALERGIA_PESCADO
+                                : ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_NOESTERILIZADO_GUAUCAT_CRUDO_ALERGIA_PESCADO;
+                            break;
+                        default:
+                            $recommended = $esterFlag
+                                ? ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_ESTILIZADO_PIENSO_ALERGIA_PESCADO
+                                : ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_NOESTERILIZADO_PIENSO_ALERGIA_PESCADO;
+                    }
+                }
+            }
+
+            $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+            $product_recommend['price'] = 9.95; // Precio orientativo
+        }
+
+        // Gran (>25 kg), cachorro (3 m‑1 a), esterilizado, peludo trabajo, alergia pescado
+        if ((int)$data['type'] === 1 && $size === 4 && $age >= 3 && $age <= 12 && $esterFlag && 
+        $data['work'] == 1 && $data['allergy_pescado']) {
+            switch ((int)$data['feeding']) {
+                case 2: // Guau&Cat cocinado
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_ESTILIZADO_PELUDO_TRABAJO_GUAUCAT_COCINADO_ALERGIA_PESCADO;
+                    break;
+                case 3: // BARF
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_ESTILIZADO_PELUDO_TRABAJO_BAF_ALERGIA_PESCADO;
+                    break;
+                case 4: // Guau&Cat crudo
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_ESTILIZADO_PELUDO_TRABAJO_GUAUCAT_CRUDO_ALERGIA_PESCADO;
+                    break;
+                default: // pienso/cocinado estándar
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_ESTILIZADO_PELUDO_TRABAJO_PIENSO_ALERGIA_PESCADO;
+            }
+        }
+
+        // Gran (>25 kg), cachorro (3 m‑1 a), esterilizado, alergia pescado, sin trabajo
+        if ((int)$data['type'] === 1 && $size === 4 && $age >= 3 && $age <= 12 && $esterFlag && 
+        $data['allergy_pescado'] && $data['work'] == 0) {
+            switch ((int)$data['feeding']) {
+                case 2:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_ESTILIZADO_GUAUCAT_COCINADO_ALERGIA_PESCADO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_ESTILIZADO_BAF_ALERGIA_PESCADO;
+                    break;
+                case 4:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_ESTILIZADO_GUAUCAT_CRUDO_ALERGIA_PESCADO;
+                    break;
+                default:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_ESTILIZADO_PIENSO_ALERGIA_PESCADO;
+            }
+        }
+
+        // Gran (>25 kg), cachorro (3 m‑1 a), esterilizado, sin alergias, sin condición
+        // (se añade la alimentación habitual)
+        if ((int)$data['type'] === 1 && $size === 4 && $age >= 3 && $age <= 12 && $esterFlag && !$data['allergy_pollo'] && !$data['allergy_pescado']) {
+            switch ((int)$data['feeding']) {
+                case 2:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_ESTILIZADO_GUAUCAT_COCINADO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_ESTILIZADO_BAF;
+                    break;
+                case 4:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_ESTILIZADO_GUAUCAT_CRUDO;
+                    break;
+                default:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_CACHORRO25KG1A_ESTILIZADO_PIENSO;
+            }
+        }
+
+        // Gran (>25 kg), adulto (>1 a), sin esterilizar, sin condición
+        if ((int)$data['type'] === 1 && $size === 4 && $age > 12 && !$esterFlag && !$data['allergy_pollo'] && !$data['allergy_pescado']) {
+            switch ((int)$data['feeding']) {
+                case 2:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_NOESTERILIZADO_GUAUCAT_COCINADO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_NOESTERILIZADO_BAF;
+                    break;
+                case 4:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_NOESTERILIZADO_GUAUCAT_CRUDO;
+                    break;
+                default:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_NOESTERILIZADO_PIENSO;
+            }
+        }
+
+        // Resto del flujo: creación del producto, precio de ejemplo, etc.
+        $product = new Product($recommended, true, (int)Context::getContext()->language->id);
+        $product_recommend['price'] = 12.95;
+
+        // Gran (>25kg), adulto (>1a), NO esterilizado, peludo trabajo, alergia pollo
+        if ((int)$data['type'] === 1 && $size === 4 && $age > 12 && !$esterFlag && $data['work'] == 1 && $data['allergy_pollo']) {
+            switch ((int)$data['feeding']) {
+                case 2:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_NOESTERILIZADO_PELUDO_TRABAJO_GUAUCAT_COCINADO_ALERGIA_POLLO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_NOESTERILIZADO_PELUDO_TRABAJO_BAF_ALERGIA_POLLO;
+                    break;
+                case 4:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_NOESTERILIZADO_PELUDO_TRABAJO_GUAUCAT_CRUDO_ALERGIA_POLLO;
+                    break;
+                default:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_NOESTERILIZADO_PELUDO_TRABAJO_PIENSO_ALERGIA_POLLO;
+            }
+        }
+
+        // Gran (>25kg), adulto (>1a), esterilizado, peludo trabajo, alergia pollo
+        if ((int)$data['type'] === 1 && $size === 4 && $age > 12 && $esterFlag && $data['work'] == 1 && $data['allergy_pollo']) {
+            switch ((int)$data['feeding']) {
+                case 2:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_ESTILIZADO_PELUDO_TRABAJO_GUAUCAT_COCINADO_ALERGIA_POLLO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_ESTILIZADO_PELUDO_TRABAJO_BAF_ALERGIA_POLLO;
+                    break;
+                case 4:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_ESTILIZADO_PELUDO_TRABAJO_GUAUCAT_CRUDO_ALERGIA_POLLO;
+                    break;
+                default:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_ESTILIZADO_PELUDO_TRABAJO_PIENSO_ALERGIA_POLLO;
+            }
+        }
+
+        // Gran (>25kg), adulto (>1a), esterilizado, sin trabajo, alergia pollo
+        if ((int)$data['type'] === 1 && $size === 4 && $age > 12 && $esterFlag && $data['allergy_pollo'] && $data['work'] == 0) {
+            switch ((int)$data['feeding']) {
+                case 2:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_ESTILIZADO_GUAUCAT_COCINADO_ALERGIA_POLLO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_ESTILIZADO_BAF_ALERGIA_POLLO;
+                    break;
+                case 4:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_ESTILIZADO_GUAUCAT_CRUDO_ALERGIA_POLLO;
+                    break;
+                default:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_ESTILIZADO_PIENSO_ALERGIA_POLLO;
+            }
+        }
+
+        // Gran (>25kg), adulto (>1a), NO esterilizado, peludo trabajo, alergia pescado
+        if ((int)$data['type'] === 1 && $size === 4 && $age > 12 && !$esterFlag && $data['work'] == 1 && $data['allergy_pescado']) {
+            switch ((int)$data['feeding']) {
+                case 2:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_NOESTERILIZADO_PELUDO_TRABAJO_GUAUCAT_COCINADO_ALERGIA_PESCADO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_NOESTERILIZADO_PELUDO_TRABAJO_BAF_ALERGIA_PESCADO;
+                    break;
+                case 4:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_NOESTERILIZADO_PELUDO_TRABAJO_GUAUCAT_CRUDO_ALERGIA_PESCADO;
+                    break;
+                default:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_NOESTERILIZADO_PELUDO_TRABAJO_PIENSO_ALERGIA_PESCADO;
+            }
+        }
+
+        // Gran (>25kg), adulto (>1a), esterilizado, peludo trabajo, alergia pescado
+        if ((int)$data['type'] === 1 && $size === 4 && $age > 12 && $esterFlag && $data['work'] == 1 && $data['allergy_pescado']) {
+            switch ((int)$data['feeding']) {
+                case 2:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_ESTILIZADO_PELUDO_TRABAJO_GUAUCAT_COCINADO_ALERGIA_PESCADO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_ESTILIZADO_PELUDO_TRABAJO_BAF_ALERGIA_PESCADO;
+                    break;
+                case 4:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_ESTILIZADO_PELUDO_TRABAJO_GUAUCAT_CRUDO_ALERGIA_PESCADO;
+                    break;
+                default:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_ESTILIZADO_PELUDO_TRABAJO_PIENSO_ALERGIA_PESCADO;
+            }
+        }
+
+        // Gran (>25kg), adulto (>1a), esterilizado, sin trabajo, alergia pescado
+        if ((int)$data['type'] === 1 && $size === 4 && $age > 12 && $esterFlag && $data['allergy_pescado'] && $data['work'] == 0) {
+            switch ((int)$data['feeding']) {
+                case 2:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_NOESTERILIZADO_GUAUCAT_COCINADO_ALERGIA_PESCADO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_NOESTERILIZADO_BAF_ALERGIA_PESCADO;
+                    break;
+                case 4:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_NOESTERILIZADO_GUAUCAT_CRUDO_ALERGIA_PESCADO;
+                    break;
+                default:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_NOESTERILIZADO_PIENSO_ALERGIA_PESCADO;
+            }
+        }
+
+        // GRAN >25kg, adulto, esterilizado, alergia pescado
+        if ((int)$data['type'] === 1 && $size === 4 && $age > 12 && $age <= 108 && $esterFlag && $data['allergy_pescado']) {
+            switch ((int)$data['feeding']) {
+                case 2:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_ESTILIZADO_GUAUCAT_COCINADO_ALERGIA_PESCADO;
+                    break;
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_ESTILIZADO_BAF_ALERGIA_PESCADO;
+                    break;
+                case 4:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_ESTILIZADO_GUAUCAT_CRUDO_ALERGIA_PESCADO;
+                    break;
+                default:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_ESTILIZADO_PIENSO_ALERGIA_PESCADO;
+            }
+        }
+
+        // GRAN >25kg, adulto, sobrepeso
+        if ((int)$data['type'] === 1 && $size === 4 && $age > 12 && $age <= 108 && $data['overweight']) {
+            if ($esterFlag) {
+                switch ((int)$data['feeding']) {
+                    case 2:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_ESTILIZADO_GUAUCAT_COCINADO_SOBREPESO;
+                        break;
+                    case 3:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_ESTILIZADO_BAF_SOBREPESO;
+                        break;
+                    case 4:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_ESTILIZADO_GUAUCAT_CRUDO_SOBREPESO;
+                        break;
+                    default:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_ESTILIZADO_PIENSO_SOBREPESO;
+                }
+            } else {
+                switch ((int)$data['feeding']) {
+                    case 2:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_NOESTERILIZADO_GUAUCAT_COCINADO_SOBREPESO;
+                        break;
+                    case 3:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_NOESTERILIZADO_BAF_SOBREPESO;
+                        break;
+                    case 4:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_NOESTERILIZADO_GUAUCAT_CRUDO_SOBREPESO;
+                        break;
+                    default:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_ADULT25KG1A_NOESTERILIZADO_PIENSO_SOBREPESO;
+                }
+            }
+        }
+
+        // GRAN >25kg, senior (>9 años)
+        if ((int)$data['type'] === 1 && $size === 4 && $age > 108 && !$data['allergy_pollo']) {
+            if ($esterFlag) {
+                switch ((int)$data['feeding']) {
+                    case 2:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_ESTILIZADO_GUAUCAT_COCINADO;
+                        break;
+                    case 3:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_ESTILIZADO_BAF;
+                        break;
+                    case 4:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_ESTILIZADO_GUAUCAT_CRUDO;
+                        break;
+                    default:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_ESTILIZADO_PIENSO;
+                }
+            } else {
+                switch ((int)$data['feeding']) {
+                    case 2:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_NOESTERILIZADO_GUAUCAT_COCINADO;
+                        break;
+                    case 3:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_NOESTERILIZADO_BAF;
+                        break;
+                    case 4:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_NOESTERILIZADO_GUAUCAT_CRUDO;
+                        break;
+                    default:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_NOESTERILIZADO_PIENSO;
+                }
+            }
+        }
+
+        // GRAN >25kg, senior, alergia pollo
+        if ((int)$data['type'] === 1 && $size === 4 && $age > 108 && $data['allergy_pollo']) {
+            if ($esterFlag) {
+                switch ((int)$data['feeding']) {
+                    case 2:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_ESTILIZADO_GUAUCAT_COCINADO_ALERGIA_POLLO;
+                        break;
+                    case 3:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_NOESTERILIZADO_BAF_ALERGIA_POLLO;
+                        break;
+                    case 4:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_NOESTERILIZADO_GUAUCAT_CRUDO_ALERGIA_POLLO;
+                        break;
+                    default:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_ESTILIZADO_PIENSO_ALERGIA_POLLO;
+                }
+            } else {
+                switch ((int)$data['feeding']) {
+                    case 2:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_NOESTERILIZADO_GUAUCAT_COCINADO_ALERGIA_POLLO;
+                        break;
+                    case 3:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_NOESTERILIZADO_BAF_ALERGIA_POLLO;
+                        break;
+                    case 4:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_NOESTERILIZADO_GUAUCAT_CRUDO_ALERGIA_POLLO;
+                        break;
+                    default:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_NOESTERILIZADO_PIENSO_ALERGIA_POLLO;
+                }
+            }
+        }
+
+        // GRAN >25kg, senior, esterilizado, alergia pollo
+        if ((int)$data['type'] === 1 && $size === 4 && $age > 108 && $esterFlag && $data['allergy_pollo']) {
+            switch ((int)$data['feeding']) {
+                case 3:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_ESTILIZADO_BAF_ALERGIA_POLLO;
+                    break;
+                case 4:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_ESTILIZADO_GUAUCAT_CRUDO_ALERGIA_POLLO;
+                    break;
+                default:
+                    $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_ESTILIZADO_GUAUCAT_COCINADO_ALERGIA_POLLO;
+            }
+        }
+
+        // GRAN >25kg, senior, alergia pescado
+        if ((int)$data['type'] === 1 && $size === 4 && $age > 108 && $data['allergy_pescado']) {
+            if ($esterFlag) {
+                switch ((int)$data['feeding']) {
+                    case 2:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_ESTILIZADO_GUAUCAT_COCINADO_ALERGIA_PESCADO;
+                        break;
+                    case 3:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_ESTILIZADO_BAF_ALERGIA_PESCADO;
+                        break;
+                    case 4:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_ESTILIZADO_GUAUCAT_CRUDO_ALERGIA_PESCADO;
+                        break;
+                    default:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_ESTILIZADO_PIENSO_ALERGIA_PESCADO;
+                }
+            } else {
+                switch ((int)$data['feeding']) {
+                    case 2:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_NOESTERILIZADO_GUAUCAT_COCINADO_ALERGIA_PESCADO;
+                        break;
+                    case 3:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_NOESTERILIZADO_BAF_ALERGIA_PESCADO;
+                        break;
+                    case 4:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_NOESTERILIZADO_GUAUCAT_CRUDO_ALERGIA_PESCADO;
+                        break;
+                    default:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_NOESTERILIZADO_PIENSO_ALERGIA_PESCADO;
+                }
+            }
+        }
+
+        // GRAN >25kg, senior, sobrepeso
+        if ((int)$data['type'] === 1 && $size === 4 && $age > 108 && $data['overweight']) {
+            if ($esterFlag) {
+                switch ((int)$data['feeding']) {
+                    case 2:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_ESTILIZADO_GUAUCAT_COCINADO_SOBREPESO;
+                        break;
+                    case 3:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_ESTILIZADO_BAF_SOBREPESO;
+                        break;
+                    case 4:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_ESTILIZADO_GUAUCAT_CRUDO_SOBREPESO;
+                        break;
+                    default:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_ESTILIZADO_PIENSO_SOBREPESO;
+                }
+            } else {
+                switch ((int)$data['feeding']) {
+                    case 2:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_NOESTERILIZADO_GUAUCAT_COCINADO_SOBREPESO;
+                        break;
+                    case 3:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_NOESTERILIZADO_BAF_SOBREPESO;
+                        break;
+                    case 4:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_NOESTERILIZADO_GUAUCAT_CRUDO_SOBREPESO;
+                        break;
+                    default:
+                        $recommended = ProfileadvMenuConstants::MENU_GRAN_SENIOR25KG9A_NOESTERILIZADO_PIENSO_SOBREPESO;
+                }
+            }
+        }
 
         if (isset($data['recommended_menu'])) {
             $product = new Product((int)$data['recommended_menu'], true, (int)Context::getContext()->language->id);
