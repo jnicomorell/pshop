@@ -392,6 +392,7 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
     }
     public function getRecommendedProduct(array $data)
     {
+        require_once _PS_MODULE_DIR_.'profileadv/classes/MenuConstants.php';
 /*
 Mida petita (menús 5kg - 200gr)
 CACHORROS:
@@ -1241,6 +1242,17 @@ Estas son los posibles valores que se envían
         )
     ),
  */
+        // If the wizard didn't calculate the recommended menu we do it here so
+        // the product recommendation follows the same logic described above
+        if (!isset($data['recommended_menu'])) {
+            include_once _PS_MODULE_DIR_ . 'profileadv/calculateamount.php';
+            $calculator = new calculateAmount();
+            $calcData = $calculator->calculateDailyEatAmount($data);
+            if (isset($calcData['recommended_menu'])) {
+                $data['recommended_menu'] = $calcData['recommended_menu'];
+            }
+        }
+
         switch ((int)$data['type']) {
             case 1:
                 switch (true) {
@@ -1272,58 +1284,62 @@ Estas son los posibles valores que se envían
                 break;
         }
 
+        $menuSizeMap = [
+            ProfileadvMenuConstants::MENU_ENERGY_COCINADO_SMALL => 1,
+            ProfileadvMenuConstants::MENU_ENERGY_CRUDO_SMALL => 1,
+            ProfileadvMenuConstants::MENU_ENERGY_COCINADO_MEDIUM => 3,
+            ProfileadvMenuConstants::MENU_ENERGY_CRUDO_MEDIUM => 3,
+            ProfileadvMenuConstants::MENU_ENERGY_COCINADO_LARGE => 4,
+            ProfileadvMenuConstants::MENU_ENERGY_CRUDO_LARGE => 4,
+            ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO_SMALL => 1,
+            ProfileadvMenuConstants::MENU_OBESIDAD_CRUDO_SMALL => 1,
+            ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO_MEDIUM => 3,
+            ProfileadvMenuConstants::MENU_OBESIDAD_CRUDO_MEDIUM => 3,
+            ProfileadvMenuConstants::MENU_OBESIDAD_COCINADO_LARGE => 4,
+            ProfileadvMenuConstants::MENU_OBESIDAD_CRUDO_LARGE => 4,
+            ProfileadvMenuConstants::MENU_COMPLETO_SIN_PESCADO_COCINADO => 1,
+            ProfileadvMenuConstants::MENU_COMPLETO_SIN_PESCADO_CRUDO => 1,
+        ];
+
+        if (isset($data['recommended_menu']) && isset($menuSizeMap[$data['recommended_menu']])) {
+            $size = $menuSizeMap[$data['recommended_menu']];
+        }
+
+        $sizePrices = [
+            1 => 4.64,
+            2 => 4.64,
+            3 => 4.27,
+            4 => 4.06,
+            5 => 4.06,
+        ];
+
 
         //Recommended product
         if (isset($data['recommended_menu'])) {
             $product = new Product((int)$data['recommended_menu'], true, (int)Context::getContext()->language->id);
         } elseif ((int)$data['feeding'] === 3 && (int) $data['type'] === 1) { //Recommend barf for dogs
-            switch ($size) {
-                case 1:
-                case 2:
-                    $recommended = self::DEFAULT_RECOMMENDED_BARF_PRODUCT_DOG_250;
-                    $product_recommend['price'] = 4.64;
-                    break;
-                case 3:
-                    $recommended = self::DEFAULT_RECOMMENDED_BARF_PRODUCT_DOG_500;
-                    $product_recommend['price'] = 4.27;
-                    break;
-                case 4:
-                case 5:
-                    $recommended = self::DEFAULT_RECOMMENDED_BARF_PRODUCT_DOG_1000;
-                    $product_recommend['price'] = 4.06;
-                    break;
-                default:
-                    $recommended = self::DEFAULT_RECOMMENDED_BARF_PRODUCT_DOG_250;
-                    $product_recommend['price'] = 4.64;
-                    break;
-            }
-
+            $barfMap = [
+                1 => self::DEFAULT_RECOMMENDED_BARF_PRODUCT_DOG_250,
+                2 => self::DEFAULT_RECOMMENDED_BARF_PRODUCT_DOG_250,
+                3 => self::DEFAULT_RECOMMENDED_BARF_PRODUCT_DOG_500,
+                4 => self::DEFAULT_RECOMMENDED_BARF_PRODUCT_DOG_1000,
+                5 => self::DEFAULT_RECOMMENDED_BARF_PRODUCT_DOG_1000,
+            ];
+            $recommended = $barfMap[$size] ?? self::DEFAULT_RECOMMENDED_BARF_PRODUCT_DOG_250;
             $product = new Product((int)$recommended, true, (int)Context::getContext()->language->id);
         } elseif ((int)$data['feeding'] === 3 && (int) $data['type'] === 2) { //Recommend barf for cats
             $product = new Product((int)self::DEFAULT_RECOMMENDED_BARF_PRODUCT_CAT, true, (int)Context::getContext()->language->id);
         } elseif ((int) $data['type'] === 2) { //Cat default menu
             $product = new Product((int)self::DEFAULT_RECOMMENDED_PRODUCT_CAT, true, (int)Context::getContext()->language->id);
         } else {
-            switch ($size) {
-                case 1:
-                case 2:
-                    $recommended = self::DEFAULT_RECOMMENDED_PRODUCT_DOG_250;
-                    $product_recommend['price'] = 4.64;
-                    break;
-                case 3:
-                    $recommended = self::DEFAULT_RECOMMENDED_PRODUCT_DOG_500;
-                    $product_recommend['price'] = 4.27;
-                    break;
-                case 4:
-                case 5:
-                    $recommended = self::DEFAULT_RECOMMENDED_PRODUCT_DOG_1000;
-                    $product_recommend['price'] = 4.06;
-                    break;
-                default:
-                    $recommended = self::DEFAULT_RECOMMENDED_PRODUCT_DOG_250;
-                    $product_recommend['price'] = 4.64;
-                    break;
-            }
+            $dogMap = [
+                1 => self::DEFAULT_RECOMMENDED_PRODUCT_DOG_250,
+                2 => self::DEFAULT_RECOMMENDED_PRODUCT_DOG_250,
+                3 => self::DEFAULT_RECOMMENDED_PRODUCT_DOG_500,
+                4 => self::DEFAULT_RECOMMENDED_PRODUCT_DOG_1000,
+                5 => self::DEFAULT_RECOMMENDED_PRODUCT_DOG_1000,
+            ];
+            $recommended = $dogMap[$size] ?? self::DEFAULT_RECOMMENDED_PRODUCT_DOG_250;
             $product = new Product((int)$recommended, true, (int)Context::getContext()->language->id);
         }
 
@@ -1343,23 +1359,7 @@ Estas son los posibles valores que se envían
         $img = $product->getCover($product->id);
         $product_recommend['image'] =  $link->getImageLink((string)$product->link_rewrite[(int)Context::getContext()->language->id], (int)$img['id_image'], 'home_default');
 
-        switch ($size) {
-            case 1:
-            case 2:
-                $product_recommend['price'] = 4.64;
-                break;
-            case 3:
-                $product_recommend['price'] = 4.27;
-                break;
-            case 4:
-            case 5:
-                $product_recommend['price'] = 4.06;
-                break;
-            default:
-                $product_recommend['price'] = 4.64;
-                break;
-        }
-
+        $product_recommend['price'] = $sizePrices[$size] ?? $sizePrices[1];
         $product_recommend['monthly_price'] = ($product_recommend['price'] / 1000) * 30;
         $product_recommend['daily_price'] = ($product_recommend['price'] / 1000);
 
