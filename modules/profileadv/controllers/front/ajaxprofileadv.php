@@ -142,11 +142,12 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
             "is_guest" => false
         ];
 
-        //Validate data before process
+        // Validate data before process
         if (!$this->validateFormData()) {
-            header("Location: /");
-            die();
-        };
+            // Preserve the flow for guests even when validation fails
+            $status = 'error';
+            $message = 'Invalid form data';
+        }
 
         //Save customer email as comment
         if ($action === 'addfirstpet') {
