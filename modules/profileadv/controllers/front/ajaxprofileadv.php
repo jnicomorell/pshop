@@ -17,6 +17,8 @@
  * for all its modules is valid only once for a single shop.
  */
 
+include_once(_PS_MODULE_DIR_ . 'profileadv/classes/AgeCalculator.php');
+
 class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontController
 {
     private $translationList;
@@ -395,7 +397,7 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
         require_once _PS_MODULE_DIR_.'profileadv/classes/MenuConstants.php';
         require_once _PS_MODULE_DIR_."profileadv/classes/RecommendedProductRules.php";
         // Get the age in years today - $data['birth']
-        $age = $this->calculateAge($data);
+        $age = AgeCalculator::calculateAgeInYears($data['birth']);
 
         $size = $this->getPetSize($data);
 
@@ -558,20 +560,4 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
         return null;
     }
 
-    public function calculateAge(array $data): ?int
-    {
-        if (empty($data['birth'])) {
-            return null;
-        }
-
-        try {
-            $birthDate = new DateTime($data['birth']);
-            $currentDate = new DateTime();
-            $interval = $birthDate->diff($currentDate);
-            return $interval->y;
-        } catch (Exception $e) {
-            // Log error or handle accordingly
-            return null;
-        }
-    }
 }
