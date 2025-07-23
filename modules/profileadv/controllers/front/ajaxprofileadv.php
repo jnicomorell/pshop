@@ -392,8 +392,73 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
             $this->module->getLocalPath() . 'mails/'
         );
     }
+
+    /**
+     * Convert translated values in the given array back to their numeric keys.
+     * This allows getRecommendedProduct to work with data coming from
+     * getPetData(), where values are translated for display.
+     */
+    private function mapTranslatedValuesToKeys(array $data): array
+    {
+        if (empty($this->translationList)) {
+            require_once _PS_MODULE_DIR_.'profileadv/classes/TranslationManager.php';
+            $iso = $this->context->language ? $this->context->language->iso_code : 'es';
+            $this->translationList = ProfileadvTranslationManager::getDataTranslations($iso);
+        }
+
+        $simpleFields = [
+            'type' => 'type',
+            'genre' => 'genre',
+            'esterilized' => 'esterilized',
+            'feeding' => 'feeding',
+            'activity' => 'activity',
+            'physical_condition' => 'physical-condition',
+        ];
+
+        foreach ($simpleFields as $field => $tKey) {
+            if (isset($data[$field]) && !is_numeric($data[$field])) {
+                $key = array_search($data[$field], $this->translationList[$tKey], true);
+                if ($key !== false) {
+                    $data[$field] = (int)$key;
+                }
+            }
+        }
+
+        // Breed depends on pet type
+        if (isset($data['breed']) && !is_numeric($data['breed'])) {
+            $typeKey = isset($data['type']) && is_numeric($data['type'])
+                ? (int)$data['type']
+                : (int)array_search($data['type'], $this->translationList['type'], true);
+            $breedList = $typeKey === 2 ? $this->translationList['breed']['cat'] : $this->translationList['breed']['dog'];
+            $bKey = array_search($data['breed'], $breedList, true);
+            if ($bKey !== false) {
+                $data['breed'] = (int)$bKey;
+            }
+        }
+
+        // Arrays: pathology and allergies
+        $arrayFields = [
+            'pathology' => 'pathologies',
+            'allergies' => 'allergies',
+        ];
+        foreach ($arrayFields as $field => $tKey) {
+            if (isset($data[$field]) && is_array($data[$field])) {
+                foreach ($data[$field] as $i => $val) {
+                    if (!is_numeric($val)) {
+                        $vKey = array_search($val, $this->translationList[$tKey], true);
+                        if ($vKey !== false) {
+                            $data[$field][$i] = (int)$vKey;
+                        }
+                    }
+                }
+            }
+        }
+
+        return $data;
+    }
     public function getRecommendedProduct(array $data)
     {
+        $data = $this->mapTranslatedValuesToKeys($data);
         require_once _PS_MODULE_DIR_.'profileadv/classes/MenuConstants.php';
         require_once _PS_MODULE_DIR_."profileadv/classes/RecommendedProductRules.php";
         // Get the age in years today - $data['birth']
