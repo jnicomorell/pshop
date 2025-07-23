@@ -1,4 +1,5 @@
 <?php
+require_once _PS_MODULE_DIR_.'profileadv/classes/MenuConstants.php';
 
 class RecommendedProductRules
 {
