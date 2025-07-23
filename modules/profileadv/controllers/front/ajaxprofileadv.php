@@ -255,7 +255,12 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
                 $shopperaccount_url .= $delimeter_rewrite . 'message=' . $message . '&error=' . $error;
             }
 
-            Tools::redirect($shopperaccount_url);
+            if ($action == 'addfirstpet') {
+                $loginUrl = $this->context->link->getPageLink('authentication', true);
+                Tools::redirect($loginUrl);
+            } else {
+                Tools::redirect($shopperaccount_url);
+            }
         } else {
             echo json_encode($response);
         }
