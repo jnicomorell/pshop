@@ -461,7 +461,11 @@
                         id="user_profile_photo" name="user_profile_photo" {if $profileadvis_chrome == 0}onsubmit="return false;"
                         {/if}>
 
-                        <input type="hidden" name="action" value="addpet" />
+                        {if isset($logged) && $logged}
+                            <input type="hidden" name="action" value="addpet" />
+                        {else}
+                            <input type="hidden" name="action" value="addfirstpet" />
+                        {/if}
 
                         {if isset($profileadvstatus_error) && $profileadvstatus_error == 1}
                             <div class="bootstrap">
@@ -795,12 +799,17 @@
                             <div class="navigation-buttons">
                                 <button type="button" class="btn previous"
                                     data-step='5'>{l s='Previous' mod='profileadv'}</button>
-                                <button type="button" class="btn next" data-step="7">{l s='Next' mod='profileadv'}</button>
+                                {if isset($logged) && $logged}
+                                    <button type="button" class="btn next" data-step="7">{l s='Next' mod='profileadv'}</button>
+                                {else}
+                                    <button type="button" class="btn next" data-step="8">{l s='Next' mod='profileadv'}</button>
+                                {/if}
                             </div>
                         </section>
 
                         <!-- section -->
 
+                        {if isset($logged) && $logged}
                         <section data-step='7' class="data-step" style="display: none;">
                             <div class="profileadv-add-header">
                                 <h1>{l s='Step7-title' mod='profileadv'}</h1>
@@ -854,6 +863,7 @@
                                 {/if}
                             </div>
                         </section>
+                        {/if}
 
                         {if !isset($logged) || !$logged}
                         <!-- Email step for guests -->
