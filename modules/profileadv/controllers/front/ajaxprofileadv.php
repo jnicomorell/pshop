@@ -137,7 +137,7 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
             "pet-amount" => (int)Tools::getValue('pet-amount'),
             "pet-amount-blocked" => (int)$isAmountBlocked,
             "pet-message" => Tools::getValue('pet-message') !== null && !empty(Tools::getValue('pet-message')) ? Tools::getValue('pet-message') : null,
-            "pet-customer-email" => Tools::getValue('pet-customer-email') !== null && !empty(Tools::getValue('pet-customer-email')) ? pSQL(Tools::getValue('pet-customer-email')) : false,
+            "pet-customer-email" => Tools::getValue('customer-email') !== null && !empty(Tools::getValue('customer-email')) ? pSQL(Tools::getValue('customer-email')) : false,
             "action" => $action,
             "is_guest" => false
         ];
@@ -152,9 +152,9 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
         //Save customer email as comment
         if ($action === 'addfirstpet') {
             //Check if is customer
-            $this->newPetData['pet-customer'] = Customer::customerExists($this->newPetData['pet-customer-email'], true) ? Customer::customerExists($this->newPetData['pet-customer-email'], true) : 1;
+            $this->newPetData['pet-customer'] = Customer::customerExists($this->newPetData['pet-customer-email'], true) ? Customer::customerExists($this->newPetData['customer-email'], true) : 1;
 
-            $this->newPetData["pet-message"] = $this->newPetData['pet-customer'] === 1 ? pSQL(Tools::getValue('pet-customer-email')) : null;
+            $this->newPetData["pet-message"] = $this->newPetData['pet-customer'] === 1 ? pSQL(Tools::getValue('customer-email')) : null;
             $this->newPetData['is_guest'] = true;
         }
 
@@ -581,7 +581,7 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
     private function getPetSize(array $data): int
     {
         if ((int)$data['type'] === 1) {
-            $weight = $data['desired_weight'];
+            $weight = isset($data['desired_weight'])?$data['desired_weight']:$data['weight'];
             if ($weight < 5) {
                 return 1;
             } elseif ($weight >= 5 && $weight < 14) {
@@ -599,32 +599,21 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
 
     private function applyRecommendationRules(array $data, int $size, int $age): ?array
     {
-        foreach (RecommendedProductRules::getRules() as $rule) {
+        $age = $age * 12; // Convert age in years to months
+        $key = (int)$data['type'].'_'.$size.'_'.(int)$data['esterilized'];
+        $rules = RecommendedProductRules::getIndexedRules()[$key] ?? [];
+
+        foreach ($rules as $rule) {
             $c = $rule['conditions'];
-            if ((int)$data['type'] !== $c['type']) {
-                continue;
-            }
-            if ($size !== $c['size']) {
-                continue;
-            }
+
             if ($age < $c['age_min'] || $age >= $c['age_max']) {
-                continue;
-            }
-            if ((int)$data['esterilized'] !== $c['esterilized']) {
                 continue;
             }
             if (!in_array((int)$data['feeding'], $c['feeding_in'], true)) {
                 continue;
             }
-            if (isset($c['activity_max'])) {
-                if (!isset($data['activity']) || (int)$data['activity'] > $c['activity_max']) {
-                    continue;
-                }
-            }
-            if (isset($c['activity_min'])) {
-                if (!isset($data['activity']) || (int)$data['activity'] < $c['activity_min']) {
-                    continue;
-                }
+            if (isset($c['activity']) && (!isset($data['activity']) || (int)$data['activity'] !== $c['activity'])) {
+                continue;
             }
             if (isset($c['allergies_in'])) {
                 $match = false;
@@ -640,14 +629,15 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
                     continue;
                 }
             }
-            if (isset($c['physical_in'])) {
-                if (!isset($data['physical_condition']) || !in_array($data['physical_condition'], $c['physical_in'], true)) {
-                    continue;
-                }
+            if (isset($c['physical_in']) && (!isset($data['physical_condition']) || !in_array($data['physical_condition'], $c['physical_in'], true))) {
+                continue;
             }
+
             return ['id' => $rule['product'], 'price' => $rule['price']];
         }
+
         return null;
     }
+
 
 }

@@ -19,7 +19,7 @@
 
 {extends file='page.tpl'}
 {block name="page_content"}
-    {if isset($logged) && $logged}
+    {if isset($profileadvislogged) && $profileadvislogged}
         <a href="/calculadora">{l s='My Pets' mod='profileadv'}</a>
         <span class="navigation-pipe"> ></span>
     {/if}
@@ -461,7 +461,7 @@
                         id="user_profile_photo" name="user_profile_photo" {if $profileadvis_chrome == 0}onsubmit="return false;"
                         {/if}>
 
-                        {if isset($logged) && $logged}
+                        {if isset($profileadvislogged) && $profileadvislogged}
                             <input type="hidden" name="action" value="addpet" />
                         {else}
                             <input type="hidden" name="action" value="addfirstpet" />
@@ -799,7 +799,7 @@
                             <div class="navigation-buttons">
                                 <button type="button" class="btn previous"
                                     data-step='5'>{l s='Previous' mod='profileadv'}</button>
-                                {if isset($logged) && $logged}
+                                {if isset($profileadvislogged) && $profileadvislogged}
                                     <button type="button" class="btn next" data-step="7">{l s='Next' mod='profileadv'}</button>
                                 {else}
                                     <button type="button" class="btn next" data-step="8">{l s='Next' mod='profileadv'}</button>
@@ -809,7 +809,7 @@
 
                         <!-- section -->
 
-                        {if isset($logged) && $logged}
+                        {if isset($profileadvislogged) && $profileadvislogged}
                         <section data-step='7' class="data-step" style="display: none;">
                             <div class="profileadv-add-header">
                                 <h1>{l s='Step7-title' mod='profileadv'}</h1>
@@ -856,7 +856,7 @@
                             </div>
                             <div class="navigation-buttons">
                                 <button type="button" class="btn previous" data-step='6'>{l s='Previous' mod='profileadv'}</button>
-                                {if isset($logged) && $logged}
+                                {if isset($profileadvislogged) && $profileadvislogged}
                                     <button type="submit" class="btn btn-submit" id="submit-button" onClick="submitClicked()">{l s='Finalizar' mod='profileadv'}</button>
                                 {else}
                                     <button type="button" class="btn next" data-step='8'>{l s='Next' mod='profileadv'}</button>
@@ -865,7 +865,7 @@
                         </section>
                         {/if}
 
-                        {if !isset($logged) || !$logged}
+                        {if !isset($profileadvislogged) || !$profileadvislogged}
                         <!-- Email step for guests -->
                         <section data-step='8' class="data-step" style="display: none;">
                             <div class="profileadv-add-header">
