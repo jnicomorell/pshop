@@ -183,9 +183,17 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
                     $shopperaccount_url = $this->context->link->getModuleLink('profileadv', 'petlist', array('error' => $info_upload['error']));
                     Tools::redirect($shopperaccount_url);
                 } else {
-                    $info_customer = $obj->getCustomerInfo();
-                    $avatar_thumb = $info_customer['avatar_thumb'];
-                    $is_show = $info_customer['is_show'];
+                    $info_customer = $obj->getCustomerInfo(
+                        $this->newPetData['pet-customer'],
+                        $this->newPetData['pet-reference']
+                    );
+                    if (is_array($info_customer)) {
+                        $avatar_thumb = $info_customer['avatar_thumb'];
+                        $is_show = $info_customer['is_show'];
+                    } else {
+                        $avatar_thumb = null;
+                        $is_show = 0;
+                    }
                 }
 
                 if ($this->newPetData['is_guest'] === true) {
@@ -407,6 +415,18 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
             $this->translationList = ProfileadvTranslationManager::getDataTranslations($iso);
         }
 
+        // Normalize "pet-*" keys and replace dashes with underscores
+        $normalized = [];
+        foreach ($data as $k => $v) {
+            $clean = $k;
+            if (strpos($k, 'pet-') === 0) {
+                $clean = substr($k, 4);
+            }
+            $clean = str_replace('-', '_', $clean);
+            $normalized[$clean] = $v;
+        }
+        $data = $normalized;
+
         $simpleFields = [
             'type' => 'type',
             'genre' => 'genre',
@@ -462,8 +482,12 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
         $data = $this->mapTranslatedValuesToKeys($data);
         require_once _PS_MODULE_DIR_.'profileadv/classes/MenuConstants.php';
         require_once _PS_MODULE_DIR_."profileadv/classes/RecommendedProductRules.php";
-        // Get the age in years today - $data['birth']
-        $age = AgeCalculator::calculateAgeInYears($data['birth']);
+        // Get the age in years today
+        $birthDate = $data['birth'] ?? ($data['pet-birth'] ?? null);
+        $age = 0;
+        if (!empty($birthDate)) {
+            $age = AgeCalculator::calculateAgeInYears($birthDate);
+        }
 
         $size = $this->getPetSize($data);
 
