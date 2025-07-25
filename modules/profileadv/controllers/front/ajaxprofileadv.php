@@ -481,7 +481,7 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
     {
         $data = $this->mapTranslatedValuesToKeys($data);
         require_once _PS_MODULE_DIR_.'profileadv/classes/MenuConstants.php';
-        require_once _PS_MODULE_DIR_."profileadv/classes/RecommendedProductRules.php";
+        $ratioData = require _PS_MODULE_DIR_."profileadv/pet_daily_ratios.php";
         // Get the age in years today
         $birthDate = $data['birth'] ?? ($data['pet-birth'] ?? null);
         $age = 0;
@@ -491,7 +491,7 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
 
         $size = $this->getPetSize($data);
 
-        $ruleResult = $this->applyRecommendationRules($data, $size, $age);
+        $ruleResult = $this->applyRecommendationRules($data, $size, $age, $ratioData);
         if ($ruleResult !== null) {
             return $this->buildRecommendationResponse(
                 $ruleResult['id'],
@@ -597,40 +597,52 @@ class ProfileadvAjaxprofileadvModuleFrontController extends ModuleFrontControlle
         return 1;
     }
 
-    private function applyRecommendationRules(array $data, int $size, int $age): ?array
+    private function applyRecommendationRules(array $data, int $size, int $age, array $ratioData): ?array
     {
-        $age = $age * 12; // Convert age in years to months
-        $key = (int)$data['type'].'_'.$size.'_'.(int)$data['esterilized'];
-        $rules = RecommendedProductRules::getIndexedRules()[$key] ?? [];
+        $type = (int)$data['type'];
+        $activity = isset($data['activity']) ? (int)$data['activity'] : 1;
+        $ester = (int)$data['esterilized'];
+        $feeding = (int)$data['feeding'];
+        $allergies = $data['allergies'] ?? [];
+        $ageMonths = $age * 12;
 
-        foreach ($rules as $rule) {
-            $c = $rule['conditions'];
+        if (!isset($ratioData['type'][$type]['age'])) {
+            return null;
+        }
 
-            if ($age < $c['age_min'] || $age >= $c['age_max']) {
+        $ageKey = null;
+        foreach ($ratioData['type'][$type]['age'] as $k => $v) {
+            if ($k <= $ageMonths) {
+                $ageKey = $k;
+            }
+        }
+        if ($ageKey === null) {
+            return null;
+        }
+
+        $pc = $ratioData['type'][$type]['age'][$ageKey]['size'][$size]['activity'][$activity]['physical_condition'][$data['physical_condition']] ?? null;
+        if (!is_array($pc) || !isset($pc['recommended'])) {
+            return null;
+        }
+
+        foreach ($pc['recommended'] as $rule) {
+            if ($rule['esterilized'] !== $ester) {
                 continue;
             }
-            if (!in_array((int)$data['feeding'], $c['feeding_in'], true)) {
+            if (!in_array($feeding, $rule['feeding_in'], true)) {
                 continue;
             }
-            if (isset($c['activity']) && (!isset($data['activity']) || (int)$data['activity'] !== $c['activity'])) {
-                continue;
-            }
-            if (isset($c['allergies_in'])) {
+            if (!empty($rule['allergies_in'])) {
                 $match = false;
-                if (isset($data['allergies']) && is_array($data['allergies'])) {
-                    foreach ($data['allergies'] as $a) {
-                        if (in_array($a, $c['allergies_in'], true)) {
-                            $match = true;
-                            break;
-                        }
+                foreach ($allergies as $a) {
+                    if (in_array($a, $rule['allergies_in'], true)) {
+                        $match = true;
+                        break;
                     }
                 }
                 if (!$match) {
                     continue;
                 }
-            }
-            if (isset($c['physical_in']) && (!isset($data['physical_condition']) || !in_array($data['physical_condition'], $c['physical_in'], true))) {
-                continue;
             }
 
             return ['id' => $rule['product'], 'price' => $rule['price']];
