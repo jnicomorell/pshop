@@ -154,6 +154,7 @@ class ProfileadvAddpetModuleFrontController extends ProfileadvFrontController
                     $currentCustomerPets[] = $value['name'];
                 }
                 $this->context->smarty->assign($name_module . 'currentcustomerpets', $currentCustomerPets);
+                $this->context->smarty->assign($name_module . 'islogged', $is_logged);
             }
         }
 
